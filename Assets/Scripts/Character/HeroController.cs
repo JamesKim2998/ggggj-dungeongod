@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HeroController : MonoBehaviour
 {
-    public TileMap tileMap;
+    public DungeonFloor dungeonFloor;
     public Character character;
 
     public void NextTurn()
