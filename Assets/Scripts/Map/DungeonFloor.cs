@@ -10,4 +10,14 @@ public class DungeonFloor
     public void CheckWallExists(Coord coord)
     {
     }
+
+    public bool CheckDownStair(Coord coord)
+    {
+        return false;
+    }
+
+    public Trigger GetTriggerOnCoord(Coord coord)
+    {
+        return null;
+    }
 }

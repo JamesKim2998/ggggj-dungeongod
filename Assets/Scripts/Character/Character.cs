@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public Coord coord => Coord.Round(transform.position);
     public float hp;
     public float power;
 
