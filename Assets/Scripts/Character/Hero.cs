@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Hero : Character
 {
-    // TODO
-    public override void Move(Dir dir)
+    protected override void OnCantMove(GameObject target)
     {
+        throw new NotImplementedException();
     }
 }

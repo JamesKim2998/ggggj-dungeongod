@@ -14,4 +14,9 @@ public struct Coord
     {
         return default(Coord);
     }
+
+    public static int distance(Coord a, Coord b)
+    {
+        return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
+    }
 }
