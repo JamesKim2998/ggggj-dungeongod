@@ -3,7 +3,9 @@ using UnityEngine;
 public static class DungeonFloorFactory
 {
     public static DungeonFloor InstantitateFloor(int floorToInstantiate)
-        => InstantitateByPrefab(floorToInstantiate);
+	{
+		return InstantitateByPrefab(floorToInstantiate);
+	}
 
     static DungeonFloor InstantitateByPrefab(int floorToInstantiate)
     {

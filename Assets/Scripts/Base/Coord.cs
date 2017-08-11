@@ -11,6 +11,11 @@ public struct Coord
 		this.y = y;
 	}
 
+	public Vector3 ToVector3(float y = 0)
+	{
+		return new Vector3(this.x, y, this.y);
+	}
+
 	public static Coord operator +(Coord a, Coord b)
 	{
 		return new Coord(a.x + b.x, a.y + b.y);
