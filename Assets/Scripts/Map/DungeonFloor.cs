@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DungeonRoom
+public class DungeonFloor
 {
-    public Coord roomSize;
     // public List<GameObject> floor;
     // public List<GameObject> items;
     // public List<GameObject> wall;
