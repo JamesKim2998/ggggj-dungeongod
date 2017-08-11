@@ -11,6 +11,19 @@ public class Hero : Character
     public bool buffed = false;
     public int buffedTurn;
 
+    private void OntriggerEnter (Collider other)
+    {
+        if( other.tag == "Exit" )
+        {
+            MainLogic.instance.GoToNextFloor();
+        }
+
+        else if( other.tag == "Equipment" )
+        {
+            // TODO :  loot or ignore
+        }
+    }
+
     public void checkBuffEnded()
     {
         if (buffedTurn <= 0)
@@ -59,6 +72,6 @@ public class Hero : Character
 
     public override void Die()
     {
-        //TODO Game over
+        MainLogic.instance.GameOver();
     }
 }

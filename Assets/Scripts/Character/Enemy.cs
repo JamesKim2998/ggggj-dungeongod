@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Enemy : Character
 {
-    public int exp = 5;
+    public int exp = 12;
     public bool isLootable = false;
 
     public EnemyReaction reaction;
@@ -30,6 +30,7 @@ public class Enemy : Character
     // OVERRIDE FUNCTIONS
     public override void OnCantMove(GameObject target)
     {
+
         Hero hero = target.GetComponent<Hero>();
 
         if (hero!= null)
@@ -41,5 +42,6 @@ public class Enemy : Character
     public override void Die()
     {
         isLootable = true;
+        Destroy(gameObject);
     }
 }

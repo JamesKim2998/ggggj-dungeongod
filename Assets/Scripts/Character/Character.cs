@@ -13,12 +13,15 @@ public abstract class Character : MonoBehaviour
     public int power = 5;
 
     public float moveTime = 1f;
-    public LayerMask blockingLayer;
+    public LayerMask blockingLayer; // set to collidable layer
 
-    private BoxCollider boxCollider;
+    private BoxCollider boxCollider; //we need box collider
+    private Rigidbody rigidbody;     //we need rigidbody. turn off gravity.
+    private float inverseMoveTime;
 
     public Condition condition;
 
+    // TODO : move this function to proper class
     public static Vector3 dirToVector3(Dir dir)
     {
         switch(dir)
@@ -27,6 +30,7 @@ public abstract class Character : MonoBehaviour
             case Dir.Down: return new Vector3(0, 0, -1);
             case Dir.Right: return new Vector3(1, 0, 0);
             case Dir.Left: return new Vector3(-1, 0, 0);
+            case Dir.Stay:
             default: return new Vector3();
         }
     }
@@ -34,6 +38,8 @@ public abstract class Character : MonoBehaviour
     protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
+        rigidbody = GetComponent<Rigidbody>();
+        inverseMoveTime = 1f / moveTime;
     }
 
     //return if Moving was successful
@@ -49,7 +55,7 @@ public abstract class Character : MonoBehaviour
 
         if(!isHit)
         {
-            //Todo Move to destination
+            StartCoroutine(SmoothMovement(dest));
 
             return true;
         }
@@ -58,7 +64,24 @@ public abstract class Character : MonoBehaviour
 
     }
 
-    protected virtual void TryToMove ( Dir dir)
+    // changing location
+    protected IEnumerator SmoothMovement(Vector3 dest)
+    {
+        float sqrRemainingDistance = (transform.position - dest).sqrMagnitude;
+        
+        while (sqrRemainingDistance > float.Epsilon)
+        {
+            Vector3 newPostion = Vector3.MoveTowards(rigidbody.position, dest, inverseMoveTime * Time.deltaTime);
+            
+            rigidbody.MovePosition(newPostion);
+            
+            sqrRemainingDistance = (transform.position - dest).sqrMagnitude;
+            
+            yield return null;
+        }
+    }
+
+    /*protected*/ public /**/ virtual void TryToMove ( Dir dir)
     {
         RaycastHit hitInfo;
 
@@ -68,7 +91,7 @@ public abstract class Character : MonoBehaviour
         {
             return;
         }
-
+        
         OnCantMove(hitInfo.transform.gameObject);
     }
 

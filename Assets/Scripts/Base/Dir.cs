@@ -4,4 +4,5 @@ public enum Dir
     Down,
     Right,
     Left,
+    Stay,
 }
