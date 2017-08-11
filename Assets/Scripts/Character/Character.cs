@@ -72,34 +72,25 @@ public abstract class Character : MonoBehaviour
         OnCantMove(hitInfo.transform.gameObject);
     }
 
-    protected abstract void OnCantMove(GameObject target);
-    
+    public abstract void OnCantMove(GameObject target);
 
-    public virtual bool Attack(GameObject target)
+    public void getDamage(int value)
     {
-        Character targetCharacter = target.GetComponent<Character>();
-        
-        if (targetCharacter == null)
+        this.HP -= value;
+
+        if (IsDead())
         {
-            return false;
+            Die();
         }
-
-        targetCharacter.getDamage(power);
-
-        return true;
     }
 
-    public virtual void Heal(int heal)
+    public virtual void Heal(int value)
     {
-        this.HP = Mathf.Clamp(this.HP + heal, 0, this.maxHP);
+        this.HP = Mathf.Clamp(this.HP + value, 0, this.maxHP);
     }
 
-    public virtual void getDamage(int damage)
-    {
-        this.HP -= damage;
-    }
 
-    public virtual bool IsDead()
+    public bool IsDead()
     {
         if(this.HP <= 0)
         {
@@ -107,4 +98,7 @@ public abstract class Character : MonoBehaviour
         }
         return false;
     }
+
+
+    public abstract void Die();
 }

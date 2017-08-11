@@ -1,32 +1,45 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections;
+
 public class Enemy : Character
 {
-    protected override void OnCantMove(GameObject target)
-    {
-        throw new NotImplementedException();
-    }
+    public int exp = 5;
+    public bool isLootable = false;
 
     public EnemyReaction reaction;
     public bool raged = false;
 
-    public override bool Attack(GameObject target)
+    public void Looted()
     {
-        Character targetCharacter = target.GetComponent<Character>();
+        isLootable = false;
+    }
 
-        if (targetCharacter == null)
-        {
-            return false;
-        }
-
+    public virtual void Attack(Hero hero)
+    {
         if (raged)
         {
-            targetCharacter.getDamage((int)(power * 1.2f));
+            hero.getDamage((int)(power * 1.2f));
             raged = false;
         }
         else
-            targetCharacter.getDamage(power);
+            hero.getDamage(power);
 
-        return true;
+    }
+
+    // OVERRIDE FUNCTIONS
+    public override void OnCantMove(GameObject target)
+    {
+        Hero hero = target.GetComponent<Hero>();
+
+        if (hero!= null)
+        {
+            Attack(hero);
+        }
+    }
+
+    public override void Die()
+    {
+        isLootable = true;
     }
 }
