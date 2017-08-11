@@ -1,9 +1,12 @@
 ﻿public enum ConditionType
 {
-    NORMAL,
-    PANIC,
+    EXPLORE,
+    WAIT,
+    GATHER,
+    COMBAT,
+    RUNAWAY,
     PARALYZED,
-    RAGE
+    PANIC
 }
 
 public class Condition
@@ -17,4 +20,5 @@ public class Condition
         {
             //TODO
         }
+    }
 }

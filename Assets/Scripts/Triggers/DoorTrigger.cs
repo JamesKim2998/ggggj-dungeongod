@@ -8,7 +8,7 @@ public class DoorTrigger : Trigger
     public override void Act()
     {
         //TODO : 문 여닫는 애니메이션 추가
-        linkedDoor.SetActive(open);
+        linkedDoor.SetActive(!open);
         open = !open;
     }
 }
