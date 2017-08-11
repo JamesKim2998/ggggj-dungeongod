@@ -15,13 +15,13 @@ public class EnemyGodTouchAction : GodTouchAction
             case EnemyReaction.IGNORE:
                 return;
             case EnemyReaction.PANIC:
-                //TODO : Enemy Behaviour Rule Sets to Panic
+                enemy.condition = new Condition(ConditionType.PANIC, 3);
                 return;
             case EnemyReaction.RAGE:
-                //TODO : Enemy's next attack gets stronger
+                enemy.raged = true;
                 return;
             case EnemyReaction.DEAD:
-                //TODO : Enemy dead
+                enemy.HP = 0;
                 return;
         }
     }

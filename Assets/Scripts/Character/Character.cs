@@ -17,6 +17,8 @@ public abstract class Character : MonoBehaviour
 
     private BoxCollider boxCollider;
 
+    public Condition condition;
+
     public static Vector3 dirToVector3(Dir dir)
     {
         switch(dir)

@@ -28,7 +28,7 @@ public class GoddessStatue : Trigger
                     hero.HP = Mathf.Min(hero.maxHP, hero.HP + 10);
                     return;
                 case StatueType.BUFF:
-                    // TODO : Hero Condition => RAGE
+                    hero.buffed = true;
                     return;
             }
         }
