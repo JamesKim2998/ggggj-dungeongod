@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using UnityEngine;
-
-public class Hero : Character
+public class Enemy : Character
 {
     protected override void OnCantMove(GameObject target)
     {
         throw new NotImplementedException();
     }
+
+    public EnemyReaction reaction;
 }

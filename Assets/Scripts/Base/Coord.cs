@@ -27,4 +27,9 @@ public struct Coord
 		var y = Mathf.RoundToInt(position.y);
 		return new Coord(x, y);
 	}
+
+    public static int distance(Coord a, Coord b)
+    {
+        return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
+    }
 }
