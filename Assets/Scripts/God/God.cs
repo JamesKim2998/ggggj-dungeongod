@@ -8,6 +8,6 @@ public class God : MonoBehaviour
 
     public void Update()
     {
-        // TODO
+        powerLeft = Mathf.Min(powerLeft + powerIncreasePerSec * Time.deltaTime, powerMax);
     }
 }

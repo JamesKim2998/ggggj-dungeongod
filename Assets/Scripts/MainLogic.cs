@@ -14,6 +14,8 @@ public class MainLogic : MonoBehaviour
 	public Hero hero;
 	public HeroController heroController;
 
+    private RaycastHit[] highLighted;
+
     // public bool isEnemyPhase = false;
     private List<Enemy> enemies {
 		get { return dungeon.currentFloor.enemies; }
@@ -38,7 +40,9 @@ public class MainLogic : MonoBehaviour
     void Update()
     {
 		god.Update();
-        if (Input.GetMouseButtonDown(0))
+        deHighLighObject();
+        highLightObject();
+        if (Input.GetMouseButtonDown(0) && god.powerLeft >= 20)
             UpdateGodTouch();
 
 		/*
@@ -175,6 +179,25 @@ public class MainLogic : MonoBehaviour
             var godTouch = hitGO.GetComponent<GodTouchAction>();
             if (godTouch != null) godTouch.Act();
         }
+        god.powerLeft -= 20;
     }
-    
+
+    public void highLightObject()
+    {
+        highLighted = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+        foreach (var hit in highLighted)
+        {
+            hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(0.5f, 0.8f, 0.5f);
+        }
+    }
+
+    public void deHighLighObject()
+    {
+        if (highLighted == null)
+            return;
+        foreach (var hit in highLighted)
+        {
+            hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(1, 1, 1);
+        }
+    }
 }
