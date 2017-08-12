@@ -53,6 +53,7 @@ public class BitmapLoader : MonoBehaviour
 		var spawned = Instantiate<GameObject>(wall);
 		spawned.transform.SetParent(newMap);
 		spawned.transform.position = new Vector3(x, -1, y);
+		spawned.transform.localRotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0);
 		spawned.GetComponentInChildren<MeshFilter>().mesh = wallModels[Random.Range(0, wallModels.Length)];
 	}
 }
