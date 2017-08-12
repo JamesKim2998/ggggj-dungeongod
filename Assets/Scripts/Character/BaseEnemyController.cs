@@ -2,14 +2,14 @@
 
 public class BaseEnemyController : EnemyController
 {
-    private void Awake()
+    private void OnEnable()
     {
         character = GetComponent<Enemy>();
-        hero = FindObjectOfType<Hero>();
     }
 
     public override void NextTurn()
     {
+		var hero = MainLogic.instance.hero;
         int xDistance, yDistance;
 
         if (Coord.distance(hero.coord, character.coord) <= detectDistance)

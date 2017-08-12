@@ -15,7 +15,7 @@ public class Hero : Character
     private void OnTriggerEnter (Collider other)
     {
 		var tag = other.GetComponent<ObjectTag>();
-		if( tag.type == ObjectType.DOWN_STAIR)
+		if( tag != null && tag.type == ObjectType.DOWN_STAIR)
 		{
 			if (onHitExit != null)
 				onHitExit();
