@@ -1,7 +1,7 @@
 # MagicaVoxel @ Ephtracy
 
 # material
-mtllib Golem Arm 1.mtl
+mtllib Golem Arm.mtl
 usemtl palette
 
 # normals
