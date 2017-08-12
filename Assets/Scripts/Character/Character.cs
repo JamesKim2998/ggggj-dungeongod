@@ -21,20 +21,6 @@ public abstract class Character : MonoBehaviour
 
     public Condition condition;
 
-    // TODO : move this function to proper class
-    public static Vector3 dirToVector3(Dir dir)
-    {
-        switch(dir)
-        {
-            case Dir.Up: return new Vector3(0, 0, 1);
-            case Dir.Down: return new Vector3(0, 0, -1);
-            case Dir.Right: return new Vector3(1, 0, 0);
-            case Dir.Left: return new Vector3(-1, 0, 0);
-            case Dir.Stay:
-            default: return new Vector3();
-        }
-    }
-
     protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -46,7 +32,7 @@ public abstract class Character : MonoBehaviour
     public virtual bool Move(Dir dir, out RaycastHit hitInfo)
     {
         Vector3 start = transform.position;
-        Vector3 dest = start + Character.dirToVector3(dir);
+        Vector3 dest = start + dir.ToVector3();
         bool isHit = false;
 
         boxCollider.enabled = false;

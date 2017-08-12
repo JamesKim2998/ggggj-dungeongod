@@ -11,8 +11,10 @@ public class MainLogic : MonoBehaviour
     public Dungeon dungeon;
     public God god;
 
-    public bool isEnemyPhase = false;
+	public Hero hero;
+	public HeroController heroController;
 
+    // public bool isEnemyPhase = false;
     private List<Enemy> enemies {
 		get { return dungeon.currentFloor.enemies; }
 	}
@@ -29,6 +31,8 @@ public class MainLogic : MonoBehaviour
         }
 
         InitGame();
+		StartCoroutine(HeroPhase());
+		StartCoroutine(EnemyPhase());
     }
 
     void Update()
@@ -36,15 +40,16 @@ public class MainLogic : MonoBehaviour
 		god.Update();
         UpdateGodTouch();
 
+		/*
         if (isEnemyPhase)
         {
-            StartCoroutine(EnemyPhase());
         }
         else
         {
             //TODO : Hero -> activate AI
             isEnemyPhase = true;
         }
+		*/
     }
 
     void InitGame()
@@ -52,10 +57,13 @@ public class MainLogic : MonoBehaviour
         //TODO : Blind activate
         //           "Level 
 
-        //TODO : if we do not generate maps, erase following line
+        // Init level
         dungeon.Clear();
 		dungeon.LoadInitLevel();
-        //TODO : Instantiate new Hero
+
+		// Instantiate hero
+		hero = HeroFactory.InstantiateRandom();
+		heroController = hero.gameObject.AddComponent<HeroController>();
 
         //TODO : Blind deactivate
     }
@@ -76,6 +84,15 @@ public class MainLogic : MonoBehaviour
         //TODO : Blind deactivate
     }
 	*/
+
+	IEnumerator HeroPhase()
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(turnDelay);
+			heroController.NextTurn();
+		}
+	}
 
     IEnumerator EnemyPhase()
     {

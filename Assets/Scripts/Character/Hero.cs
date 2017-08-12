@@ -4,14 +4,13 @@ using System.Collections;
 
 public class Hero : Character
 {
-
     public int level = 1;
     public int expNeeded = 10;
 
     public bool buffed = false;
     public int buffedTurn;
 
-    private void OntriggerEnter (Collider other)
+    private void OnTriggerEnter (Collider other)
     {
         if( other.tag == "Exit" )
         {
