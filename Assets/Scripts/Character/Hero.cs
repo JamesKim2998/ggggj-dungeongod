@@ -23,30 +23,35 @@ public class Hero : Character
 		var tag = other.GetComponent<ObjectTag>();
 		if (tag != null && tag.type == ObjectType.DOWN_STAIR)
 		{
-			if (onHitExit != null)
-				onHitExit();
+			animation.SetTrigger("Jumpdown");
+			tag.GetComponent<Animator>().enabled = true;
 		}
 
 		else if (other.tag == "Equipment")
 		{
-            if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power){
-                ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
-                ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
-            }
+			if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power)
+			{
+				ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
+				ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
+			}
 			// TODO :  loot or ignore
 		}
 
-        else if (other.tag == "Consumable")
-        {
-            if ((int)other.GetComponent<ConsumableItem>().code <= 2) // Èú°è¿­ ¾ÆÀÌÅÛ
-                MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
-            else //¹öÇÁ°è¿­ ¾ÆÀÌÅÛ
-                MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-            Destroy(other.gameObject);
-        }
+		else if (other.tag == "Consumable")
+		{
+			if ((int)other.GetComponent<ConsumableItem>().code <= 2) // ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
+			else //ï¿½ï¿½ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+			Destroy(other.gameObject);
+		}
 
 	}
 
+	public void JumpedDown()
+	{
+		onHitExit();
+	}
 	public void checkBuffEnded()
 	{
 		if (buffedTurn <= 0)

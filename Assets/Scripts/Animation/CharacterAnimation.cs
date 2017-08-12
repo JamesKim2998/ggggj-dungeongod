@@ -53,15 +53,12 @@ public class CharacterAnimation : MonoBehaviour
 		me.Die();
 	}
 
+	public void OnJumpedDown()
+	{
+		(me as Hero).JumpedDown();
+	}
+
 	void AttackReaction()
 	{
-		if (me.IsDead())
-		{
-			anim.SetTrigger("Die");
-		}
-		else
-		{
-			anim.SetTrigger("Hit");
-		}
 	}
 }

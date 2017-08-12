@@ -129,17 +129,20 @@ public abstract class Character : MonoBehaviour
 	public virtual void getDamage(int power, int dice)
 	{
 		int powerDiff = power + dice - this.power;
+		bool hit = false;
 		if (powerDiff >= 12)
 		{
 			//CRITICAL !! TODO ANIMATION
 			this.HP -= 2;
 			EffectSpawner.SetEffect("HitEffect", transform.position + Vector3.up);
+			hit = true;
 		}
 		else if (powerDiff >= 7 || dice >= 12)
 		{
 			//normal hit;
 			this.HP -= 1;
 			EffectSpawner.SetEffect("HitEffect", transform.position + Vector3.up);
+			hit = true;
 		}
 		else
 		{
@@ -154,7 +157,7 @@ public abstract class Character : MonoBehaviour
 		}
 		else
 		{
-			if (animation) animation.SetTrigger("Hit");
+			if (animation && hit) animation.SetTrigger("Hit");
 		}
 	}
 

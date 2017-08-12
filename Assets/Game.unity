@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029505, g: 0.22572652, b: 0.30692935, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ Prefab:
     - target: {fileID: 224681356604770304, guid: 76e8db54162bd4bc8ab1972bdbdb702a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 224681356604770304, guid: 76e8db54162bd4bc8ab1972bdbdb702a,
         type: 2}
@@ -542,7 +542,7 @@ Prefab:
     - target: {fileID: 224681356604770304, guid: 76e8db54162bd4bc8ab1972bdbdb702a,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224681356604770304, guid: 76e8db54162bd4bc8ab1972bdbdb702a,
         type: 2}
@@ -552,7 +552,7 @@ Prefab:
     - target: {fileID: 224681356604770304, guid: 76e8db54162bd4bc8ab1972bdbdb702a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224681356604770304, guid: 76e8db54162bd4bc8ab1972bdbdb702a,
         type: 2}
@@ -721,12 +721,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   condition: 0
+  visibleDistance: 8
   animation: {fileID: 0}
   level: 1
   expNeeded: 10
-  preParalyzed: 0
-  prePanic: 0
-  visibleDistance: 8
+  fogDistance: 8
   defaultCondition: 0
   buffed: 0
   buffedTurn: 0
@@ -741,8 +740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c971e05aaebb457dae4f20d541eba43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonFloor: {fileID: 0}
-  countdown: 0
+  combatHP: 6
+  runAwayDistance: 5
 --- !u!65 &1510539865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1043,7 +1042,7 @@ Prefab:
     - target: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
         type: 2}
@@ -1068,7 +1067,7 @@ Prefab:
     - target: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
         type: 2}
@@ -1078,7 +1077,7 @@ Prefab:
     - target: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
         type: 2}
