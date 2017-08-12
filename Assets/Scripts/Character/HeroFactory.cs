@@ -31,8 +31,7 @@ public static class HeroFactory
 		var prefab = Resources.Load<GameObject>("Hero");
 		var hero = Object.Instantiate(prefab).GetComponent<Hero>();
 		hero.transform.position = Vector3.one;
-		var children = hero.transform.GetComponentsInChildren<Transform>();
-		foreach (Transform child in children)
+		foreach (Transform child in hero.transform)
 			Object.Destroy(child.gameObject);
 		var body = Object.Instantiate<GameObject>(GetRandomBody());
 		var head = Object.Instantiate<GameObject>(GetRandomHead());
