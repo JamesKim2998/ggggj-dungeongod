@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
     
         if (character.prePanic == true) {
             character.condition = ConditionType.PANIC;
+            countdown = 3;
             character.prePanic = false;
         }
 
