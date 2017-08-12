@@ -12,13 +12,12 @@ public class HeroController : MonoBehaviour
 	int combarHPOnLastTurn;
 	public int runAwayDistance = 5;
 
-	ConditionType? nextCondition;
+	public ConditionType? nextCondition;
 	int countdown = 0;
 
-	GameObject targetToGather;
+	Item targetToGather;
 	Enemy targetToCombat;
 	Enemy targetToRunAway;
-
 
 	void Awake()
 	{
@@ -134,7 +133,7 @@ public class HeroController : MonoBehaviour
 		}
 
 		// 시야범위 안에 아이템이 떨어져 있으면 획득 상태에 들어간다
-		var targetToGather = GetDirToReachableVisibleItem(out dir);
+		targetToGather = GetDirToReachableVisibleItem(out dir);
 		if (targetToGather)
 		{
 			nextCondition = ConditionType.GATHER;

@@ -190,10 +190,13 @@ public class MainLogic : MonoBehaviour
     }
 	*/
 
+	int turnCount;
+
 	public IEnumerator CoroutineCycleTurnInfinite()
 	{
 		while (true)
 		{
+			Debug.Log("Turn: " + turnCount++);
 			yield return HeroPhase();
 			yield return EnemyPhase();
 		}
@@ -314,9 +317,7 @@ public class MainLogic : MonoBehaviour
         if (hitOnGround && thunder != null)
         {
             if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
-            {
-                hero.nextCondition = ConditionType.PANIC;
-            }
+                heroController.nextCondition = ConditionType.PANIC;
         }
         
     }

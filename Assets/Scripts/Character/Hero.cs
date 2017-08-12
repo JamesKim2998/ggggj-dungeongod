@@ -7,7 +7,6 @@ public class Hero : Character
 	public int level = 1;
 	public int expNeeded = 10;
 
-	public ConditionType? nextCondition;
 	public int fogDistance = 8;
 
 	public ConditionType defaultCondition = ConditionType.EXPLORE;
