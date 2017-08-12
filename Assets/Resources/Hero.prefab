@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 114163674800746354}
   - component: {fileID: 114536422969821384}
   - component: {fileID: 114550066137954654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,9 +515,13 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
+  condition: 0
+  visibleDistance: 8
+  animation: {fileID: 0}
   level: 1
   expNeeded: 10
-  visibleDistance: 8
+  fogDistance: 8
+  defaultCondition: 0
   buffed: 0
   buffedTurn: 0
 --- !u!114 &114550066137954654

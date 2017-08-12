@@ -106,6 +106,7 @@ public class EnemyController : MonoBehaviour
     public virtual void NextTurn()
     {
         var hero = MainLogic.instance.hero;
+		UpdateCondition(hero);
 
         switch (character.condition)
         {
