@@ -39,7 +39,6 @@ public class BitmapLoader : MonoBehaviour
 	}
 	void SpawnFloor(int x, int y, Transform newMap)
 	{
-		Debug.Log(string.Format("Floor At {0}, {1}", x, y));
 		var spawned = Instantiate<GameObject>(floor);
 		spawned.transform.SetParent(newMap);
 		spawned.transform.position = new Vector3(x, -1, y);
@@ -49,7 +48,6 @@ public class BitmapLoader : MonoBehaviour
 	{
 		if (coordSet.Any(c => c.x == x && c.y == y) || walls.Any(c => c.x == x && c.y == y)) return;
 		walls.Add(new Coord(x, y));
-		Debug.Log(string.Format("Wall At {0}, {1}", x, y));
 		var spawned = Instantiate<GameObject>(wall);
 		spawned.transform.SetParent(newMap);
 		spawned.transform.position = new Vector3(x, -1, y);
