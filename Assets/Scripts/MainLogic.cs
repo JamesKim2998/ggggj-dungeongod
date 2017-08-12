@@ -38,7 +38,8 @@ public class MainLogic : MonoBehaviour
     void Update()
     {
 		god.Update();
-        UpdateGodTouch();
+        if (Input.GetMouseButtonDown(0))
+            UpdateGodTouch();
 
 		/*
         if (isEnemyPhase)
@@ -160,7 +161,7 @@ public class MainLogic : MonoBehaviour
     // TODO
     public RaycastHit[] TestGodTouch()
     {
-        return null;
+        return Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
     }
 
     public void UpdateGodTouch()
@@ -169,6 +170,7 @@ public class MainLogic : MonoBehaviour
 		if (hits == null) return;
         foreach (var hit in hits)
         {
+            Debug.Log(hit.transform.gameObject.name);
             var hitGO = hit.collider.gameObject;
             var godTouch = hitGO.GetComponent<GodTouchAction>();
             if (godTouch != null) godTouch.Act();
