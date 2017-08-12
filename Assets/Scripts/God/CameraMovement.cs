@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour
         //    Camera.main.transform.position += Vector3.ClampMagnitude(new Vector3(Input.mousePosition.x - Screen.width / 2f, 0, Input.mousePosition.y - Screen.height / 2f),20 * Time.deltaTime);
         if (Input.GetMouseButton(2))
         {
-            Camera.main.transform.position -= new Vector3(Input.mousePosition.x - preMousePos.x, 0, Input.mousePosition.y - preMousePos.y) * (Camera.main.fieldOfView / 1200f);
+            Camera.main.transform.position -= Quaternion.Euler(0, -Camera.main.transform.rotation.eulerAngles.z,0) * new Vector3(Input.mousePosition.x - preMousePos.x, 0, Input.mousePosition.y - preMousePos.y) * (Camera.main.fieldOfView / 1200f);
         }
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
             Camera.main.fieldOfView = Mathf.Max(20, Camera.main.fieldOfView - Input.GetAxis("Mouse ScrollWheel") * 20);
@@ -22,7 +22,6 @@ public class CameraMovement : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Min(65, Camera.main.fieldOfView - Input.GetAxis("Mouse ScrollWheel") * 20);
         if (Input.GetMouseButton(1))
         {
-            Debug.Log(Input.mouseScrollDelta.x);
             Camera.main.transform.Rotate(0, 0, 360 * (Input.mousePosition.x - preMousePos.x)/ Screen.width);
         }
         preMousePos = Input.mousePosition;
