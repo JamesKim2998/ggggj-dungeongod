@@ -48,11 +48,6 @@ public class CharacterAnimation : MonoBehaviour
 		anim.SetTrigger(trigger);
 	}
 
-	public void Move()
-	{
-		anim.SetBool("Moving", true);
-	}
-
 	public void OnDieAnimationEnd()
 	{
 		me.Die();

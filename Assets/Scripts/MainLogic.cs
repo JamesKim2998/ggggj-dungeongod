@@ -56,6 +56,13 @@ public class MainLogic : MonoBehaviour
         ItemManager.consumalbeDic.Add(ConsumableItemCode.WINE, 10);
         ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
         ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
+
+        ItemManager.equipDic.Add(EquipmentType.ARMOR, 0);
+        ItemManager.equipDic.Add(EquipmentType.BOOTS, 0);
+        ItemManager.equipDic.Add(EquipmentType.GAUNTLET, 0);
+        ItemManager.equipDic.Add(EquipmentType.HELMET, 0);
+        ItemManager.equipDic.Add(EquipmentType.SHIELD, 0);
+        ItemManager.equipDic.Add(EquipmentType.WEAPON, 0);
     }
 
     void Update()

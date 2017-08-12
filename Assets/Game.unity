@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182dda4a9017143228debbaed6574d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnDelay: 1
+  turnDelay: 0.6
   dungeon: {fileID: 337887432}
   god: {fileID: 337887433}
   hero: {fileID: 1510539863}
