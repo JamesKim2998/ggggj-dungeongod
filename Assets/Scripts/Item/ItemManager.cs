@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public static Dictionary<ConsumableItemCode, int> consumalbeDic;
+    public static Dictionary<ConsumableItemCode, int> consumalbeDic = new Dictionary<ConsumableItemCode, int>();
     public Item[] items;
 
     public Helmet helmet {

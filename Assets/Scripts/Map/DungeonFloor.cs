@@ -30,7 +30,7 @@ public class DungeonFloor : MonoBehaviour
 			{
 				fogOfWarCache = InstantiateFogOfWar();
 				fogOfWarCache.transform.SetParent(transform, false);
-				fogOfWarCache.transform.position = new Vector3(-0.5f, 3.1f, -0.5f);
+				fogOfWarCache.transform.position = new Vector3(-0.5f, 1.01f, -0.5f);
 			}
 			return fogOfWarCache;
 		}
@@ -43,7 +43,8 @@ public class DungeonFloor : MonoBehaviour
 			var point = spawnInfo.point.position;
 			var prefab = Resources.Load<GameObject>("Enemies/" + spawnInfo.prefabName);
 			var enemy = Instantiate(prefab, point, Quaternion.identity, enemySpawnRoot);
-			enemies.Add(enemy.GetComponent<Enemy>());
+            enemy.GetComponent<Enemy>().initialCoord = Coord.Round(point);
+            enemies.Add(enemy.GetComponent<Enemy>());
 		}
 	}
 

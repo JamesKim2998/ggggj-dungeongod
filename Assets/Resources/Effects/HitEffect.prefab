@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4260096061901078}
   - component: {fileID: 198133498957388400}
   - component: {fileID: 199846869035758302}
+  - component: {fileID: 114404276251578642}
   m_Layer: 0
   m_Name: HitEffect
   m_TagString: Untagged
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114404276251578642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703987220986114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd85961e8c3845c78f54b0314316eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.7
 --- !u!198 &198133498957388400
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -50,7 +63,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 1
   simulationSpeed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -100,7 +113,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2037282928
+  randomSeed: -205805244
   InitialModule:
     serializedVersion: 3
     enabled: 1

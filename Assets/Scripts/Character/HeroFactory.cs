@@ -32,22 +32,25 @@ public static class HeroFactory
 	{
 		var prefab = Resources.Load<GameObject>("Hero");
 		var hero = Object.Instantiate(prefab).GetComponent<Hero>();
+		var charParent = hero.GetComponent<HeroMarker>().characterParent;
+
 		hero.transform.position = Vector3.one;
 		if (Application.isEditor)
 		{
-			var tempList = hero.transform.Cast<Transform>().ToList();
+			var tempList = charParent.Cast<Transform>().ToList();
 			foreach (Transform child in tempList)
 				Object.DestroyImmediate(child.gameObject);
 		}
 		else
 		{
-			foreach (Transform child in hero.transform)
+			foreach (Transform child in charParent)
 				Object.Destroy(child.gameObject);
 		}
 		var body = Object.Instantiate<GameObject>(GetRandomBody());
 		var head = Object.Instantiate<GameObject>(GetRandomHead());
-		body.transform.SetParent(hero.transform, false);
-		head.transform.SetParent(hero.transform, false);
+
+		body.transform.SetParent(charParent, false);
+		head.transform.SetParent(charParent, false);
 		Shader.SetGlobalColor("_HairColor", GetRandomColor());
 		Shader.SetGlobalColor("_BodyColor", GetRandomColor());
 

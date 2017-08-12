@@ -13,10 +13,10 @@ public class BaseEnemyController : EnemyController
         int xDistance, yDistance;
 
         if (Coord.distance(hero.coord, character.coord) <= detectDistance)
-            character.condition.type = ConditionType.COMBAT;
-        if (character.condition.type == ConditionType.WAIT)
+            character.condition = ConditionType.COMBAT;
+        if (character.condition == ConditionType.WAIT)
             return;
-        if (character.condition.type == ConditionType.COMBAT)
+        if (character.condition == ConditionType.COMBAT)
         {
             Dir[] moveDirection = new Dir[2];
             xDistance = character.coord.x - hero.coord.x;
