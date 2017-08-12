@@ -315,8 +315,7 @@ public class MainLogic : MonoBehaviour
         {
             if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
             {
-                Debug.Log("RUN");
-                //hero.condition = new Condition(ConditionType.RUNAWAY, 4);
+                hero.nextCondition = ConditionType.PANIC;
             }
         }
         
