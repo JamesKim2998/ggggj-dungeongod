@@ -33,7 +33,8 @@ public class FogOfWar : MonoBehaviour
 		quadInfo = new QuadInfo();
 		quads[coord] = quadInfo;
 
-		var quad = Instantiate(prefabQuad, coord.ToVector3(), Quaternion.identity, quadRoot);
+		var pos = coord.ToVector3(0.5f);
+		var quad = Instantiate(prefabQuad, pos, Quaternion.identity, quadRoot);
 		quad.name = coord.ToString();
 		quad.transform.eulerAngles = new Vector3(90, 0, 0);
 		quad.SetActive(true);
@@ -108,7 +109,14 @@ public class FogOfWar : MonoBehaviour
 		foreach (var testDelta in Range.InsideDistance(visibleDistance))
 		{
 			var testCoord = center + testDelta;
-			if (!character.CanSee(testCoord)) continue;
+			RaycastHit hitInfo;
+			if (!character.CanSee(testCoord, out hitInfo))
+			{
+				var hitCoord = Coord.Round(hitInfo.transform.position);
+				if (hitCoord != testCoord)
+					continue;
+			}
+
 			SetHeroVisible(testCoord);
 			heroVisiblity.Add(testCoord);
 		}

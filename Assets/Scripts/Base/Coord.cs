@@ -21,6 +21,16 @@ public struct Coord
 		return x + "_" + y;
 	}
 
+	public static bool operator ==(Coord a, Coord b)
+	{
+		return a.x == b.x && a.y == b.y;
+	}
+
+	public static bool operator !=(Coord a, Coord b)
+	{
+		return !(a == b);
+	}
+
 	public static readonly Coord zero = new Coord(0, 0);
 	public static readonly Coord up = new Coord(0, 1);
 	public static readonly Coord down = new Coord(0, -1);

@@ -40,9 +40,8 @@ public abstract class Character : MonoBehaviour
 		return isHit;
 	}
 
-	public bool CanSee(Coord testCoord)
+	public bool CanSee(Coord testCoord, out RaycastHit hitInfo)
 	{
-		RaycastHit hitInfo;
 		return !IsCoordBlocked(testCoord, out hitInfo);
 	}
 
