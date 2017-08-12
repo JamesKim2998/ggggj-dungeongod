@@ -57,9 +57,14 @@ public class Enemy : Character
 		}
 	}
 
+	public override void getDamage(int power, int dice)
+	{
+		base.getDamage(power, dice);
+		if (IsDead()) isLootable = true;
+	}
+
 	public override void Die()
 	{
-		isLootable = true;
 		Destroy(gameObject);
 	}
 }

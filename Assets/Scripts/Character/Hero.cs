@@ -75,7 +75,10 @@ public class Hero : Character
 			this.HP++;
 		}
 		if (levelup)
+		{
 			StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
+			EffectSpawner.SetEffect("LvUP", transform.position);
+		}
 	}
 
 	public void Attack(Enemy enemy)
