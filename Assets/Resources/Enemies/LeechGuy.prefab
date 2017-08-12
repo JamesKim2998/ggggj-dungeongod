@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114932701745227992}
   - component: {fileID: 65091342025826694}
   - component: {fileID: 54075758200392694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeechGuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,9 +22,6 @@ public class MainLogic : MonoBehaviour
     public GameObject thunderPrefab;
 
     // public bool isEnemyPhase = false;
-    private List<Enemy> enemies {
-		get { return dungeon.currentFloor.enemies; }
-	}
 
     void Awake()
     {
@@ -126,6 +123,7 @@ public class MainLogic : MonoBehaviour
         {
             yield return new WaitForSeconds(turnDelay);
             // Assume that we can ignore times to calculate AI's next action
+			var enemies = dungeon.currentFloor.EachEnemy();
             foreach (Enemy enemy in enemies)
             {
                 enemy.GetComponent<EnemyController>().NextTurn();

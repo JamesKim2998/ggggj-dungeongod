@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114262733434784172}
   - component: {fileID: 65917250832447362}
   - component: {fileID: 54836398898525402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThreeLegSpider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
