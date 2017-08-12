@@ -28,6 +28,15 @@ public class Hero : Character
 		{
 			// TODO :  loot or ignore
 		}
+
+        else if (other.tag == "Consumable")
+        {
+            if ((int)other.GetComponent<ConsumableItem>().code <= 2) // 힐계열 아이템
+                MainLogic.instance.hero.HP += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+            else //버프계열 아이템
+                MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+            Destroy(other.gameObject);
+        }
 	}
 
 	public void checkBuffEnded()

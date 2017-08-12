@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    
-    Dictionary<ConsumableItem, ConsumableItem> consumable;
+    public static Dictionary<ConsumableItemCode, int> consumalbeDic;
+    public Item[] items;
 
     public Helmet helmet {
         get
@@ -91,7 +91,7 @@ public class ItemManager : MonoBehaviour
 
     private void Awake()
     {
-        //consumable.Add()...;
+        items = FindObjectsOfType<Item>();
     }
 
 }

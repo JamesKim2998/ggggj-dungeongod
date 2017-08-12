@@ -1,34 +1,17 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public enum ConsumableItemCode
 {
     CAKE,
-    JEON,
-    POTION
+    CHICKEN,
+    PIE,
+    WINE,
+    SPAGETTI,
+    EGGJJIM    
 }
 
-public class ConsumableItem
+public class ConsumableItem : Item
 {
-    public virtual void  use()
-    {
-
-    }
-}
-
-public class HealingItem : ConsumableItem
-{
-    public int healAmount;
-    public override void use()
-    {
-        MainLogic.instance.hero.HP += healAmount;
-    }
-}
-
-public class BuffItem : ConsumableItem
-{
-    int turn;
-    public override void use()
-    {
-        MainLogic.instance.hero.buffedTurn += turn;
-    }
+    public ConsumableItemCode code;
 }
