@@ -34,8 +34,11 @@ public class HeroHPBar : MonoBehaviour
 		}
 		else if (oldMaxHP > maxHP)
 		{
-			for (var i = maxHP; i != oldMaxHP; ++i)
+			for (var i = oldMaxHP - 1; i >= maxHP; --i)
+			{
 				Destroy(hearts[i]);
+				hearts.RemoveAt(i);
+			}
 		}
 
 		if (fullHearts)
