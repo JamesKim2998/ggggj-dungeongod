@@ -5,6 +5,7 @@ public static class HeroFactory
 {
 	static GameObject[] heads;
 	static GameObject[] bodies;
+	static readonly string[] bodyNames = { "Body 1", "Body 2", "Body 3", "Body 8", "Body 12" };
 	static Color GetRandomColor()
 	{
 		return Color.HSVToRGB(Random.Range(0f, 1f), Random.Range(0f, 0.8f), Random.Range(0f, 1f));
@@ -22,7 +23,7 @@ public static class HeroFactory
 	{
 		if (bodies == null)
 		{
-			bodies = Resources.LoadAll<GameObject>("Hero/Body");
+			bodies = Resources.LoadAll<GameObject>("Hero/Body").Where(o => bodyNames.Contains(o.name)).ToArray();
 		}
 		return bodies[Random.Range(0, bodies.Length)];
 	}
