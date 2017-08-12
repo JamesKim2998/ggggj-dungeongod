@@ -56,7 +56,7 @@ public class Hero : Character
 
 	public void Attack(Enemy enemy)
 	{
-		enemy.getDamage(power);
+		enemy.getDamage(power, DiceRoll());
 
 		if (enemy.IsDead() && enemy.isLootable)
 		{

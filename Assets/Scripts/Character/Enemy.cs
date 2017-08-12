@@ -23,13 +23,14 @@ public class Enemy : Character
 
     public virtual void Attack(Hero hero)
     {
+        /*
         if (raged)
         {
             hero.getDamage((int)(power * 1.2f));
             raged = false;
         }
-        else
-            hero.getDamage(power);
+        else*/
+        hero.getDamage(power, DiceRoll() );
 
     }
 

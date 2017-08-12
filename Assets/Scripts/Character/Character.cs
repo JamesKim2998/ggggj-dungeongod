@@ -98,9 +98,28 @@ public abstract class Character : MonoBehaviour
 
     public abstract void OnCantMove(GameObject target);
 
-    public void getDamage(int value)
+    public int DiceRoll()
     {
-        this.HP -= value;
+        return Random.Range(1, 7) + Random.Range(1, 7);
+    }
+
+    public void getDamage(int power, int dice)
+    {
+        int powerDiff = power + dice - this.power;
+        if (dice >= 12)
+        {
+            //CRITICAL !! TODO ANIMATION
+            this.HP -= 2;
+        }
+        else if (dice >= 7 || dice == 12)
+        {
+            //normal hit;
+            this.HP -= 1;
+        }
+        else
+        {
+            //MISS!!
+        }
 
         if (IsDead())
         {
