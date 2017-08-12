@@ -46,8 +46,7 @@ public class MainLogic : MonoBehaviour
         pathFinder = new PathFinder();
         pathFinder.init();
         InitGame();
-		StartCoroutine(HeroPhase());
-		StartCoroutine(EnemyPhase());
+		StartCoroutine(CoroutineCycleTurnInfinite());
 
         audioManager = FindObjectOfType<AudioManager>();
 
@@ -154,27 +153,28 @@ public class MainLogic : MonoBehaviour
     }
 	*/
 
-	IEnumerator HeroPhase()
+	public IEnumerator CoroutineCycleTurnInfinite()
 	{
 		while (true)
 		{
-			yield return new WaitForSeconds(turnDelay);
-			heroController.NextTurn();
+			yield return HeroPhase();
+			yield return EnemyPhase();
 		}
+	}
+
+	IEnumerator HeroPhase()
+	{
+		yield return new WaitForSeconds(turnDelay);
+		heroController.NextTurn();
 	}
 
     IEnumerator EnemyPhase()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(turnDelay);
-            // Assume that we can ignore times to calculate AI's next action
-			var enemies = dungeon.currentFloor.EachEnemy();
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.GetComponent<EnemyController>().NextTurn();
-            }
-        }
+		yield return new WaitForSeconds(turnDelay);
+		// Assume that we can ignore times to calculate AI's next action
+		var enemies = dungeon.currentFloor.EachEnemy();
+		foreach (var enemy in enemies)
+			enemy.GetComponent<EnemyController>().NextTurn();
     }
 
 	void GoToNextFloor()
