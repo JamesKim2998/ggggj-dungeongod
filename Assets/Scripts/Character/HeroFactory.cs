@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 
 public static class HeroFactory
 {
@@ -31,8 +32,17 @@ public static class HeroFactory
 		var prefab = Resources.Load<GameObject>("Hero");
 		var hero = Object.Instantiate(prefab).GetComponent<Hero>();
 		hero.transform.position = Vector3.one;
-		foreach (Transform child in hero.transform)
-			Object.Destroy(child.gameObject);
+		if (Application.isEditor)
+		{
+			var tempList = hero.transform.Cast<Transform>().ToList();
+			foreach (Transform child in tempList)
+				Object.DestroyImmediate(child.gameObject);
+		}
+		else
+		{
+			foreach (Transform child in hero.transform)
+				Object.Destroy(child.gameObject);
+		}
 		var body = Object.Instantiate<GameObject>(GetRandomBody());
 		var head = Object.Instantiate<GameObject>(GetRandomHead());
 		body.transform.SetParent(hero.transform, false);
