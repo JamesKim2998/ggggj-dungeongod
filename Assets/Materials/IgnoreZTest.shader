@@ -3,6 +3,7 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		_Multiplier ("Multiplier", float) = 1.0
 	}
 	SubShader
 	{
@@ -36,6 +37,7 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
+			float _Multiplier;
 			
 			v2f vert (appdata v)
 			{
@@ -51,7 +53,7 @@
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
 				// apply fog
-				return col * i.color;
+				return col * i.color * _Multiplier;
 			}
 			ENDCG
 		}

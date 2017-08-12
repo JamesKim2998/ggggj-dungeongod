@@ -65,6 +65,7 @@ Material:
     - _InvFade: 3
     - _Metallic: 0
     - _Mode: 0
+    - _Multiplier: 1.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
