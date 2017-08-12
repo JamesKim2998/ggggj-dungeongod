@@ -7,7 +7,7 @@ public class CharacterAnimation : MonoBehaviour
 {
 	Character me;
 	Animator anim;
-	AttackContext attackContext;
+	Character target;
 	System.Action<Character> attackCallback;
 
 	/// <summary>
@@ -22,18 +22,18 @@ public class CharacterAnimation : MonoBehaviour
 	public void Attack(Character target, string trigger = "Attack", System.Action<Character> callback = null)
 	{
 		anim.SetTrigger(trigger);
-		attackContext = new AttackContext();
-		attackContext.target = target;
+		this.target = target;
 		if (callback != null) attackCallback = callback;
 	}
 
 	public void OnAttackPerformed()
 	{
-		if (attackContext.target.animation)
-			attackContext.target.animation.AttackReaction();
+		if (target == null) return;
+		if (target.animation)
+			target.animation.AttackReaction();
 		if (attackCallback != null)
 		{
-			attackCallback(attackContext.target);
+			attackCallback(target);
 			attackCallback = null;
 		}
 	}
@@ -64,9 +64,4 @@ public class CharacterAnimation : MonoBehaviour
 			anim.SetTrigger("Hit");
 		}
 	}
-}
-
-public struct AttackContext
-{
-	public Character target;
 }
