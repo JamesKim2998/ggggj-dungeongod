@@ -10,22 +10,24 @@ public class GoddessStatue : Trigger
 {
     public Coord coord;
     public StatueType type;
-    public Hero hero;
     public int buffDistance; //여신상 버프 범위
+    public int healAmount;
 
-    private void Start()
+    private void Awake()
     {
-        hero = FindObjectOfType<Hero>();
+        coord = Coord.Round(transform.localPosition);
     }
 
     public override void Act()
     {
+        Hero hero = MainLogic.instance.hero;
         if (Coord.distance(hero.coord, coord) <= buffDistance)
         {
+            Debug.Log("Goddess Statue Activated");
             switch (type)
             {
                 case StatueType.HEAL:
-                    hero.HP = Mathf.Min(hero.maxHP, hero.HP + 10);
+                    hero.HP = Mathf.Min(hero.maxHP, hero.HP + healAmount);
                     return;
                 case StatueType.BUFF:
                     hero.buffed = true;

@@ -49,6 +49,7 @@ public class MainLogic : MonoBehaviour
         highLightObject();
         if (Input.GetMouseButtonDown(0) && god.powerLeft >= 20)
             UpdateGodTouch();
+		UpdateFogOfWar();
 		UpdateUI();
 
 		/*
@@ -62,6 +63,12 @@ public class MainLogic : MonoBehaviour
         }
 		*/
     }
+
+	void UpdateFogOfWar()
+	{
+		var floor = dungeon.currentFloor;
+		floor.fogOfWar.UpdateVisibilty(floor, hero.coord, hero.visibleDistance);
+	}
 
 	void UpdateUI()
 	{

@@ -7,6 +7,8 @@ public class Hero : Character
     public int level = 1;
     public int expNeeded = 10;
 
+	public int visibleDistance = 8;
+
     public bool buffed = false;
     public int buffedTurn;
 
