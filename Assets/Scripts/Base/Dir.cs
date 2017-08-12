@@ -60,4 +60,17 @@ public static partial class ExtensionMethods
             default: return Dir.Stay;
         }
     }
+
+	public static int XZAngleFromUp(this Dir thiz)
+	{
+		switch (thiz)
+		{
+			case Dir.Up: return 0;
+			case Dir.Down: return 180;
+			case Dir.Right: return 90;
+			case Dir.Left: return -90;
+			case Dir.Stay: return 0;
+			default: return 0;
+		}
+	}
 }

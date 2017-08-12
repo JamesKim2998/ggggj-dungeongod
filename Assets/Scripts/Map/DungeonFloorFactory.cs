@@ -9,7 +9,8 @@ public static class DungeonFloorFactory
 
 	static DungeonFloor InstantitateByPrefab(int floorToInstantiate)
 	{
-		var floorPrefab = Resources.Load<GameObject>("Floors/Floor0");
+		var floor = Mathf.Clamp(floorToInstantiate, 1, 5);
+		var floorPrefab = Resources.Load<GameObject>("Levels/Level" + floor);
 		return Object.Instantiate(floorPrefab).GetComponent<DungeonFloor>();
 	}
 

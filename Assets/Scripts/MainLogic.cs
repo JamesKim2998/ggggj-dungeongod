@@ -66,6 +66,7 @@ public class MainLogic : MonoBehaviour
         highLightObject();
         if (Input.GetMouseButtonDown(0) && god.powerLeft >= 20)
             UpdateGodTouch();
+		UpdateCamera();
 		UpdateFogOfWar();
 		UpdateUI();
 
@@ -80,6 +81,12 @@ public class MainLogic : MonoBehaviour
         }
 		*/
     }
+
+	void UpdateCamera()
+	{
+		// TODO: Debug
+		SetCameraXZToCenter(hero.transform.position);
+	}
 
 	void UpdateFogOfWar()
 	{
@@ -100,6 +107,7 @@ public class MainLogic : MonoBehaviour
         dungeon.Clear();
 		var entrance = dungeon.LoadInitLevel();
 		SpawnNewHero(entrance);
+		SetCameraXZToCenter(entrance);
 		godPowerBar.powerMax = god.powerMax;
     }
 
@@ -112,6 +120,21 @@ public class MainLogic : MonoBehaviour
 		// TODO: AI ?�성?�서 ??�?
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
+	}
+
+	void SetCameraXZToCenter(Vector3 positionToCenter)
+	{
+		var cam = Camera.main;
+		var camY = cam.transform.position.y;
+		var ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 1));
+		var yRatio = camY / ray.direction.y;
+		var xzOffset = new Vector3(ray.direction.x * yRatio, 0, ray.direction.z * yRatio);
+
+		var newPosition = positionToCenter + xzOffset;
+		newPosition.y = camY;
+		var delta = newPosition - cam.transform.position;
+		var camParent= cam.transform.parent;
+		camParent.position = camParent.position + delta;
 	}
 
 	/*
@@ -164,6 +187,7 @@ public class MainLogic : MonoBehaviour
 	{
 		var entrance = dungeon.GoBackToFirstFloor();
 		SpawnNewHero(entrance);
+		SetCameraXZToCenter(entrance);
 	}
 
     void OnHeroDead()
