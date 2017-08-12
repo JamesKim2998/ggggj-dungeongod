@@ -10,6 +10,7 @@ public class MainLogic : MonoBehaviour
 
     public Dungeon dungeon;
     public God god;
+    public PathFinder pathFinder;
 
 	public Hero hero;
 	public HeroController heroController;
@@ -20,6 +21,8 @@ public class MainLogic : MonoBehaviour
 	public GodPowerBar godPowerBar;
 
     public GameObject thunderPrefab;
+
+    public AudioManager audioManager;
 
     // public bool isEnemyPhase = false;
 
@@ -36,13 +39,17 @@ public class MainLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        
 		heroPlaceholder = hero;
 		heroControllerPlaceholder = heroController;
-
+        
+        pathFinder = new PathFinder();
+        pathFinder.init();
         InitGame();
 		StartCoroutine(HeroPhase());
 		StartCoroutine(EnemyPhase());
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -214,6 +221,7 @@ public class MainLogic : MonoBehaviour
                 return;
             if (isThunder)
             {
+                StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), audioManager.SFXs[5]));
                 thunder = Instantiate(thunderPrefab);
                 thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
                 isThunder = false;

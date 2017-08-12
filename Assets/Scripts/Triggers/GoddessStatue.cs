@@ -34,5 +34,6 @@ public class GoddessStatue : Trigger
                     return;
             }
         }
+        StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[8]));
     }
 }

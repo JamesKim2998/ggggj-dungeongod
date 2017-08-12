@@ -44,6 +44,7 @@ public class Hero : Character
 
 	public void CheckLevelUp()
 	{
+        bool levelup = expNeeded <= 0;
 		while (expNeeded <= 0)
 		{
 			//TODO LVL up
@@ -52,6 +53,8 @@ public class Hero : Character
 			this.maxHP++;
 			this.HP++;
 		}
+        if (levelup)
+           StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
 	}
 
 	public void Attack(Enemy enemy)
