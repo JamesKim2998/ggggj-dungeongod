@@ -152,7 +152,6 @@ public abstract class Character : MonoBehaviour
 
 		if (IsDead())
 		{
-			Die();
 			if (animation) animation.SetTrigger("Die");
 		}
 		else
