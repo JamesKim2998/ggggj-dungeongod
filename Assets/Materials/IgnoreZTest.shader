@@ -13,6 +13,7 @@
 		Pass
 		{
 			Ztest always
+			zwrite false
 			blend srcalpha oneminussrcalpha
 			CGPROGRAM
 			#pragma vertex vert
