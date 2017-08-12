@@ -19,6 +19,8 @@ public class MainLogic : MonoBehaviour
 	public HeroHPBar heroHPBar;
 	public GodPowerBar godPowerBar;
 
+    public GameObject thunderPrefab;
+
     // public bool isEnemyPhase = false;
     private List<Enemy> enemies {
 		get { return dungeon.currentFloor.enemies; }
@@ -78,7 +80,7 @@ public class MainLogic : MonoBehaviour
 		hero = HeroFactory.InstantiateRandom();
 		hero.transform.position = entrance;
 		hero.onHitExit += GoToNextFloor;
-		// TODO: AI 완성해서 열 것.
+		// TODO: AI ?�성?�서 ??�?
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
 
@@ -181,13 +183,20 @@ public class MainLogic : MonoBehaviour
     {
         var hits = TestGodTouch();
 		if (hits == null) return;
+        bool isThunder = true;
         foreach (var hit in hits)
         {
-            Debug.Log(hit.transform.gameObject.name);
+            if (isThunder)
+            {
+                GameObject thunder = Instantiate(thunderPrefab);
+                thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
+                isThunder = false;
+            }
             var hitGO = hit.collider.gameObject;
             var godTouch = hitGO.GetComponent<GodTouchAction>();
             if (godTouch != null) godTouch.Act();
         }
+        
         god.powerLeft -= 20;
     }
 
@@ -206,6 +215,8 @@ public class MainLogic : MonoBehaviour
             return;
         foreach (var hit in highLighted)
         {
+            if (hit.transform == null)
+                continue;
             hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
     }
