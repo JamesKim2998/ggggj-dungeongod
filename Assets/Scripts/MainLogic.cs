@@ -38,8 +38,9 @@ public class MainLogic : MonoBehaviour
             Destroy(gameObject);
         }
 
-        InitGame();
+        pathFinder = new PathFinder();
         pathFinder.init();
+        InitGame();
 		StartCoroutine(HeroPhase());
 		StartCoroutine(EnemyPhase());
     }
