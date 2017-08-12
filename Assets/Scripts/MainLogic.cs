@@ -10,6 +10,7 @@ public class MainLogic : MonoBehaviour
 
     public Dungeon dungeon;
     public God god;
+    public PathFinder pathFinder;
 
 	public Hero hero;
 	public HeroController heroController;
@@ -38,6 +39,7 @@ public class MainLogic : MonoBehaviour
         }
 
         InitGame();
+        pathFinder.init();
 		StartCoroutine(HeroPhase());
 		StartCoroutine(EnemyPhase());
     }
