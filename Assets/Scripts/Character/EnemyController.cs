@@ -3,9 +3,9 @@
 public class EnemyController : MonoBehaviour
 {
     public DungeonFloor dungeonFloor;
-    public Enemy character;
-    public Hero hero;
-    public int detectDistance;
+    protected Enemy character;
+    protected Hero hero;
+    public int detectDistance = 4;
 
     public virtual void NextTurn()
     {

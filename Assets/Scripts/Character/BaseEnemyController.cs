@@ -2,7 +2,7 @@
 
 public class BaseEnemyController : EnemyController
 {
-    private void Start()
+    private void Awake()
     {
         character = GetComponent<Enemy>();
         hero = FindObjectOfType<Hero>();
