@@ -188,6 +188,9 @@ public class MainLogic : MonoBehaviour
 
     public void UpdateGodTouch()
     {
+        GameObject thunder = null;
+        bool hitOnGround = true;
+
         var hits = TestGodTouch();
 		if (hits == null) return;
         bool isThunder = true;
@@ -195,16 +198,26 @@ public class MainLogic : MonoBehaviour
         {
             if (isThunder)
             {
-                GameObject thunder = Instantiate(thunderPrefab);
+                thunder = Instantiate(thunderPrefab);
                 thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
                 isThunder = false;
+                god.powerLeft -= 20;
             }
             var hitGO = hit.collider.gameObject;
             var godTouch = hitGO.GetComponent<GodTouchAction>();
-            if (godTouch != null) godTouch.Act();
+            if (godTouch != null)
+            {
+                hitOnGround = false;
+                godTouch.Act();
+            }
         }
         
-        god.powerLeft -= 20;
+        if (hitOnGround && thunder != null)
+        {
+            if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
+                hero.condition = new Condition(ConditionType.RUNAWAY, 4);
+        }
+        
     }
 
     public void highLightObject()
