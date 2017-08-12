@@ -99,15 +99,15 @@ public class MainLogic : MonoBehaviour
 
     IEnumerator EnemyPhase()
     {
-        yield return new WaitForSeconds(turnDelay);
-
-        // Assume that we can ignore times to calculate AI's next action
-        foreach (Enemy enemy in enemies)
+        while (true)
         {
-            //TODO :  enemy -> activate AI;
+            yield return new WaitForSeconds(turnDelay);
+            // Assume that we can ignore times to calculate AI's next action
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.GetComponent<EnemyController>().NextTurn();
+            }
         }
-        
-        yield return new WaitForSeconds(turnDelay);
     }
 
     public void GoToNextFloor()

@@ -26,6 +26,7 @@ public abstract class Character : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         rigidbody = GetComponent<Rigidbody>();
         inverseMoveTime = 1f / moveTime;
+        blockingLayer = LayerMask.GetMask("Collidable");
     }
 
     //return if Moving was successful

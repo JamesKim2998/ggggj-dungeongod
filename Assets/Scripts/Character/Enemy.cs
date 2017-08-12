@@ -10,6 +10,11 @@ public class Enemy : Character
     public EnemyReaction reaction;
     public bool raged = false;
 
+    private void Awake()
+    {
+        condition = new Condition(ConditionType.WAIT, 1);
+    }
+
     public void Looted()
     {
         isLootable = false;
