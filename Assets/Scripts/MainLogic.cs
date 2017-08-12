@@ -63,7 +63,8 @@ public class MainLogic : MonoBehaviour
 
 		// Instantiate hero
 		hero = HeroFactory.InstantiateRandom();
-		heroController = hero.gameObject.AddComponent<HeroController>();
+		// heroController = hero.gameObject.AddComponent<HeroController>();
+		hero.gameObject.AddComponent<CharacterInputController>();
 
         //TODO : Blind deactivate
     }
