@@ -7,7 +7,11 @@ public class Hero : Character
 	public int level = 1;
 	public int expNeeded = 10;
 
+    public bool preParalyzed = false;
+    public bool prePanic = false;
 	public int visibleDistance = 8;
+
+    public ConditionType defaultCondition = ConditionType.EXPLORE;
 
 	public bool buffed = false;
 	public int buffedTurn;
