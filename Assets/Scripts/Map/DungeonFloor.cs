@@ -30,7 +30,7 @@ public class DungeonFloor : MonoBehaviour
 			{
 				fogOfWarCache = InstantiateFogOfWar();
 				fogOfWarCache.transform.SetParent(transform, false);
-				fogOfWarCache.transform.position = new Vector3(-0.5f, 3.1f, -0.5f);
+				fogOfWarCache.transform.position = new Vector3(-0.5f, 1.01f, -0.5f);
 			}
 			return fogOfWarCache;
 		}
