@@ -6,7 +6,7 @@ public class MainLogic : MonoBehaviour
 {
     public static MainLogic instance = null;
 
-    public float turnDelay = 3.0f;
+    public float turnDelay;
 
     public Dungeon dungeon;
     public God god;
@@ -17,6 +17,7 @@ public class MainLogic : MonoBehaviour
     private RaycastHit[] highLighted;
 
 	public HeroHPBar heroHPBar;
+	public GodPowerBar godPowerBar;
 
     // public bool isEnemyPhase = false;
     private List<Enemy> enemies {
@@ -64,13 +65,11 @@ public class MainLogic : MonoBehaviour
 	{
 		heroHPBar.SetMaxHP(hero.maxHP, false);
 		heroHPBar.SetHP(hero.HP);
+		godPowerBar.SetSmooth(god.powerLeft);
 	}
 
     void InitGame()
     {
-        //TODO : Blind activate
-        //           "Level 
-
         // Init level
         dungeon.Clear();
 		var entrance = dungeon.LoadInitLevel();
@@ -79,10 +78,11 @@ public class MainLogic : MonoBehaviour
 		hero = HeroFactory.InstantiateRandom();
 		hero.transform.position = entrance;
 		hero.onHitExit += GoToNextFloor;
+		// TODO: AI 완성해서 열 것.
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
 
-        //TODO : Blind deactivate
+		godPowerBar.powerMax = god.powerMax;
     }
 
 	/*
