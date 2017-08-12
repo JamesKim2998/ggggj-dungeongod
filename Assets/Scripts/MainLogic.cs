@@ -10,6 +10,7 @@ public class MainLogic : MonoBehaviour
 
     public Dungeon dungeon;
     public God god;
+    public PathFinder pathFinder;
 
 	public Hero hero;
 	public HeroController heroController;
@@ -36,10 +37,12 @@ public class MainLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        
 		heroPlaceholder = hero;
 		heroControllerPlaceholder = heroController;
-
+        
+        pathFinder = new PathFinder();
+        pathFinder.init();
         InitGame();
 		StartCoroutine(HeroPhase());
 		StartCoroutine(EnemyPhase());

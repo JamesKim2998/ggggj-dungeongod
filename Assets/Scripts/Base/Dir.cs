@@ -47,5 +47,17 @@ public static partial class ExtensionMethods
 			case Dir.Left: return Dir.Up;
 			default: return Dir.Stay;
 		}
-	}
+    }
+
+    public static Dir Reverse(this Dir thiz)
+    {
+        switch (thiz)
+        {
+            case Dir.Up: return Dir.Down;
+            case Dir.Down: return Dir.Up;
+            case Dir.Right: return Dir.Left;
+            case Dir.Left: return Dir.Right;
+            default: return Dir.Stay;
+        }
+    }
 }
