@@ -194,6 +194,8 @@ public class MainLogic : MonoBehaviour
         bool isThunder = true;
         foreach (var hit in hits)
         {
+            if (!dungeon.currentFloor.fogOfWar.IsVisibleByGod(Coord.Round(hit.transform.position)))
+                return;
             if (isThunder)
             {
                 thunder = Instantiate(thunderPrefab);
@@ -213,7 +215,10 @@ public class MainLogic : MonoBehaviour
         if (hitOnGround && thunder != null)
         {
             if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
+            {
+                Debug.Log("RUN");
                 hero.condition = new Condition(ConditionType.RUNAWAY, 4);
+            }
         }
         
     }
