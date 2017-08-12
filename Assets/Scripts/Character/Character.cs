@@ -23,6 +23,7 @@ public abstract class Character : MonoBehaviour
 	public ConditionType condition;
 	public int visibleDistance = 10;
 	public new CharacterAnimation animation;
+	protected string moveType = "Move";
 
 	protected virtual void Awake()
 	{
@@ -76,7 +77,7 @@ public abstract class Character : MonoBehaviour
 		{
 			var oldPos = transform.position;
 			transform.DOMove(dest.ToVector3(oldPos.y), 0.5f);
-			if (animation) animation.SetTrigger("Move");
+			if (animation) animation.SetTrigger(moveType);
 			// TODO: 조작감 문제로 일단 주석처리.
 			// StartCoroutine(SmoothMovement(dest));
 

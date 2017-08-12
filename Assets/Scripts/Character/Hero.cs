@@ -106,6 +106,15 @@ public class Hero : Character
 		}
 	}
 
+	public override bool Move(Dir dir, out RaycastHit hitInfo)
+	{
+		if (condition == ConditionType.PANIC || condition == ConditionType.RUNAWAY)
+			moveType = "Panic";
+		else
+			moveType = "Move";
+		return base.Move(dir, out hitInfo);
+	}
+
 	public override void Die()
 	{
 		var skeletonPrefab = Resources.Load<GameObject>("Hero/Dead Skeleton");
