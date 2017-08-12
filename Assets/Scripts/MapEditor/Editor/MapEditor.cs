@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class MapEditor : EditorWindow
 {
-	const string pathTilePrefab = "Assets/Models/Floor 1.obj";
-	const string pathWallPrefab = "Assets/Models/Pillar 1.obj";
+	const string pathTilePrefab = "Assets/Models/Dungeon/Floors/Floor 1.obj";
+	const string pathWallPrefab = "Assets/Models/Dungeon/Pillar 1.obj";
+	const string pathStairPrefab = "Assets/Models/Dungeon/Stair.obj";
 
 	Coord _genTileGridSize;
 	Coord _genWallGridSize;
@@ -32,12 +33,35 @@ public class MapEditor : EditorWindow
 		CoordField("Room", ref _genRoomSize);
 		if (GUILayout.Button("Gen Room"))
 			GenRoom(_genRoomSize);
+		if (GUILayout.Button("Gen Up Stair"))
+			GenUpStair();
+		if (GUILayout.Button("Gen Down Stair"))
+			GenDownStair();
 	}
 
-	void CoordField(string name, ref Coord coord)
+	static void CoordField(string name, ref Coord coord)
 	{
 		coord.x = EditorGUILayout.IntField(name + " Width", coord.x);
 		coord.y = EditorGUILayout.IntField(name + " Height", coord.y);
+	}
+
+	static void Tag(GameObject go, ObjectType type)
+	{
+		go.AddComponent<ObjectTag>().type = type;
+	}
+
+	static void AddColliderCube(GameObject go)
+	{
+		var c = go.AddComponent<BoxCollider>();
+		c.center = new Vector3(0, 0.5f, 0);
+		c.size = Vector3.one;
+	}
+
+	static void AddColliderUpCube(GameObject go)
+	{
+		var c = go.AddComponent<BoxCollider>();
+		c.center = new Vector3(0, 1.5f, 0);
+		c.size = Vector3.one;
 	}
 
 	GameObject InstantiateAsset(string prefabPath)
@@ -52,7 +76,7 @@ public class MapEditor : EditorWindow
 		foreach (var coord in Range.Grid(size))
 		{
 			var go = InstantiateAsset(pathTilePrefab);
-			go.AddComponent<MapEditorObjectTag>().type = MapEditorObjectType.TILE;
+			Tag(go, ObjectType.TILE);
 			go.transform.SetParent(ret.transform, false);
 			go.transform.position = coord.ToVector3();
 		}
@@ -65,7 +89,7 @@ public class MapEditor : EditorWindow
 		foreach (var coord in Range.Rect(size))
 		{
 			var go = InstantiateAsset(pathWallPrefab);
-			go.AddComponent<MapEditorObjectTag>().type = MapEditorObjectType.WALL;
+			Tag(go, ObjectType.WALL);
 			go.transform.SetParent(ret.transform, false);
 			go.transform.position = coord.ToVector3(1);
 		}
@@ -80,5 +104,22 @@ public class MapEditor : EditorWindow
 		tiles.transform.SetParent(ret.transform, false);
 		walls.transform.SetParent(ret.transform, false);
 		return ret;
+	}
+
+	GameObject GenUpStair()
+	{
+		var go = InstantiateAsset(pathStairPrefab);
+		go.name = ObjectType.UP_STAIR.ToString();
+		Tag(go, ObjectType.UP_STAIR);
+		return go;
+	}
+
+	GameObject GenDownStair()
+	{
+		var go = InstantiateAsset(pathStairPrefab);
+		go.name = ObjectType.DOWN_STAIR.ToString();
+		Tag(go, ObjectType.DOWN_STAIR);
+		AddColliderUpCube(go);
+		return go;
 	}
 }

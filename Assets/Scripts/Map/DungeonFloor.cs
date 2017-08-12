@@ -15,8 +15,8 @@ public class DungeonFloor : MonoBehaviour
 		for (var i = 0; i != hitCount; ++i)
 		{
 			var hitGO = hitsCache[i].collider.gameObject;
-			var objTag = hitGO.GetComponent<MapEditorObjectTag>();
-			if (objTag != null && objTag.type == MapEditorObjectType.WALL)
+			var objTag = hitGO.GetComponent<ObjectTag>();
+			if (objTag != null && objTag.type == ObjectType.WALL)
 				return true;
 		}
 		return false;

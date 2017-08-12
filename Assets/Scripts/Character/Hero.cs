@@ -14,11 +14,12 @@ public class Hero : Character
 
     private void OnTriggerEnter (Collider other)
     {
-        if( other.tag == "Exit" )
-        {
+		var tag = other.GetComponent<ObjectTag>();
+		if( tag.type == ObjectType.DOWN_STAIR)
+		{
 			if (onHitExit != null)
 				onHitExit();
-        }
+		}
 
         else if( other.tag == "Equipment" )
         {
