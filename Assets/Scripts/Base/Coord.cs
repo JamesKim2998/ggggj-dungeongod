@@ -24,7 +24,7 @@ public struct Coord
 	public static Coord Round(Vector3 position)
 	{
 		var x = Mathf.RoundToInt(position.x);
-		var y = Mathf.RoundToInt(position.y);
+		var y = Mathf.RoundToInt(position.z);
 		return new Coord(x, y);
 	}
 
