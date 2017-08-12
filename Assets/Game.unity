@@ -289,7 +289,7 @@ MonoBehaviour:
   heroController: {fileID: 1510539864}
   heroHPBar: {fileID: 1819082769}
   godPowerBar: {fileID: 811551686}
-  thunderPrefab: {fileID: 1579406783305832, guid: 2dddc330e16c14c47b16f8fe97abfeed,
+  thunderPrefab: {fileID: 1703170274330154, guid: dac1d3b0592c846b1b3424d3c82d069f,
     type: 2}
   audioManager: {fileID: 97808891}
 --- !u!114 &337887432

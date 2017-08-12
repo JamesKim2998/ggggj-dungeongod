@@ -13,6 +13,8 @@
 
 		Pass
 		{
+			zwrite off
+			ztest always
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
