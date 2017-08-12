@@ -28994,6 +28994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b7116801722484ea1d77d8ebf6a37e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statueSFX: {fileID: 8300000, guid: 8d709ae232e951d469478a64d19a440a, type: 3}
   type: 0
   buffDistance: 2
   healAmount: 2

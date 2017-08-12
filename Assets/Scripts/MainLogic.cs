@@ -22,6 +22,8 @@ public class MainLogic : MonoBehaviour
 
     public GameObject thunderPrefab;
 
+    public AudioManager audioManager;
+
     // public bool isEnemyPhase = false;
 
 	Hero heroPlaceholder;
@@ -46,6 +48,8 @@ public class MainLogic : MonoBehaviour
         InitGame();
 		StartCoroutine(HeroPhase());
 		StartCoroutine(EnemyPhase());
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -217,6 +221,7 @@ public class MainLogic : MonoBehaviour
                 return;
             if (isThunder)
             {
+                StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), audioManager.SFXs[5]));
                 thunder = Instantiate(thunderPrefab);
                 thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
                 isThunder = false;
