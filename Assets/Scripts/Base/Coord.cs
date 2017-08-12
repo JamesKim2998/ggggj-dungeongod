@@ -16,6 +16,11 @@ public struct Coord
 		return new Vector3(this.x, y, this.y);
 	}
 
+	public override string ToString()
+	{
+		return x + "_" + y;
+	}
+
 	public static Coord operator +(Coord a, Coord b)
 	{
 		return new Coord(a.x + b.x, a.y + b.y);
@@ -28,8 +33,27 @@ public struct Coord
 		return new Coord(x, y);
 	}
 
-    public static int distance(Coord a, Coord b)
-    {
-        return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
-    }
+	public static int distance(Coord a, Coord b)
+	{
+		return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
+	}
+}
+
+public struct CoordRect
+{
+	public int x;
+	public int y;
+	public int w;
+	public int h;
+
+	public Coord bl { get { return new Coord(x, y); } }
+	public Coord tr { get { return new Coord(x + w, y + h); } }
+
+	public CoordRect(int x, int y, int w, int h)
+	{
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+	}
 }

@@ -16,9 +16,24 @@ public class DungeonFloor : MonoBehaviour
 	// public List<GameObject> items;
 	// public List<GameObject> wall;
 	public GameObject entrance;
+
 	public Transform enemySpawnRoot;
 	public List<EnemySpawnInfo> enemySpawnInfo = new List<EnemySpawnInfo>();
 	public List<Enemy> enemies = new List<Enemy>();
+
+	private FogOfWar fogOfWarCache;
+	public FogOfWar fogOfWar
+	{
+		get
+		{
+			if (fogOfWarCache == null)
+			{
+				fogOfWarCache = InstantiateFogOfWar();
+				fogOfWarCache.transform.SetParent(transform, false);
+			}
+			return fogOfWarCache;
+		}
+	}
 
 	void OnEnable()
 	{
@@ -45,6 +60,7 @@ public class DungeonFloor : MonoBehaviour
 		return false;
 	}
 
+	/*
 	public bool CheckDownStair(Coord coord)
 	{
 		return false;
@@ -53,5 +69,12 @@ public class DungeonFloor : MonoBehaviour
 	public Trigger GetTriggerOnCoord(Coord coord)
 	{
 		return null;
+	}
+	*/
+
+	static FogOfWar InstantiateFogOfWar()
+	{
+		var prefab = Resources.Load<GameObject>("FogOfWar/FogOfWar");
+		return Instantiate(prefab).GetComponent<FogOfWar>();
 	}
 }
