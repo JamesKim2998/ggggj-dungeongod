@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public abstract class Character : MonoBehaviour
 {
@@ -60,7 +61,8 @@ public abstract class Character : MonoBehaviour
 		if (!isHit)
 		{
 			var oldPos = transform.position;
-			transform.position = dest.ToVector3(oldPos.y);
+			transform.DOMove(dest.ToVector3(oldPos.y), 0.5f);
+			if (animation) animation.SetTrigger("Move");
 			// TODO: 조작감 문제로 일단 주석처리.
 			// StartCoroutine(SmoothMovement(dest));
 
