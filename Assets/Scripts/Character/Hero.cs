@@ -10,11 +10,14 @@ public class Hero : Character
     public bool buffed = false;
     public int buffedTurn;
 
+	public System.Action onHitExit;
+
     private void OnTriggerEnter (Collider other)
     {
         if( other.tag == "Exit" )
         {
-            MainLogic.instance.GoToNextFloor();
+			if (onHitExit != null)
+				onHitExit();
         }
 
         else if( other.tag == "Equipment" )

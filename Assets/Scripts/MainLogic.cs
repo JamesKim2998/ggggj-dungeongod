@@ -63,6 +63,7 @@ public class MainLogic : MonoBehaviour
 
 		// Instantiate hero
 		hero = HeroFactory.InstantiateRandom();
+		hero.onHitExit += GoToNextFloor;
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
 

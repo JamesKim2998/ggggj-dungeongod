@@ -156,7 +156,6 @@ MonoBehaviour:
   god: {fileID: 337887433}
   hero: {fileID: 1510539863}
   heroController: {fileID: 1510539864}
-  isEnemyPhase: 0
 --- !u!114 &337887432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,6 +403,8 @@ GameObject:
   - component: {fileID: 1510539862}
   - component: {fileID: 1510539863}
   - component: {fileID: 1510539864}
+  - component: {fileID: 1510539865}
+  - component: {fileID: 1510539866}
   m_Layer: 0
   m_Name: HeroPlaceholder
   m_TagString: Untagged
@@ -457,6 +458,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c971e05aaebb457dae4f20d541eba43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1510539865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510539861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1510539866
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510539861}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2075271673
 GameObject:
   m_ObjectHideFlags: 0
