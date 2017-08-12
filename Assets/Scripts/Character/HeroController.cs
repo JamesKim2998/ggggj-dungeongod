@@ -8,7 +8,7 @@ public class HeroController : MonoBehaviour
 
 	protected Hero character;
 
-	public int combatHP = 6;
+	public int combatHP = 2;
 	int combarHPOnLastTurn;
 	public int runAwayDistance = 5;
 
