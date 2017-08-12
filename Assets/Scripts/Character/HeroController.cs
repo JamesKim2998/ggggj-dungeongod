@@ -82,9 +82,6 @@ public class HeroController : MonoBehaviour
 
             }
         }
-
-        
-        ;
     }
 
 	Dir nextDirForDebug; // TODO: delete me
@@ -96,7 +93,7 @@ public class HeroController : MonoBehaviour
 		}
 
         // TODO: Character 다음 행동.
-		hero.TryToMove(nextDirForDebug);
+		character.TryToMove(nextDirForDebug);
 		nextDirForDebug = nextDirForDebug.Clockwise();
     }
 }
