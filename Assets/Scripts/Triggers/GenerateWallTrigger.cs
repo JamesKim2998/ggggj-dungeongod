@@ -18,7 +18,7 @@ public class GenerateWallTrigger : Trigger
         {
             Debug.Log(hit.transform.name);
             if (hit.transform.GetComponent<Character>() != null)
-                hit.transform.GetComponent<Character>().getDamage(100000);
+                hit.transform.GetComponent<Character>().Die();
         }
     }
     IEnumerator FallDown()
