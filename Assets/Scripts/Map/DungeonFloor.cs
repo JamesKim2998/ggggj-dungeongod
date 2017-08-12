@@ -6,6 +6,7 @@ public class DungeonFloor : MonoBehaviour
 	// public List<GameObject> floor;
 	// public List<GameObject> items;
 	// public List<GameObject> wall;
+	public GameObject entrance;
 	public List<Enemy> enemies = new List<Enemy>();
 
 	RaycastHit[] hitsCache = new RaycastHit[16];

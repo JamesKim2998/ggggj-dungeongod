@@ -41,7 +41,9 @@ public abstract class Character : MonoBehaviour
 
         if(!isHit)
         {
-            StartCoroutine(SmoothMovement(dest));
+			transform.position = dest;
+			// TODO: 조작감 문제로 일단 주석처리.
+            // StartCoroutine(SmoothMovement(dest));
 
             return true;
         }

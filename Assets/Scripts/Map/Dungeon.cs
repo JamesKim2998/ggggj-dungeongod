@@ -3,24 +3,39 @@ using UnityEngine;
 
 public class Dungeon : MonoBehaviour
 {
-    public List<DungeonFloor> floors;
-    public DungeonFloor currentFloor;
-    public int currentFloorIdx;
+	public List<DungeonFloor> floors;
+	public DungeonFloor currentFloor;
+	public int currentFloorIdx;
 
 	public void Clear()
 	{
-		// TODO
+		foreach (var floor in floors)
+			currentFloor.gameObject.SetActive(false);
+		currentFloorIdx = 0;
 	}
 
-	public void LoadInitLevel()
+	public Vector3 LoadInitLevel()
 	{
-		DungeonFloorFactory.InstantitateFloor(0);
+		currentFloorIdx = -1;
+		return GoToNextFloor();
 	}
 
-    public void GoToNextFloor()
-    {
-        // TOOD
-        ++currentFloorIdx;
-        currentFloor = DungeonFloorFactory.InstantitateFloor(currentFloorIdx);
-    }
+	public Vector3 GoToNextFloor()
+	{
+		currentFloor.gameObject.SetActive(false);
+
+		var nextFloor = ++currentFloorIdx;
+		if (nextFloor < floors.Count)
+		{
+			currentFloor = floors[nextFloor];
+			currentFloor.gameObject.SetActive(true);
+		}
+		else
+		{
+			currentFloor = DungeonFloorFactory.InstantitateFloor(nextFloor);
+			floors.Add(currentFloor);
+		}
+
+		return currentFloor.entrance.transform.position;
+	}
 }

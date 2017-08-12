@@ -59,10 +59,11 @@ public class MainLogic : MonoBehaviour
 
         // Init level
         dungeon.Clear();
-		dungeon.LoadInitLevel();
+		var entrance = dungeon.LoadInitLevel();
 
 		// Instantiate hero
 		hero = HeroFactory.InstantiateRandom();
+		hero.transform.position = entrance;
 		hero.onHitExit += GoToNextFloor;
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
@@ -111,7 +112,8 @@ public class MainLogic : MonoBehaviour
 
     public void GoToNextFloor()
     {
-		dungeon.GoToNextFloor();
+		var entrance = dungeon.GoToNextFloor();
+		hero.transform.position = entrance;
     }
 
     public void GameOver()
