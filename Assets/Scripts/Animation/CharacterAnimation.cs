@@ -8,6 +8,7 @@ public class CharacterAnimation : MonoBehaviour
 	Character me;
 	Animator anim;
 	AttackContext attackContext;
+	System.Action<Character> attackCallback;
 
 	/// <summary>
 	/// Awake is called when the script instance is being loaded.
@@ -18,21 +19,23 @@ public class CharacterAnimation : MonoBehaviour
 		anim = GetComponent<Animator>();
 	}
 
-	public void Attack(CharacterAnimation target, bool successful, string trigger = "Attack")
+	public void Attack(Character target, string trigger = "Attack", System.Action<Character> callback = null)
 	{
 		anim.SetTrigger(trigger);
 		attackContext = new AttackContext();
 		attackContext.target = target;
-		attackContext.successful = successful;
+		if (callback != null) attackCallback = callback;
 	}
 
 	public void OnAttackPerformed()
 	{
-		attackContext.target.AttackReaction();
-		if (attackContext.successful)
-			EffectSpawner.SetEffect("HitEffect", attackContext.target.transform.position + Vector3.up);
-		else
-			EffectSpawner.SetEffect("MISS", attackContext.target.transform.position + Vector3.up);
+		if (attackContext.target.animation)
+			attackContext.target.animation.AttackReaction();
+		if (attackCallback != null)
+		{
+			attackCallback(attackContext.target);
+			attackCallback = null;
+		}
 	}
 
 	public void DestroySelf()
@@ -70,6 +73,5 @@ public class CharacterAnimation : MonoBehaviour
 
 public struct AttackContext
 {
-	public CharacterAnimation target;
-	public bool successful;
+	public Character target;
 }

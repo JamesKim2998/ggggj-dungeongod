@@ -6,8 +6,8 @@ using System.Linq;
 public class EffectSpawner : MonoBehaviour
 {
 	private static EffectSpawner _instance;
-	private Dictionary<string, List<GameObject>> effects;
-	private Dictionary<string, GameObject> originals;
+	private readonly Dictionary<string, List<GameObject>> effects = new Dictionary<string, List<GameObject>>();
+	private readonly Dictionary<string, GameObject> originals = new Dictionary<string, GameObject>();
 
 	static EffectSpawner instance
 	{

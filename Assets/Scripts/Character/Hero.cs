@@ -7,11 +7,11 @@ public class Hero : Character
 	public int level = 1;
 	public int expNeeded = 10;
 
-    public bool preParalyzed = false;
-    public bool prePanic = false;
+	public bool preParalyzed = false;
+	public bool prePanic = false;
 	public int visibleDistance = 8;
 
-    public ConditionType defaultCondition = ConditionType.EXPLORE;
+	public ConditionType defaultCondition = ConditionType.EXPLORE;
 
 	public bool buffed = false;
 	public int buffedTurn;
@@ -33,14 +33,14 @@ public class Hero : Character
 			// TODO :  loot or ignore
 		}
 
-        else if (other.tag == "Consumable")
-        {
-            if ((int)other.GetComponent<ConsumableItem>().code <= 2) // Èú°è¿­ ¾ÆÀÌÅÛ
-                MainLogic.instance.hero.HP += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-            else //¹öÇÁ°è¿­ ¾ÆÀÌÅÛ
-                MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-            Destroy(other.gameObject);
-        }
+		else if (other.tag == "Consumable")
+		{
+			if ((int)other.GetComponent<ConsumableItem>().code <= 2) // ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				MainLogic.instance.hero.HP += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+			else //ï¿½ï¿½ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+			Destroy(other.gameObject);
+		}
 	}
 
 	public void checkBuffEnded()
@@ -57,7 +57,7 @@ public class Hero : Character
 
 	public void CheckLevelUp()
 	{
-        bool levelup = expNeeded <= 0;
+		bool levelup = expNeeded <= 0;
 		while (expNeeded <= 0)
 		{
 			//TODO LVL up
@@ -66,12 +66,18 @@ public class Hero : Character
 			this.maxHP++;
 			this.HP++;
 		}
-        if (levelup)
-           StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
+		if (levelup)
+			StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
 	}
 
 	public void Attack(Enemy enemy)
 	{
+		animation.Attack(enemy, callback: AttackCallback);
+	}
+
+	void AttackCallback(Character target)
+	{
+		var enemy = target as Enemy;
 		enemy.getDamage(power, DiceRoll());
 
 		if (enemy.IsDead() && enemy.isLootable)
