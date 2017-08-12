@@ -68,6 +68,7 @@ public class MainLogic : MonoBehaviour
 		UpdateCamera();
 		UpdateFogOfWar();
 		UpdateUI();
+		UpdateDebugInput();
 
 		/*
         if (isEnemyPhase)
@@ -100,6 +101,33 @@ public class MainLogic : MonoBehaviour
 		godPowerBar.SetSmooth(god.powerLeft);
 	}
 
+	void UpdateDebugInput()
+	{
+		var inputController = hero.GetComponent<CharacterInputController>();
+		if (canControlHeroWithInput)
+		{
+			if (inputController == null)
+				hero.gameObject.AddComponent<CharacterInputController>();
+		}
+		else
+		{
+			if (inputController != null)
+				Destroy(inputController);
+		}
+	}
+
+	const string prefKey_CanControlHeroWithInput= "MainLogic_CanControlHeroByInput";
+	static bool canControlHeroWithInput
+	{
+		get { return PlayerPrefs.GetInt(prefKey_CanControlHeroWithInput) == 1; }
+		set { PlayerPrefs.SetInt(prefKey_CanControlHeroWithInput, value ? 1 : 0); }
+	}
+
+	void OnGUI()
+	{
+		canControlHeroWithInput = GUILayout.Toggle(canControlHeroWithInput, "ControlHeroByInput");
+	}
+
     void InitGame()
     {
         // Init level
@@ -117,8 +145,7 @@ public class MainLogic : MonoBehaviour
 		hero.onHitExit += GoToNextFloor;
 		hero.onDead += OnHeroDead;
 		// TODO: AI ?�성?�서 ??�?
-		// heroController = hero.gameObject.AddComponent<HeroController>();
-		hero.gameObject.AddComponent<CharacterInputController>();
+		heroController = hero.gameObject.AddComponent<HeroController>();
 	}
 
 	void SetCameraXZToCenter(Vector3 positionToCenter)
@@ -164,8 +191,15 @@ public class MainLogic : MonoBehaviour
 
 	IEnumerator HeroPhase()
 	{
-		yield return new WaitForSeconds(turnDelay);
-		heroController.NextTurn();
+		if (canControlHeroWithInput)
+		{
+			yield return null;
+		}
+		else
+		{
+			yield return new WaitForSeconds(turnDelay);
+			heroController.NextTurn();
+		}
 	}
 
     IEnumerator EnemyPhase()
