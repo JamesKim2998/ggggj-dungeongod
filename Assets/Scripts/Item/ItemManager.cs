@@ -15,10 +15,4 @@ public class ItemManager : MonoBehaviour
     {
         return equipDic[heroEquipInfo[EquipmentType.ARMOR]].power + equipDic[heroEquipInfo[EquipmentType.WEAPON]].power;
     }
-
-    private void Awake()
-    {
-        items = FindObjectsOfType<Item>();
-    }
-
 }

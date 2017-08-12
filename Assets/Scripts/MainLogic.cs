@@ -10,7 +10,6 @@ public class MainLogic : MonoBehaviour
 
     public Dungeon dungeon;
     public God god;
-    public PathFinder pathFinder;
 
 	public Hero hero;
 	public HeroController heroController;
@@ -43,8 +42,6 @@ public class MainLogic : MonoBehaviour
 		heroPlaceholder = hero;
 		heroControllerPlaceholder = heroController;
         
-        pathFinder = new PathFinder();
-        pathFinder.init();
         InitGame();
 		StartCoroutine(CoroutineCycleTurnInfinite());
 
@@ -104,7 +101,7 @@ public class MainLogic : MonoBehaviour
 	void UpdateFogOfWar()
 	{
 		var floor = dungeon.currentFloor;
-		floor.fogOfWar.UpdateVisibilty(hero, hero.visibleDistance);
+		floor.fogOfWar.UpdateVisibilty(hero, hero.fogDistance);
 	}
 
 	void UpdateUI()

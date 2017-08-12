@@ -73,4 +73,9 @@ public static partial class ExtensionMethods
 			default: return 0;
 		}
 	}
+
+	public static Dir CounterClockwise(this Dir thiz)
+	{
+		return thiz.Clockwise().Reverse();
+    }
 }

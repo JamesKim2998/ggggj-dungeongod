@@ -12,14 +12,23 @@ public class EnemySpawnInfo
 
 public class DungeonFloor : MonoBehaviour
 {
-	// public List<GameObject> floor;
-	// public List<GameObject> items;
-	// public List<GameObject> wall;
 	public GameObject entrance;
 
 	public Transform enemySpawnRoot;
 	public List<EnemySpawnInfo> enemySpawnInfo = new List<EnemySpawnInfo>();
 	List<Enemy> enemies = new List<Enemy>();
+	Item[] items = new Item[0];
+
+	PathFinder pathFinderCache;
+	public PathFinder pathFinder
+	{
+		get
+		{
+			if (pathFinderCache == null)
+				pathFinderCache = new PathFinder(this);
+			return pathFinderCache;
+		}
+	}
 
 	FogOfWar fogOfWarCache;
 	public FogOfWar fogOfWar
@@ -43,9 +52,11 @@ public class DungeonFloor : MonoBehaviour
 			var point = spawnInfo.point.position;
 			var prefab = Resources.Load<GameObject>("Enemies/" + spawnInfo.prefabName);
 			var enemy = Instantiate(prefab, point, Quaternion.identity, enemySpawnRoot);
-            enemy.GetComponent<Enemy>().initialCoord = Coord.Round(point);
-            enemies.Add(enemy.GetComponent<Enemy>());
+			enemy.GetComponent<Enemy>().initialCoord = Coord.Round(point);
+			enemies.Add(enemy.GetComponent<Enemy>());
 		}
+
+		items = FindObjectsOfType<Item>();
 	}
 
 	void OnDisable()
@@ -79,6 +90,15 @@ public class DungeonFloor : MonoBehaviour
 		{
 			if (enemy == null) continue;
 			yield return enemy;
+		}
+	}
+
+	public IEnumerable<Item> EachItem()
+	{
+		foreach (var item in items)
+		{
+			if (item == null) continue;
+			yield return item;
 		}
 	}
 

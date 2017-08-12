@@ -7,16 +7,19 @@ public class PathFinder
     List<Coord> queue;
     Dir[][] from;
 
-    DungeonFloor currMap;
-    
-	public void init () { 
+    readonly DungeonFloor currMap;
+
+	public PathFinder(DungeonFloor currMap)
+	{
+        this.currMap = currMap;
+
         queue = new List<Coord>();
         from = new Dir[100][];
         for( int i = 0; i < 100; i ++ )
         {
             from[i] = new Dir[100];
         }
-	}
+    }
 
     private void ResetCheck()
     {
@@ -27,11 +30,6 @@ public class PathFinder
                 from[i][j] = Dir.Stay;
             }
         }
-    }
-
-    public void UpdateMapInfo(DungeonFloor currMap)
-    {
-        this.currMap = currMap;
     }
 
     private bool IsArrived(Coord curr, Coord dest)

@@ -206,10 +206,7 @@ public class FogOfWar : MonoBehaviour
 			// Check wall
 			RaycastHit hitInfo;
 			if (!character.CanSee(testCoord, out hitInfo))
-			{
-				var hitCoord = Coord.Round(hitInfo.transform.position);
-				if (hitCoord != testCoord) continue;
-			}
+				continue;
 
 			RequestUpdate(testCoord, Visiblity.Hero);
 			visibleToHero.Add(testCoord);
