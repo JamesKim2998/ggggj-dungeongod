@@ -1,6 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class CharacterOrCoord
+{
+	bool isCharacter;
+	Character target;
+	Coord coord;
+	public CharacterOrCoord(Character newTarget) { target = newTarget; isCharacter = true; coord = new Coord(0, 0); }
+	public CharacterOrCoord(Coord newCoord) { isCharacter = false; coord = newCoord; target = null; }
+	public Vector3 GetPosition()
+	{
+		if (isCharacter) return target.transform.position;
+		else return coord.ToVector3();
+	}
+}
 public class HeroController : MonoBehaviour
 {
 	DungeonFloor curFloor { get { return MainLogic.instance.dungeon.currentFloor; } }
@@ -17,7 +30,7 @@ public class HeroController : MonoBehaviour
 
 	Item targetToGather;
 	Enemy targetToCombat;
-	Enemy targetToRunAway;
+	CharacterOrCoord targetToRunAway;
 
 	void Awake()
 	{
@@ -64,6 +77,13 @@ public class HeroController : MonoBehaviour
 			case ConditionType.PANIC: Panic_NextTurn(); break;
 			default: break;
 		}
+	}
+
+	public void ForceRunAway(Coord from, int turns)
+	{
+		nextCondition = ConditionType.RUNAWAY;
+		targetToRunAway = new CharacterOrCoord(from);
+		countdown = turns;
 	}
 
 	Item GetDirToReachableVisibleItem(out Dir dir)
@@ -195,7 +215,7 @@ public class HeroController : MonoBehaviour
 		if (character.HP <= combarHPOnLastTurn - 2)
 		{
 			nextCondition = ConditionType.RUNAWAY;
-			targetToRunAway = targetToCombat;
+			targetToRunAway = new CharacterOrCoord(targetToCombat);
 		}
 
 		var targetCoord = Coord.Round(targetToCombat.transform.position);
@@ -224,7 +244,7 @@ public class HeroController : MonoBehaviour
 			countdown = 0;
 		}
 
-		var targetCoord = Coord.Round(targetToRunAway.transform.position);
+		var targetCoord = Coord.Round(targetToRunAway.GetPosition());
 		if (Coord.distance(targetCoord, character.coord) >= runAwayDistance)
 		{
 			nextCondition = ConditionType.EXPLORE;

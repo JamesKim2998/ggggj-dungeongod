@@ -35,7 +35,7 @@ public static class HeroFactory
 		var charParent = hero.GetComponent<HeroMarker>().characterParent;
 
 		hero.transform.position = Vector3.one;
-		if (Application.isEditor)
+		if (!Application.isPlaying)
 		{
 			var tempList = charParent.Cast<Transform>().ToList();
 			foreach (Transform child in tempList)

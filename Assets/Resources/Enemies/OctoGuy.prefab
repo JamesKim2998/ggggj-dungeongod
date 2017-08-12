@@ -295,6 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550934421021850}
   - component: {fileID: 95205367947126974}
+  - component: {fileID: 114359287822850436}
   m_Layer: 0
   m_Name: OctoGuy
   m_TagString: Untagged
@@ -909,6 +910,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114359287822850436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987397784260682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6915dd680f12471eb1b8431967398f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114737163249023856
 MonoBehaviour:
   m_ObjectHideFlags: 1

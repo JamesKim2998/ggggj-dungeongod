@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4531670098399862}
   - component: {fileID: 95058407125248980}
+  - component: {fileID: 114990945874199702}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -456,3 +457,14 @@ MonoBehaviour:
   rage: 0
   defaultCondition: 2
   reaction: 0
+--- !u!114 &114990945874199702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231543686073732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6915dd680f12471eb1b8431967398f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
