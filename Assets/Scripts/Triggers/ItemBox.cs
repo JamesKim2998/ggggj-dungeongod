@@ -18,7 +18,7 @@ public class ItemBox : Trigger
 
     IEnumerator FadeOut()
     {
-        for (float i = 1; i >= 0; i -= 0.01f) {
+        for (float i = 1; i >= 0; i -= 0.04f) {
             box.GetComponent<MeshRenderer>().material.color = new Color (1,1,1,i);
             yield return new WaitForSeconds(1 / 60f);
         }
