@@ -66,6 +66,7 @@ public class HeroHPBar : MonoBehaviour
 	public void SetHP(int hp)
 	{
 		hp = Mathf.Clamp(hp, 0, hearts.Count + 1);
+		if (hp == curHP) return;
 
 		if (hp > curHP)
 		{

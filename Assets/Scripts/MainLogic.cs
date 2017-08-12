@@ -16,6 +16,8 @@ public class MainLogic : MonoBehaviour
 
     private RaycastHit[] highLighted;
 
+	public HeroHPBar heroHPBar;
+
     // public bool isEnemyPhase = false;
     private List<Enemy> enemies {
 		get { return dungeon.currentFloor.enemies; }
@@ -44,6 +46,7 @@ public class MainLogic : MonoBehaviour
         highLightObject();
         if (Input.GetMouseButtonDown(0) && god.powerLeft >= 20)
             UpdateGodTouch();
+		UpdateUI();
 
 		/*
         if (isEnemyPhase)
@@ -56,6 +59,12 @@ public class MainLogic : MonoBehaviour
         }
 		*/
     }
+
+	void UpdateUI()
+	{
+		heroHPBar.SetMaxHP(hero.maxHP, false);
+		heroHPBar.SetHP(hero.HP);
+	}
 
     void InitGame()
     {

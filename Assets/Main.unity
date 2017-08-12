@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -155,6 +155,7 @@ MonoBehaviour:
   god: {fileID: 337887433}
   hero: {fileID: 1510539863}
   heroController: {fileID: 1510539864}
+  heroHPBar: {fileID: 1819082769}
 --- !u!114 &337887432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +763,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224322606090452360, guid: 5a8392e86cd534cec8b813e072e547d6,
     type: 2}
   m_PrefabInternal: {fileID: 1812299841}
+--- !u!114 &1819082769 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114093512947404584, guid: 5a8392e86cd534cec8b813e072e547d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1812299841}
+  m_Script: {fileID: 11500000, guid: 854f02cc9d71546e3ae85afcb62b9881, type: 3}
 --- !u!1 &2075271673
 GameObject:
   m_ObjectHideFlags: 0
