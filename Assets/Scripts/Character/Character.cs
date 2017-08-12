@@ -107,15 +107,15 @@ public abstract class Character : MonoBehaviour
         return Random.Range(1, 7) + Random.Range(1, 7);
     }
 
-    public void getDamage(int power, int dice)
+    public virtual void getDamage(int power, int dice)
     {
         int powerDiff = power + dice - this.power;
-        if (dice >= 12)
+        if (powerDiff >= 12)
         {
             //CRITICAL !! TODO ANIMATION
             this.HP -= 2;
         }
-        else if (dice >= 7 || dice == 12)
+        else if (powerDiff >= 7 || dice >= 12)
         {
             //normal hit;
             this.HP -= 1;

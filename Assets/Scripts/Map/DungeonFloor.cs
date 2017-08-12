@@ -43,7 +43,8 @@ public class DungeonFloor : MonoBehaviour
 			var point = spawnInfo.point.position;
 			var prefab = Resources.Load<GameObject>("Enemies/" + spawnInfo.prefabName);
 			var enemy = Instantiate(prefab, point, Quaternion.identity, enemySpawnRoot);
-			enemies.Add(enemy.GetComponent<Enemy>());
+            enemy.GetComponent<Enemy>().initialCoord = Coord.Round(point);
+            enemies.Add(enemy.GetComponent<Enemy>());
 		}
 	}
 
