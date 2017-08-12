@@ -8,6 +8,8 @@ public class BitmapLoader : MonoBehaviour
 	public Texture2D texture;
 	public GameObject floor;
 	public GameObject wall;
+	public Mesh[] floorModels;
+	public Mesh[] wallModels;
 	public void LoadBitmap()
 	{
 		HashSet<Coord> coords = new HashSet<Coord>();
@@ -40,6 +42,7 @@ public class BitmapLoader : MonoBehaviour
 		var spawned = Instantiate<GameObject>(floor);
 		spawned.transform.SetParent(newMap);
 		spawned.transform.position = new Vector3(x, -1, y);
+		spawned.GetComponentInChildren<MeshFilter>().mesh = floorModels[Random.Range(0, floorModels.Length)];
 	}
 	void SpawnWall(HashSet<Coord> coordSet, int x, int y, Transform newMap)
 	{
@@ -48,5 +51,6 @@ public class BitmapLoader : MonoBehaviour
 		var spawned = Instantiate<GameObject>(wall);
 		spawned.transform.SetParent(newMap);
 		spawned.transform.position = new Vector3(x, -1, y);
+		spawned.GetComponentInChildren<MeshFilter>().mesh = wallModels[Random.Range(0, wallModels.Length)];
 	}
 }
