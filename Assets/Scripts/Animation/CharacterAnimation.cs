@@ -40,6 +40,16 @@ public class CharacterAnimation : MonoBehaviour
 		Destroy(me.gameObject);
 	}
 
+	public void SetTrigger(string trigger)
+	{
+		anim.SetTrigger(trigger);
+	}
+
+	public void Move()
+	{
+		anim.SetBool("Moving", true);
+	}
+
 	public void OnDieAnimationEnd()
 	{
 		me.Die();
