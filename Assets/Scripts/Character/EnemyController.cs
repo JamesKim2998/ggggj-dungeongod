@@ -2,7 +2,6 @@
 
 public class EnemyController : MonoBehaviour
 {
-    public DungeonFloor dungeonFloor;
     protected PathFinder pathFinder;
     protected Enemy character;
     protected Hero hero;
