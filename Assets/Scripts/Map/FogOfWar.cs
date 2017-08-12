@@ -144,7 +144,7 @@ public class FogOfWar : MonoBehaviour
 		switch (visiblity)
 		{
 			case Visiblity.None: return 1;
-			case Visiblity.God: return 0.3f;
+			case Visiblity.God: return 0.8f;
 			case Visiblity.Hero: return 0;
 			default: return 1;
 		}
