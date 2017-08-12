@@ -79,17 +79,20 @@ public class MainLogic : MonoBehaviour
         // Init level
         dungeon.Clear();
 		var entrance = dungeon.LoadInitLevel();
+		SpawnNewHero(entrance);
+		godPowerBar.powerMax = god.powerMax;
+    }
 
-		// Instantiate hero
+	void SpawnNewHero(Vector3 position)
+	{
 		hero = HeroFactory.InstantiateRandom();
-		hero.transform.position = entrance;
+		hero.transform.position = position;
 		hero.onHitExit += GoToNextFloor;
+		hero.onDead += OnHeroDead;
 		// TODO: AI ?�성?�서 ??�?
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
-
-		godPowerBar.powerMax = god.powerMax;
-    }
+	}
 
 	/*
 	void LoadLevel(int level)
@@ -131,16 +134,21 @@ public class MainLogic : MonoBehaviour
         }
     }
 
-    public void GoToNextFloor()
-    {
+	void GoToNextFloor()
+	{
 		var entrance = dungeon.GoToNextFloor();
 		hero.transform.position = entrance;
-    }
+	}
 
-    public void GameOver()
+	void GoBackToFirstFloor()
+	{
+		var entrance = dungeon.GoBackToFirstFloor();
+		SpawnNewHero(entrance);
+	}
+
+    void OnHeroDead(Hero hero)
     {
-        //TODO : Ending process
-        //TODO : restart?
+		GoBackToFirstFloor();
     }
 
     /*

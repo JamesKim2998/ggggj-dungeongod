@@ -139,4 +139,14 @@ public class FogOfWar : MonoBehaviour
 				SetGodVisible(oldVisibleCoord);
 		}
 	}
+
+	public void ClearHeroVisibility()
+	{
+		foreach (var coord in heroVisiblity)
+		{
+			var quadInfo = quads[coord];
+			quadInfo.renderer.sharedMaterial = matGodVisible;
+		}
+		heroVisiblity.Clear();
+	}
 }
