@@ -23,6 +23,9 @@ public class MainLogic : MonoBehaviour
 
     // public bool isEnemyPhase = false;
 
+	Hero heroPlaceholder;
+	HeroController heroControllerPlaceholder;
+
     void Awake()
     {
         if (instance == null)
@@ -33,6 +36,9 @@ public class MainLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+		heroPlaceholder = hero;
+		heroControllerPlaceholder = heroController;
 
         InitGame();
 		StartCoroutine(HeroPhase());
@@ -146,8 +152,10 @@ public class MainLogic : MonoBehaviour
 		SpawnNewHero(entrance);
 	}
 
-    void OnHeroDead(Hero hero)
+    void OnHeroDead()
     {
+		hero = heroPlaceholder;
+		heroController = heroControllerPlaceholder;
 		GoBackToFirstFloor();
     }
 

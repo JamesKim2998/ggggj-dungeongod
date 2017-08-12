@@ -13,7 +13,7 @@ public class Hero : Character
 	public int buffedTurn;
 
 	public event System.Action onHitExit;
-	public event System.Action<Hero> onDead;
+	public event System.Action onDead;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -78,12 +78,12 @@ public class Hero : Character
 
 	public override void Die()
 	{
-		if (onDead != null) onDead(this);
 		var skeletonPrefab = Resources.Load<GameObject>("Hero/Dead Skeleton");
 		var position = transform.position;
 		var rotation = transform.rotation;
 		var parent = MainLogic.instance.dungeon.currentFloor.transform;
 		Instantiate(skeletonPrefab, position, rotation, parent);
 		Destroy(gameObject);
+		if (onDead != null) onDead();
 	}
 }

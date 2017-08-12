@@ -21,7 +21,7 @@ public abstract class Character : MonoBehaviour
 
     public Condition condition;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
         rigidbody = GetComponent<Rigidbody>();

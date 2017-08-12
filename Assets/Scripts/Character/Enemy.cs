@@ -10,8 +10,9 @@ public class Enemy : Character
     public EnemyReaction reaction;
     public bool raged = false;
 
-    private void Awake()
+    protected override void Awake()
     {
+		base.Awake();
         condition = new Condition(ConditionType.WAIT, 1);
     }
 
