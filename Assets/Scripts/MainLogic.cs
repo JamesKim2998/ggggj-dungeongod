@@ -50,6 +50,13 @@ public class MainLogic : MonoBehaviour
 		StartCoroutine(EnemyPhase());
 
         audioManager = FindObjectOfType<AudioManager>();
+
+        ItemManager.consumalbeDic.Add(ConsumableItemCode.CAKE, 5);
+        ItemManager.consumalbeDic.Add(ConsumableItemCode.CHICKEN, 3);
+        ItemManager.consumalbeDic.Add(ConsumableItemCode.PIE, 2);
+        ItemManager.consumalbeDic.Add(ConsumableItemCode.WINE, 10);
+        ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
+        ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
     }
 
     void Update()
