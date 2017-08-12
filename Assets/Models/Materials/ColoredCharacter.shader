@@ -3,8 +3,6 @@
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_MaskTex("Mask (RGB)", 2D) = "black" {}
-		_HairColor("Hair Color", Color) = (0,0,1,1)
-		_BodyColor("Body Color", Color) = (0,1,0,1)
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }

@@ -14,8 +14,8 @@ public class CharacterInputController : MonoBehaviour
 	void Update()
 	{
 		var dir = InputToDir();
-		if (dir != Dir.Stay)
-			character.TryToMove(dir);
+		if (dir == Dir.Stay) return;
+		character.TryToMove(dir);
 	}
 
 	Dir InputToDir()
