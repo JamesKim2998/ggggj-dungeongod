@@ -11,6 +11,19 @@ public enum Dir
 
 public static partial class ExtensionMethods
 {
+	public static Coord ToCoord(this Dir thiz)
+	{
+		switch (thiz)
+		{
+			case Dir.Up: return Coord.up;
+			case Dir.Down: return Coord.down;
+			case Dir.Right: return Coord.right;
+			case Dir.Left: return Coord.left;
+			case Dir.Stay: return Coord.zero;
+			default: return Coord.zero;
+		}
+	}
+
 	public static Vector3 ToVector3(this Dir thiz)
 	{
 		switch (thiz)

@@ -28,20 +28,33 @@ public abstract class Character : MonoBehaviour
         inverseMoveTime = 1f / moveTime;
     }
 
+	public bool IsCoordBlocked(Coord testCoord, out RaycastHit hitInfo)
+	{
+		var start = transform.position;
+		var dest = testCoord.ToVector3(start.y);
+		bool isHit = false;
+		boxCollider.enabled = false;
+		isHit = Physics.Linecast(start, dest,
+			out hitInfo, blockingLayer);
+		boxCollider.enabled = true;
+		return isHit;
+	}
+
+	public bool CanSee(Coord testCoord, out RaycastHit hitInfo)
+	{
+		return !IsCoordBlocked(testCoord, out hitInfo);
+	}
+
     //return if Moving was successful
     public virtual bool Move(Dir dir, out RaycastHit hitInfo)
     {
-        Vector3 start = transform.position;
-        Vector3 dest = start + dir.ToVector3();
-        bool isHit = false;
-
-        boxCollider.enabled = false;
-        isHit = Physics.Linecast(start, dest, out hitInfo, blockingLayer);
-        boxCollider.enabled = true;
+		var dest = coord + dir.ToCoord();
+		var isHit = IsCoordBlocked(dest, out hitInfo);
 
         if(!isHit)
         {
-			transform.position = dest;
+			var oldPos = transform.position;
+			transform.position = dest.ToVector3(oldPos.y);
 			// TODO: 조작감 문제로 일단 주석처리.
             // StartCoroutine(SmoothMovement(dest));
 

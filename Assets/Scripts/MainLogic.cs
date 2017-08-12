@@ -22,9 +22,6 @@ public class MainLogic : MonoBehaviour
     public GameObject thunderPrefab;
 
     // public bool isEnemyPhase = false;
-    private List<Enemy> enemies {
-		get { return dungeon.currentFloor.enemies; }
-	}
 
     void Awake()
     {
@@ -67,7 +64,7 @@ public class MainLogic : MonoBehaviour
 	void UpdateFogOfWar()
 	{
 		var floor = dungeon.currentFloor;
-		floor.fogOfWar.UpdateVisibilty(floor, hero.coord, hero.visibleDistance);
+		floor.fogOfWar.UpdateVisibilty(hero, hero.visibleDistance);
 	}
 
 	void UpdateUI()
@@ -87,7 +84,7 @@ public class MainLogic : MonoBehaviour
 		hero = HeroFactory.InstantiateRandom();
 		hero.transform.position = entrance;
 		hero.onHitExit += GoToNextFloor;
-		// TODO: AI ?„ì„±?´ì„œ ??ê²?
+		// TODO: AI ?ï¿½ì„±?ï¿½ì„œ ??ï¿½?
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
 
@@ -126,6 +123,7 @@ public class MainLogic : MonoBehaviour
         {
             yield return new WaitForSeconds(turnDelay);
             // Assume that we can ignore times to calculate AI's next action
+			var enemies = dungeon.currentFloor.EachEnemy();
             foreach (Enemy enemy in enemies)
             {
                 enemy.GetComponent<EnemyController>().NextTurn();
@@ -188,23 +186,41 @@ public class MainLogic : MonoBehaviour
 
     public void UpdateGodTouch()
     {
+        GameObject thunder = null;
+        bool hitOnGround = true;
+
         var hits = TestGodTouch();
 		if (hits == null) return;
         bool isThunder = true;
         foreach (var hit in hits)
         {
+            if (!dungeon.currentFloor.fogOfWar.IsVisibleByGod(Coord.Round(hit.transform.position)))
+                return;
             if (isThunder)
             {
-                GameObject thunder = Instantiate(thunderPrefab);
+                thunder = Instantiate(thunderPrefab);
                 thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
                 isThunder = false;
+                god.powerLeft -= 20;
             }
             var hitGO = hit.collider.gameObject;
             var godTouch = hitGO.GetComponent<GodTouchAction>();
-            if (godTouch != null) godTouch.Act();
+            if (godTouch != null)
+            {
+                hitOnGround = false;
+                godTouch.Act();
+            }
         }
         
-        god.powerLeft -= 20;
+        if (hitOnGround && thunder != null)
+        {
+            if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
+            {
+                Debug.Log("RUN");
+                hero.condition = new Condition(ConditionType.RUNAWAY, 4);
+            }
+        }
+        
     }
 
     public void highLightObject()

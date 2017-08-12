@@ -19,9 +19,9 @@ public class DungeonFloor : MonoBehaviour
 
 	public Transform enemySpawnRoot;
 	public List<EnemySpawnInfo> enemySpawnInfo = new List<EnemySpawnInfo>();
-	public List<Enemy> enemies = new List<Enemy>();
+	List<Enemy> enemies = new List<Enemy>();
 
-	private FogOfWar fogOfWarCache;
+	FogOfWar fogOfWarCache;
 	public FogOfWar fogOfWar
 	{
 		get
@@ -58,6 +58,15 @@ public class DungeonFloor : MonoBehaviour
 				return true;
 		}
 		return false;
+	}
+
+	public IEnumerable<Enemy> EachEnemy()
+	{
+		foreach (var enemy in enemies)
+		{
+			if (enemy == null) continue;
+			yield return enemy;
+		}
 	}
 
 	/*

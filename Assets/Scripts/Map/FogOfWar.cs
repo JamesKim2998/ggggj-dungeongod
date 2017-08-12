@@ -17,15 +17,23 @@ public class FogOfWar : MonoBehaviour
 
 	readonly Dictionary<Coord, QuadInfo> quads = new Dictionary<Coord, QuadInfo>();
 	HashSet<Coord> heroVisiblity = new HashSet<Coord>();
-
-	void Awake()
-	{
-		StartCoroutine(CoroutineTest());
-	}
+	CoordRect oldBoundingRect;
 
 	void Update()
 	{
 		UpdateFrustrum();
+	}
+
+	public bool IsVisibleByGod(Coord coord)
+	{
+		if (!quads.ContainsKey(coord))
+			return false;
+		return quads[coord].godVisible;
+	}
+
+	public bool IsVisibleByHero(Coord coord)
+	{
+		return heroVisiblity.Contains(coord);
 	}
 
 	QuadInfo PullQuad(Coord coord)
@@ -37,7 +45,8 @@ public class FogOfWar : MonoBehaviour
 		quadInfo = new QuadInfo();
 		quads[coord] = quadInfo;
 
-		var quad = Instantiate(prefabQuad, coord.ToVector3(), Quaternion.identity, quadRoot);
+		var pos = coord.ToVector3(0.5f);
+		var quad = Instantiate(prefabQuad, pos, Quaternion.identity, quadRoot);
 		quad.name = coord.ToString();
 		quad.transform.eulerAngles = new Vector3(90, 0, 0);
 		quad.SetActive(true);
@@ -60,6 +69,9 @@ public class FogOfWar : MonoBehaviour
 		boundingRect.y -= 1;
 		boundingRect.w += 2;
 		boundingRect.h += 2;
+
+		if (oldBoundingRect == boundingRect) return;
+		oldBoundingRect = boundingRect;
 
 		foreach (var coord in Range.Grid(boundingRect))
 			PullQuad(coord);
@@ -98,17 +110,27 @@ public class FogOfWar : MonoBehaviour
 		quadInfo.renderer.sharedMaterial = matGodVisible;
 	}
 
-	public void UpdateVisibilty(DungeonFloor floor, Coord center, int visibleDistance)
+	public void UpdateVisibilty(Character character, int visibleDistance)
 	{
+		var center = character.coord;
+
 		var oldVisible = heroVisiblity;
 		heroVisiblity = new HashSet<Coord>();
 
 		// TODO: 벽체크.
 		foreach (var testDelta in Range.InsideDistance(visibleDistance))
 		{
-			var test = center + testDelta;
-			SetHeroVisible(test);
-			heroVisiblity.Add(test);
+			var testCoord = center + testDelta;
+			RaycastHit hitInfo;
+			if (!character.CanSee(testCoord, out hitInfo))
+			{
+				var hitCoord = Coord.Round(hitInfo.transform.position);
+				if (hitCoord != testCoord)
+					continue;
+			}
+
+			SetHeroVisible(testCoord);
+			heroVisiblity.Add(testCoord);
 		}
 
 		foreach (var oldVisibleCoord in oldVisible)
@@ -116,12 +138,5 @@ public class FogOfWar : MonoBehaviour
 			if (!heroVisiblity.Contains(oldVisibleCoord))
 				SetGodVisible(oldVisibleCoord);
 		}
-	}
-
-	IEnumerator CoroutineTest()
-	{
-		UpdateVisibilty(null, new Coord(3, 3), 3);
-		SetHeroVisible(new Coord(3, 3));
-		yield return new WaitForSeconds(1);
 	}
 }
