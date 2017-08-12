@@ -19,7 +19,7 @@ public abstract class Character : MonoBehaviour
     private Rigidbody rigidbody;     //we need rigidbody. turn off gravity.
     private float inverseMoveTime;
 
-    public Condition condition;
+    public ConditionType condition;
 
     protected virtual void Awake()
     {
