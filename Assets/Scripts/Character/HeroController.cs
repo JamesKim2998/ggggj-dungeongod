@@ -122,14 +122,6 @@ public class HeroController : MonoBehaviour
 	{
 		Dir dir;
 
-		// 시야범위 안에 아이템이 떨어져 있으면 획득 상태에 들어간다
-		var targetToGather = GetDirToReachableVisibleItem(out dir);
-		if (targetToGather)
-		{
-			nextCondition = ConditionType.GATHER;
-			return dir;
-		}
-
 		// 시야범위 안에 적이 있고 체력이 n 이상이면 전투 상태에 들어간다
 		if (character.HP >= combatHP)
 		{
@@ -139,6 +131,14 @@ public class HeroController : MonoBehaviour
 				nextCondition = ConditionType.COMBAT;
 				return dir;
 			}
+		}
+
+		// 시야범위 안에 아이템이 떨어져 있으면 획득 상태에 들어간다
+		var targetToGather = GetDirToReachableVisibleItem(out dir);
+		if (targetToGather)
+		{
+			nextCondition = ConditionType.GATHER;
+			return dir;
 		}
 
 		// 안개로 덮인 가장 이동거리 가까운 곳을 목표로 이동한다
