@@ -24,6 +24,18 @@ public class FogOfWar : MonoBehaviour
 		UpdateFrustrum();
 	}
 
+	public bool IsVisibleByGod(Coord coord)
+	{
+		if (!quads.ContainsKey(coord))
+			return false;
+		return quads[coord].godVisible;
+	}
+
+	public bool IsVisibleByHero(Coord coord)
+	{
+		return heroVisiblity.Contains(coord);
+	}
+
 	QuadInfo PullQuad(Coord coord)
 	{
 		QuadInfo quadInfo;
