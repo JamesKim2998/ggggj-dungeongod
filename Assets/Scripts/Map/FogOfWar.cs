@@ -38,6 +38,7 @@ public class FogOfWar : MonoBehaviour
 
 	void RequestAdd(Coord coord)
 	{
+		if (quadInfos.ContainsKey(coord)) return;
 		if (quadUpdates.ContainsKey(coord)) return;
 		quadUpdates[coord] = Visiblity.None;
 	}

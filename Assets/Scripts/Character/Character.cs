@@ -48,6 +48,10 @@ public abstract class Character : MonoBehaviour
     //return if Moving was successful
     public virtual bool Move(Dir dir, out RaycastHit hitInfo)
     {
+		var newEulerAngles = transform.eulerAngles;
+		newEulerAngles.y = dir.XZAngleFromUp();
+		transform.eulerAngles = newEulerAngles;
+
 		var dest = coord + dir.ToCoord();
 		var isHit = IsCoordBlocked(dest, out hitInfo);
 
