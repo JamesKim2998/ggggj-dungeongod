@@ -57,12 +57,18 @@ public class MainLogic : MonoBehaviour
         ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
         ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
 
-        ItemManager.equipDic.Add(EquipmentType.ARMOR, 0);
-        ItemManager.equipDic.Add(EquipmentType.BOOTS, 0);
-        ItemManager.equipDic.Add(EquipmentType.GAUNTLET, 0);
-        ItemManager.equipDic.Add(EquipmentType.HELMET, 0);
-        ItemManager.equipDic.Add(EquipmentType.SHIELD, 0);
-        ItemManager.equipDic.Add(EquipmentType.WEAPON, 0);
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR0, new EquipmentInfo(EquipmentType.ARMOR, 0));
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR1, new EquipmentInfo(EquipmentType.ARMOR, 20));
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR2, new EquipmentInfo(EquipmentType.ARMOR, 30));
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR3, new EquipmentInfo(EquipmentType.ARMOR, 40));
+
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON0, new EquipmentInfo(EquipmentType.WEAPON, 0));
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON1, new EquipmentInfo(EquipmentType.WEAPON, 20));
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON2, new EquipmentInfo(EquipmentType.WEAPON, 30));
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON3, new EquipmentInfo(EquipmentType.WEAPON, 40));
+
+        ItemManager.heroEquipInfo.Add(EquipmentType.ARMOR, EquipmentCode.ARMOR0);
+        ItemManager.heroEquipInfo.Add(EquipmentType.WEAPON, EquipmentCode.WEAPON0);
     }
 
     void Update()

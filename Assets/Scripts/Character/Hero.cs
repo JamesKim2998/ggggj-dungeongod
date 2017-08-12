@@ -30,9 +30,9 @@ public class Hero : Character
 
 		else if (other.tag == "Equipment")
 		{
-            if (other.GetComponent<EquipmentItem>().power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().type]){
-                ItemManager.equipDic.Remove(other.GetComponent<EquipmentItem>().type);
-                ItemManager.equipDic.Add(other.GetComponent<EquipmentItem>().type, other.GetComponent<EquipmentItem>().power);
+            if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power){
+                ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
+                ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
             }
 			// TODO :  loot or ignore
 		}
