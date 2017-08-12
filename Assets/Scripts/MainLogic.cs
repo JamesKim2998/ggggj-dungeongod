@@ -14,7 +14,7 @@ public class MainLogic : MonoBehaviour
 
     public bool isEnemyPhase = false;
 
-    private List<Enemy> enemies;
+    private List<Enemy> enemies = new List<Enemy>();
 
     void Awake()
     {
@@ -32,8 +32,7 @@ public class MainLogic : MonoBehaviour
 
     void Update()
     {
-
-        god.Update();
+		god.Update();
         UpdateGodTouch();
 
         if (isEnemyPhase)
@@ -153,6 +152,7 @@ public class MainLogic : MonoBehaviour
     public void UpdateGodTouch()
     {
         var hits = TestGodTouch();
+		if (hits == null) return;
         foreach (var hit in hits)
         {
             var hitGO = hit.collider.gameObject;
