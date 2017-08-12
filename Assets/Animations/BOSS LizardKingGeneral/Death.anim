@@ -1,0 +1,3926 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Death
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 22, y: 0, z: 0}
+        inSlope: {x: -180.12, y: 164.76, z: -173.16}
+        outSlope: {x: -180.12, y: 164.76, z: -173.16}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: -8.02, y: 27.46, z: -28.86}
+        inSlope: {x: 0, y: 82.38, z: -86.58}
+        outSlope: {x: 0, y: 82.38, z: -86.58}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: -8.02, y: 27.46, z: -28.86}
+        inSlope: {x: 0, y: 57.8064, z: -109.489525}
+        outSlope: {x: 0, y: 57.8064, z: -109.489525}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3
+        value: {x: -6.6088, y: 62.143833, z: -94.5537}
+        inSlope: {x: 0, y: 57.8064, z: -109.489525}
+        outSlope: {x: 0, y: 57.8064, z: -109.489525}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -6.6088, y: 62.143833, z: -94.5537}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -6.6088, y: 62.143833, z: -94.5537}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -6.6088, y: 62.143833, z: -94.5537}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -22, y: 0, z: 0}
+        inSlope: {x: 174.59999, y: 0, z: 0}
+        outSlope: {x: 174.59999, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: 7.1, y: 0, z: 0}
+        inSlope: {x: 87.460625, y: -8.714287, z: 15.728574}
+        outSlope: {x: 87.460625, y: -8.714287, z: 15.728574}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.51666665
+        value: {x: 7.212443, y: -6.1, z: 11.01}
+        inSlope: {x: -30.059134, y: -2.403942, z: 4.3389187}
+        outSlope: {x: -30.059134, y: -2.403942, z: 4.3389187}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: -22, y: 0, z: 0}
+        inSlope: {x: -30.219767, y: 48.83208, z: 11.253825}
+        outSlope: {x: -30.219767, y: 48.83208, z: 11.253825}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3833333
+        value: {x: -22, y: 32.6, z: 17.36}
+        inSlope: {x: 0, y: 42.521736, z: 22.64348}
+        outSlope: {x: 0, y: 42.521736, z: 22.64348}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -22, y: 32.6, z: 17.36}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -22, y: 32.6, z: 17.36}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -22, y: 32.6, z: 17.36}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -16.571001, y: 0, z: 0}
+        inSlope: {x: -346.37402, y: 0, z: 0}
+        outSlope: {x: -346.37402, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: -74.3, y: 0, z: 0}
+        inSlope: {x: -138.5496, y: 0, z: 0}
+        outSlope: {x: -138.5496, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: -16.571001, y: 0, z: 0}
+        inSlope: {x: 34.6374, y: 49.81071, z: 0.10714285}
+        outSlope: {x: 34.6374, y: 49.81071, z: 0.10714285}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.4666667
+        value: {x: -16.571001, y: 46.49, z: 0.1}
+        inSlope: {x: 0, y: 50.057484, z: -6.9767284}
+        outSlope: {x: 0, y: 50.057484, z: -6.9767284}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -16.571001, y: 47, z: -14.54}
+        inSlope: {x: 0, y: 0.24677339, z: -7.0838714}
+        outSlope: {x: 0, y: 0.24677339, z: -7.0838714}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -16.571001, y: 47, z: -14.54}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS neck
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: -51.600002, y: 0, z: 0}
+        outSlope: {x: -51.600002, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: -8.6, y: 0, z: 0}
+        inSlope: {x: -36.402, y: 0, z: 0}
+        outSlope: {x: -36.402, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: -26.27, y: 0, z: 0}
+        inSlope: {x: 109.30567, y: 0, z: 0}
+        outSlope: {x: 109.30567, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.2166667
+        value: {x: 25.69, y: 0, z: 0}
+        inSlope: {x: 19.027664, y: -26.8, z: 0}
+        outSlope: {x: 19.027664, y: -26.8, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.4666667
+        value: {x: -24.75, y: -13.4, z: 0}
+        inSlope: {x: -101.615486, y: -20.316128, z: 0}
+        outSlope: {x: -101.615486, y: -20.316128, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -26.27, y: 0, z: 0}
+        inSlope: {x: -0.7354841, y: 6.483871, z: 0}
+        outSlope: {x: -0.7354841, y: 6.483871, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -26.27, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 37.464, y: 0, z: 0}
+        inSlope: {x: 152.10399, y: 0, z: 0}
+        outSlope: {x: 152.10399, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 75.49, y: 0, z: 0}
+        inSlope: {x: 64.79199, y: 0, z: 0}
+        outSlope: {x: 64.79199, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 58.6, y: 0, z: 0}
+        inSlope: {x: -11.259999, y: 0, z: -46.000008}
+        outSlope: {x: -11.259999, y: 0, z: -46.000008}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3
+        value: {x: 58.6, y: 0, z: -27.6}
+        inSlope: {x: 0, y: 0, z: -46.000008}
+        outSlope: {x: 0, y: 0, z: -46.000008}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: 58.6, y: 0, z: -27.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: 58.6, y: 0, z: -27.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: 58.6, y: 0, z: -27.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 46.824635, y: -0, z: -0}
+        inSlope: {x: -14.88695, y: 0, z: 0}
+        outSlope: {x: -14.88695, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6666667
+        value: {x: 36.9, y: -0, z: -0}
+        inSlope: {x: -52.293488, y: 0, z: 0}
+        outSlope: {x: -52.293488, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.73333335
+        value: {x: 30.92, y: 0, z: 0}
+        inSlope: {x: -10.012512, y: 0, z: 0}
+        outSlope: {x: -10.012512, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 49.5, y: 0, z: 0}
+        inSlope: {x: 34.8375, y: 19.81667, z: 5.2166677}
+        outSlope: {x: 34.8375, y: 19.81667, z: 5.2166677}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3
+        value: {x: 49.5, y: 11.89, z: 3.13}
+        inSlope: {x: -132.08994, y: 19.81667, z: 5.2166677}
+        outSlope: {x: -132.08994, y: 19.81667, z: 5.2166677}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.4666667
+        value: {x: 5.47, y: 11.89, z: 3.13}
+        inSlope: {x: -132.08994, y: 0, z: 0}
+        outSlope: {x: -132.08994, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: 5.47, y: 11.89, z: 3.13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: 5.47, y: 11.89, z: 3.13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: 5.47, y: 11.89, z: 3.13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 33.048, y: 0, z: 0}
+        inSlope: {x: -35.78286, y: 0, z: 0}
+        outSlope: {x: -35.78286, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.7
+        value: {x: 8, y: 0, z: 0}
+        inSlope: {x: -137.89133, y: 0, z: 0}
+        outSlope: {x: -137.89133, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.73333335
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: -94.33323, y: 0, z: -3.749606}
+        outSlope: {x: -94.33323, y: 0, z: -3.749606}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.8833333
+        value: {x: 7.7, y: 0, z: -1.1248816}
+        inSlope: {x: 17.416672, y: 0, z: -9.487232}
+        outSlope: {x: 17.416672, y: 0, z: -9.487232}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.35
+        value: {x: 0, y: 0, z: -6.48}
+        inSlope: {x: -88.60714, y: 0, z: -5.7376266}
+        outSlope: {x: -88.60714, y: 0, z: -5.7376266}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.5833334
+        value: {x: -37.5, y: 0, z: -6.48}
+        inSlope: {x: -80.35714, y: 0, z: 0}
+        outSlope: {x: -80.35714, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -37.5, y: 0, z: -6.48}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -37.5, y: 0, z: -6.48}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -37.5, y: 0, z: -6.48}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -39.595, y: 0, z: 0}
+        inSlope: {x: 155.385, y: 0, z: 0}
+        outSlope: {x: 155.385, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.33333334
+        value: {x: 12.2, y: 0, z: 0}
+        inSlope: {x: 70.08536, y: 0, z: 0}
+        outSlope: {x: 70.08536, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.8
+        value: {x: 5.1, y: 0, z: 0}
+        inSlope: {x: -7.607143, y: -26.825, z: -8.125001}
+        outSlope: {x: -7.607143, y: -26.825, z: -8.125001}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 5.1, y: -10.73, z: -3.25}
+        inSlope: {x: 0, y: -26.825, z: 4.603569}
+        outSlope: {x: 0, y: -26.825, z: 4.603569}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.35
+        value: {x: 5.1, y: -10.73, z: 5.66}
+        inSlope: {x: -83.84212, y: -20.052637, z: 50.528576}
+        outSlope: {x: -83.84212, y: -20.052637, z: 50.528576}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.6666666
+        value: {x: -48, y: -23.43, z: 29.6}
+        inSlope: {x: -83.84212, y: -20.052637, z: 37.800007}
+        outSlope: {x: -83.84212, y: -20.052637, z: 37.800007}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -48, y: -23.43, z: 29.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -48, y: -23.43, z: 29.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -47.725002, y: 0, z: 0}
+        inSlope: {x: 153.83334, y: 0, z: 0}
+        outSlope: {x: 153.83334, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.45
+        value: {x: 21.5, y: 0, z: 0}
+        inSlope: {x: 36.488106, y: 0, z: 0}
+        outSlope: {x: 36.488106, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.8
+        value: {x: -6.8, y: 0, z: 0}
+        inSlope: {x: -11.071421, y: 9.549709, z: -6.764308}
+        outSlope: {x: -11.071421, y: 9.549709, z: -6.764308}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.2666667
+        value: {x: 20.6, y: 8.913061, z: -6.3133535}
+        inSlope: {x: -52.160095, y: 7.539646, z: 11.083987}
+        outSlope: {x: -52.160095, y: 7.539646, z: 11.083987}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -58.2, y: 6.97, z: 10.94}
+        inSlope: {x: -81.51724, y: -2.0100634, z: 17.848295}
+        outSlope: {x: -81.51724, y: -2.0100634, z: 17.848295}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -58.2, y: 6.97, z: 10.94}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -58.2, y: 6.97, z: 10.94}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 125.6, y: 412.8, z: 289.6}
+        outSlope: {x: 125.6, y: 412.8, z: 289.6}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 31.4, y: 103.2, z: 72.4}
+        inSlope: {x: 62.8, y: 206.4, z: 144.8}
+        outSlope: {x: 62.8, y: 206.4, z: 144.8}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.1666666
+        value: {x: 31.4, y: 103.2, z: 72.4}
+        inSlope: {x: -6.977307, y: 79.93848, z: -41}
+        outSlope: {x: -6.977307, y: 79.93848, z: -41}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.5166667
+        value: {x: 26.515884, y: 159.15694, z: 43.7}
+        inSlope: {x: -6.977307, y: 79.93848, z: -41}
+        outSlope: {x: -6.977307, y: 79.93848, z: -41}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: 26.515884, y: 159.15694, z: 43.7}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: 26.515884, y: 159.15694, z: 43.7}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: 26.515884, y: 159.15694, z: 43.7}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 125.6, y: -412.8, z: -289.6}
+        outSlope: {x: 125.6, y: -412.8, z: -289.6}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 31.4, y: -103.2, z: -72.4}
+        inSlope: {x: 44.89749, y: -161.66699, z: -107.948654}
+        outSlope: {x: 44.89749, y: -161.66699, z: -107.948654}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6333333
+        value: {x: 17.674746, y: -68.9047, z: -44.1473}
+        inSlope: {x: -13.186703, y: 69.39531, z: 26.916302}
+        outSlope: {x: -13.186703, y: 69.39531, z: 26.916302}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 21.133001, y: -50.819004, z: -51.433002}
+        inSlope: {x: -34.39821, y: -59.040695, z: -39.77906}
+        outSlope: {x: -34.39821, y: -59.040695, z: -39.77906}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.1666666
+        value: {x: 8.095, y: -78.72, z: -61.381004}
+        inSlope: {x: -39.114014, y: -83.70301, z: -29.844013}
+        outSlope: {x: -39.114014, y: -83.70301, z: -29.844013}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: 8.095, y: -78.72, z: -61.381004}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: 8.095, y: -78.72, z: -61.381004}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: 8.095, y: -78.72, z: -61.381004}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -90, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: -90, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3
+        value: {x: -96.746994, y: 0, z: 25.728989}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -96.746994, y: 0, z: 25.728989}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -96.746994, y: 0, z: 25.728989}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -96.746994, y: 0, z: 25.728989}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: -1.59}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 0, y: 0, z: -1.59}
+        inSlope: {x: 0, y: 0, z: 1.1500003}
+        outSlope: {x: 0, y: 0, z: 1.1500003}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3
+        value: {x: 0, y: 0, z: -0.9}
+        inSlope: {x: 0, y: 0, z: 1.1500003}
+        outSlope: {x: 0, y: 0, z: 1.1500003}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: 0, y: 0, z: -0.9}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: 0, y: 0, z: -0.9}
+        inSlope: {x: 0, y: 0, z: 0.37834775}
+        outSlope: {x: 0, y: 0, z: 0.37834775}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: 0, y: 0, z: 2.3}
+        inSlope: {x: 0, y: 0, z: 4.799999}
+        outSlope: {x: 0, y: 0, z: 4.799999}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -0, y: -0.68, z: -0.33}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: -0, y: -0.68, z: -0.33}
+        inSlope: {x: -0.54782605, y: 0, z: -0.013043466}
+        outSlope: {x: -0.54782605, y: 0, z: -0.013043466}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3833333
+        value: {x: -0.42, y: -0.68, z: -0.34}
+        inSlope: {x: -0.54782605, y: 0, z: -0.013043466}
+        outSlope: {x: -0.54782605, y: 0, z: -0.013043466}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -0.42, y: -0.68, z: -0.34}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -0.42, y: -0.68, z: -0.34}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -0.42, y: -0.68, z: -0.34}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 1.58, z: -0.28}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 0, y: 1.58, z: -0.28}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: {x: -0, y: 1.58, z: -0.28}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -0, y: 1.58, z: -0.28}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -0, y: 1.58, z: -0.28}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS neck
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 1.21, z: 0.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: {x: 0, y: 1.21, z: 0.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: {x: -0, y: 1.21, z: 0.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: {x: -0, y: 1.21, z: 0.6}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 0
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3860460880
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 895575531
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 3860460880
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 2602749879
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1581826070
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1877216081
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 850884086
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 3789667985
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 524305849
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 2527218875
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 950815672
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 844852332
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 895575531
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2602749879
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 1581826070
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 3.1666667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.59
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -1.59
+        inSlope: 1.1500003
+        outSlope: 1.1500003
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: -0.9
+        inSlope: 1.1500003
+        outSlope: 1.1500003
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0.9
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0.9
+        inSlope: 0.37834775
+        outSlope: 0.37834775
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 2.3
+        inSlope: 4.799999
+        outSlope: 4.799999
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 22
+        inSlope: -180.12
+        outSlope: -180.12
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -8.02
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: -8.02
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.3
+        value: -6.6088
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.75
+        value: -6.6088
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 2.5
+        value: -6.6088
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -6.6088
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 164.76
+        outSlope: 164.76
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 27.46
+        inSlope: 82.38
+        outSlope: 82.38
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 27.46
+        inSlope: 57.8064
+        outSlope: 57.8064
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 62.143833
+        inSlope: 57.8064
+        outSlope: 57.8064
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 62.143833
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 62.143833
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 62.143833
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -173.16
+        outSlope: -173.16
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -28.86
+        inSlope: -86.58
+        outSlope: -86.58
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -28.86
+        inSlope: -109.489525
+        outSlope: -109.489525
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: -94.5537
+        inSlope: -109.489525
+        outSlope: -109.489525
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -94.5537
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -94.5537
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -94.5537
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -0
+        inSlope: -0.54782605
+        outSlope: -0.54782605
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3833333
+        value: -0.42
+        inSlope: -0.54782605
+        outSlope: -0.54782605
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0.42
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0.42
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0.42
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.68
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -0.68
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3833333
+        value: -0.68
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0.68
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0.68
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0.68
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.33
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -0.33
+        inSlope: -0.013043466
+        outSlope: -0.013043466
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3833333
+        value: -0.34
+        inSlope: -0.013043466
+        outSlope: -0.013043466
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0.34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0.34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0.34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -22
+        inSlope: 174.59999
+        outSlope: 174.59999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 7.1
+        inSlope: 87.460625
+        outSlope: 87.460625
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.51666665
+        value: 7.212443
+        inSlope: -30.059134
+        outSlope: -30.059134
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -22
+        inSlope: -30.219767
+        outSlope: -30.219767
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3833333
+        value: -22
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -22
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -22
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -22
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: -8.714287
+        outSlope: -8.714287
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.51666665
+        value: -6.1
+        inSlope: -2.403942
+        outSlope: -2.403942
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 48.83208
+        outSlope: 48.83208
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3833333
+        value: 32.6
+        inSlope: 42.521736
+        outSlope: 42.521736
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 32.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 32.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 32.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 15.728574
+        outSlope: 15.728574
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.51666665
+        value: 11.01
+        inSlope: 4.3389187
+        outSlope: 4.3389187
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 11.253825
+        outSlope: 11.253825
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3833333
+        value: 17.36
+        inSlope: 22.64348
+        outSlope: 22.64348
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 17.36
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 17.36
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 17.36
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1.58
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 1.58
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 1.58
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 1.58
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 1.58
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -16.571001
+        inSlope: -346.37402
+        outSlope: -346.37402
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -74.3
+        inSlope: -138.5496
+        outSlope: -138.5496
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -16.571001
+        inSlope: 34.6374
+        outSlope: 34.6374
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: -16.571001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -16.571001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -16.571001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 49.81071
+        outSlope: 49.81071
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: 46.49
+        inSlope: 50.057484
+        outSlope: 50.057484
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 47
+        inSlope: 0.24677339
+        outSlope: 0.24677339
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 47
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0.10714285
+        outSlope: 0.10714285
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: 0.1
+        inSlope: -6.9767284
+        outSlope: -6.9767284
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -14.54
+        inSlope: -7.0838714
+        outSlope: -7.0838714
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -14.54
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1.21
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 1.21
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 1.21
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 1.21
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -51.600002
+        outSlope: -51.600002
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -8.6
+        inSlope: -36.402
+        outSlope: -36.402
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -26.27
+        inSlope: 109.30567
+        outSlope: 109.30567
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.2166667
+        value: 25.69
+        inSlope: 19.027664
+        outSlope: 19.027664
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: -24.75
+        inSlope: -101.615486
+        outSlope: -101.615486
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -26.27
+        inSlope: -0.7354841
+        outSlope: -0.7354841
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -26.27
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.2166667
+        value: 0
+        inSlope: -26.8
+        outSlope: -26.8
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: -13.4
+        inSlope: -20.316128
+        outSlope: -20.316128
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 6.483871
+        outSlope: 6.483871
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.2166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 37.464
+        inSlope: 152.10399
+        outSlope: 152.10399
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 75.49
+        inSlope: 64.79199
+        outSlope: 64.79199
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 58.6
+        inSlope: -11.259999
+        outSlope: -11.259999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 58.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 58.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 58.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 58.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: -46.000008
+        outSlope: -46.000008
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: -27.6
+        inSlope: -46.000008
+        outSlope: -46.000008
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -27.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -27.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -27.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 46.824635
+        inSlope: -14.88695
+        outSlope: -14.88695
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6666667
+        value: 36.9
+        inSlope: -52.293488
+        outSlope: -52.293488
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.73333335
+        value: 30.92
+        inSlope: -10.012512
+        outSlope: -10.012512
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 49.5
+        inSlope: 34.8375
+        outSlope: 34.8375
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 49.5
+        inSlope: -132.08994
+        outSlope: -132.08994
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: 5.47
+        inSlope: -132.08994
+        outSlope: -132.08994
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 5.47
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 5.47
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 5.47
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.73333335
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 19.81667
+        outSlope: 19.81667
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 11.89
+        inSlope: 19.81667
+        outSlope: 19.81667
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: 11.89
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 11.89
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 11.89
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 11.89
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.73333335
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 5.2166677
+        outSlope: 5.2166677
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.3
+        value: 3.13
+        inSlope: 5.2166677
+        outSlope: 5.2166677
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.4666667
+        value: 3.13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 3.13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 3.13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 3.13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 33.048
+        inSlope: -35.78286
+        outSlope: -35.78286
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.7
+        value: 8
+        inSlope: -137.89133
+        outSlope: -137.89133
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.73333335
+        value: 0
+        inSlope: -94.33323
+        outSlope: -94.33323
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8833333
+        value: 7.7
+        inSlope: 17.416672
+        outSlope: 17.416672
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.35
+        value: 0
+        inSlope: -88.60714
+        outSlope: -88.60714
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.5833334
+        value: -37.5
+        inSlope: -80.35714
+        outSlope: -80.35714
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -37.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -37.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -37.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.7
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.73333335
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.5833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.7
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.73333335
+        value: 0
+        inSlope: -3.749606
+        outSlope: -3.749606
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8833333
+        value: -1.1248816
+        inSlope: -9.487232
+        outSlope: -9.487232
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.35
+        value: -6.48
+        inSlope: -5.7376266
+        outSlope: -5.7376266
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.5833334
+        value: -6.48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -6.48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -6.48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -6.48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -39.595
+        inSlope: 155.385
+        outSlope: 155.385
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.33333334
+        value: 12.2
+        inSlope: 70.08536
+        outSlope: 70.08536
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8
+        value: 5.1
+        inSlope: -7.607143
+        outSlope: -7.607143
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 5.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.35
+        value: 5.1
+        inSlope: -83.84212
+        outSlope: -83.84212
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.6666666
+        value: -48
+        inSlope: -83.84212
+        outSlope: -83.84212
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.33333334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8
+        value: 0
+        inSlope: -26.825
+        outSlope: -26.825
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -10.73
+        inSlope: -26.825
+        outSlope: -26.825
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.35
+        value: -10.73
+        inSlope: -20.052637
+        outSlope: -20.052637
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.6666666
+        value: -23.43
+        inSlope: -20.052637
+        outSlope: -20.052637
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -23.43
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -23.43
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.33333334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8
+        value: 0
+        inSlope: -8.125001
+        outSlope: -8.125001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -3.25
+        inSlope: 4.603569
+        outSlope: 4.603569
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.35
+        value: 5.66
+        inSlope: 50.528576
+        outSlope: 50.528576
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.6666666
+        value: 29.6
+        inSlope: 37.800007
+        outSlope: 37.800007
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 29.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 29.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -47.725002
+        inSlope: 153.83334
+        outSlope: 153.83334
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.45
+        value: 21.5
+        inSlope: 36.488106
+        outSlope: 36.488106
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8
+        value: -6.8
+        inSlope: -11.071421
+        outSlope: -11.071421
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.2666667
+        value: 20.6
+        inSlope: -52.160095
+        outSlope: -52.160095
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -58.2
+        inSlope: -81.51724
+        outSlope: -81.51724
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -58.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -58.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.45
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8
+        value: 0
+        inSlope: 9.549709
+        outSlope: 9.549709
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.2666667
+        value: 8.913061
+        inSlope: 7.539646
+        outSlope: 7.539646
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 6.97
+        inSlope: -2.0100634
+        outSlope: -2.0100634
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 6.97
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 6.97
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.45
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.8
+        value: 0
+        inSlope: -6.764308
+        outSlope: -6.764308
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.2666667
+        value: -6.3133535
+        inSlope: 11.083987
+        outSlope: 11.083987
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 10.94
+        inSlope: 17.848295
+        outSlope: 17.848295
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 10.94
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 10.94
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 125.6
+        outSlope: 125.6
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 31.4
+        inSlope: 62.8
+        outSlope: 62.8
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.1666666
+        value: 31.4
+        inSlope: -6.977307
+        outSlope: -6.977307
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.5166667
+        value: 26.515884
+        inSlope: -6.977307
+        outSlope: -6.977307
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 26.515884
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 26.515884
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 26.515884
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 412.8
+        outSlope: 412.8
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 103.2
+        inSlope: 206.4
+        outSlope: 206.4
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.1666666
+        value: 103.2
+        inSlope: 79.93848
+        outSlope: 79.93848
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.5166667
+        value: 159.15694
+        inSlope: 79.93848
+        outSlope: 79.93848
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 159.15694
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 159.15694
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 159.15694
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 289.6
+        outSlope: 289.6
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 72.4
+        inSlope: 144.8
+        outSlope: 144.8
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.1666666
+        value: 72.4
+        inSlope: -41
+        outSlope: -41
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.5166667
+        value: 43.7
+        inSlope: -41
+        outSlope: -41
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 43.7
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 43.7
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 43.7
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 125.6
+        outSlope: 125.6
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 31.4
+        inSlope: 44.89749
+        outSlope: 44.89749
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6333333
+        value: 17.674746
+        inSlope: -13.186703
+        outSlope: -13.186703
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 21.133001
+        inSlope: -34.39821
+        outSlope: -34.39821
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.1666666
+        value: 8.095
+        inSlope: -39.114014
+        outSlope: -39.114014
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: 8.095
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: 8.095
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 8.095
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -412.8
+        outSlope: -412.8
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -103.2
+        inSlope: -161.66699
+        outSlope: -161.66699
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6333333
+        value: -68.9047
+        inSlope: 69.39531
+        outSlope: 69.39531
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -50.819004
+        inSlope: -59.040695
+        outSlope: -59.040695
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.1666666
+        value: -78.72
+        inSlope: -83.70301
+        outSlope: -83.70301
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -78.72
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -78.72
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -78.72
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -289.6
+        outSlope: -289.6
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -72.4
+        inSlope: -107.948654
+        outSlope: -107.948654
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6333333
+        value: -44.1473
+        inSlope: 26.916302
+        outSlope: 26.916302
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: -51.433002
+        inSlope: -39.77906
+        outSlope: -39.77906
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.1666666
+        value: -61.381004
+        inSlope: -29.844013
+        outSlope: -29.844013
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1.75
+        value: -61.381004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 2.5
+        value: -61.381004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -61.381004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -90
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1
+        value: -90
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.3
+        value: -96.746994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.75
+        value: -96.746994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 2.5
+        value: -96.746994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 3.1666667
+        value: -96.746994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 2.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.3
+        value: 25.728989
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.75
+        value: 25.728989
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 2.5
+        value: 25.728989
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 3.1666667
+        value: 25.728989
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS neck
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS wing right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS neck/LizardMan BOSS head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3/LizardMan BOSS tail 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS Legs
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS tail 0/LizardMan BOSS tail 1/LizardMan
+      BOSS tail 2/LizardMan BOSS tail 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: LizardMan BOSS body/LizardMan BOSS wing left
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 1
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_IsEmpty: 0
+  m_Events: []
