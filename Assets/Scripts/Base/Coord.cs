@@ -21,6 +21,12 @@ public struct Coord
 		return x + "_" + y;
 	}
 
+	public static readonly Coord zero = new Coord(0, 0);
+	public static readonly Coord up = new Coord(0, 1);
+	public static readonly Coord down = new Coord(0, -1);
+	public static readonly Coord left = new Coord(-1, 0);
+	public static readonly Coord right = new Coord(1, 0);
+
 	public static Coord operator +(Coord a, Coord b)
 	{
 		return new Coord(a.x + b.x, a.y + b.y);
@@ -55,5 +61,16 @@ public struct CoordRect
 		this.y = y;
 		this.w = w;
 		this.h = h;
+	}
+
+	public static bool operator ==(CoordRect a, CoordRect b)
+	{
+		return a.x == b.x && a.y == b.y
+			&& a.w == b.w && a.h == b.h;
+	}
+
+	public static bool operator !=(CoordRect a, CoordRect b)
+	{
+		return !(a == b);
 	}
 }

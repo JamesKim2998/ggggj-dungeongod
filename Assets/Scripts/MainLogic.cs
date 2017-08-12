@@ -67,7 +67,7 @@ public class MainLogic : MonoBehaviour
 	void UpdateFogOfWar()
 	{
 		var floor = dungeon.currentFloor;
-		floor.fogOfWar.UpdateVisibilty(floor, hero.coord, hero.visibleDistance);
+		floor.fogOfWar.UpdateVisibilty(hero, hero.visibleDistance);
 	}
 
 	void UpdateUI()
@@ -87,7 +87,7 @@ public class MainLogic : MonoBehaviour
 		hero = HeroFactory.InstantiateRandom();
 		hero.transform.position = entrance;
 		hero.onHitExit += GoToNextFloor;
-		// TODO: AI ?„ì„±?´ì„œ ??ê²?
+		// TODO: AI ?ï¿½ì„±?ï¿½ì„œ ??ï¿½?
 		// heroController = hero.gameObject.AddComponent<HeroController>();
 		hero.gameObject.AddComponent<CharacterInputController>();
 
