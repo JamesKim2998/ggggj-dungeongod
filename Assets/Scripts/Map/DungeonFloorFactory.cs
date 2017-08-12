@@ -2,21 +2,20 @@ using UnityEngine;
 
 public static class DungeonFloorFactory
 {
-    public static DungeonFloor InstantitateFloor(int floorToInstantiate)
+	public static DungeonFloor InstantitateFloor(int floorToInstantiate)
 	{
 		return InstantitateByPrefab(floorToInstantiate);
 	}
 
-    static DungeonFloor InstantitateByPrefab(int floorToInstantiate)
-    {
-        // TODO: 우선순위 낮음.
-        // Resources.Load()
-        return null;
-    }
+	static DungeonFloor InstantitateByPrefab(int floorToInstantiate)
+	{
+		var floorPrefab = Resources.Load<GameObject>("Floors/Floor0");
+		return Object.Instantiate(floorPrefab).GetComponent<DungeonFloor>();
+	}
 
-    static DungeonFloor InstantitateByRandom()
-    {
-        // TODO: 우선순위 낮음.
-        return null;
-    }
+	static DungeonFloor InstantitateByRandom()
+	{
+		// TODO: 우선순위 낮음.
+		return null;
+	}
 }

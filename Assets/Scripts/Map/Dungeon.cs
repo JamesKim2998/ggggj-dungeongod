@@ -7,7 +7,17 @@ public class Dungeon : MonoBehaviour
     public DungeonFloor currentFloor;
     public int currentFloorIdx;
 
-    public void GoFloorDown()
+	public void Clear()
+	{
+		// TODO
+	}
+
+	public void LoadInitLevel()
+	{
+		DungeonFloorFactory.InstantitateFloor(0);
+	}
+
+    public void GoToNextFloor()
     {
         // TOOD
         ++currentFloorIdx;

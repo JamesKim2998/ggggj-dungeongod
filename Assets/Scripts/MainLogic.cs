@@ -8,13 +8,14 @@ public class MainLogic : MonoBehaviour
 
     public float turnDelay = 3.0f;
 
-    public int level;
-    public List<Dungeon> floors;
+    public Dungeon dungeon;
     public God god;
 
     public bool isEnemyPhase = false;
 
-    private List<Enemy> enemies = new List<Enemy>();
+    private List<Enemy> enemies {
+		get { return dungeon.currentFloor.enemies; }
+	}
 
     void Awake()
     {
@@ -52,17 +53,16 @@ public class MainLogic : MonoBehaviour
         //           "Level 
 
         //TODO : if we do not generate maps, erase following line
-        floors.Clear();
-        this.level = 0;
-        LoadLevel(this.level);
+        dungeon.Clear();
+		dungeon.LoadInitLevel();
         //TODO : Instantiate new Hero
 
         //TODO : Blind deactivate
     }
 
-    void LoadLevel(int level)
+	/*
+	void LoadLevel(int level)
     {
-
         //TODO : Blind activate
         //          "Level #"
 
@@ -75,13 +75,7 @@ public class MainLogic : MonoBehaviour
 
         //TODO : Blind deactivate
     }
-
-    void GenerateMonsters(int level)
-    {
-        enemies.Clear();
-
-        //TODO : generate Monsters.
-    }
+	*/
 
     IEnumerator EnemyPhase()
     {
@@ -98,8 +92,7 @@ public class MainLogic : MonoBehaviour
 
     public void GoToNextFloor()
     {
-        this.level++;
-        LoadLevel(this.level);
+		dungeon.GoToNextFloor();
     }
 
     public void GameOver()
