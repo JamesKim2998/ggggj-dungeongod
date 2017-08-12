@@ -14,7 +14,7 @@ public class HeroController : MonoBehaviour
     {
 		if (hero == null)
 		{
-			Debug.LogError("Why null? " + name);
+			//Debug.LogError("Why null? " + name);
 			return;
 		}
 
