@@ -7,13 +7,18 @@ public class Enemy : Character
     public int exp = 12;
     public bool isLootable = false;
 
+    public bool prePanic = false;
+    public int rage = 0;
+
+    public Coord initialCoord;
+    public ConditionType defaultCondition = ConditionType.GATHER;
+
     public EnemyReaction reaction;
-    public bool raged = false;
 
     protected override void Awake()
     {
 		base.Awake();
-        condition = new Condition(ConditionType.WAIT, 1);
+        condition = defaultCondition;
     }
 
     public void Looted()
@@ -23,14 +28,8 @@ public class Enemy : Character
 
     public virtual void Attack(Hero hero)
     {
-        /*
-        if (raged)
-        {
-            hero.getDamage((int)(power * 1.2f));
-            raged = false;
-        }
-        else*/
-        hero.getDamage(power, DiceRoll() );
+        hero.getDamage(power, DiceRoll() + rage);
+        rage = 0;
 
     }
 
