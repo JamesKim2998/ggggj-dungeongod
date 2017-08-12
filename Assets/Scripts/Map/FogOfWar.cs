@@ -4,57 +4,155 @@ using UnityEngine;
 
 public class FogOfWar : MonoBehaviour
 {
-	public GameObject prefabQuad;
-	public Transform quadRoot;
-	public Material matGodVisible;
-
-	class QuadInfo
+	enum Visiblity
 	{
-		public bool godVisible;
-		public GameObject go;
-		public MeshRenderer renderer;
+		None,
+		God,
+		Hero,
 	}
 
-	readonly Dictionary<Coord, QuadInfo> quads = new Dictionary<Coord, QuadInfo>();
-	HashSet<Coord> heroVisiblity = new HashSet<Coord>();
+	struct QuadInfo
+	{
+		public int quadIdx;
+		public Visiblity visiblity;
+	}
+
+	public MeshFilter meshFilter;
+	Mesh mesh;
 	CoordRect oldBoundingRect;
 
-	void Update()
+	HashSet<Coord> visibleToHero = new HashSet<Coord>();
+	readonly Dictionary<Coord, QuadInfo> quadInfos = new Dictionary<Coord, QuadInfo>();
+	readonly Dictionary<Coord, Visiblity> quadUpdates = new Dictionary<Coord, Visiblity>();
+
+	void Awake()
 	{
-		UpdateFrustrum();
+		mesh = new Mesh();
+		meshFilter.mesh = mesh;
+	}
+
+	void RequestUpdate(Coord coord, Visiblity visiblity)
+	{
+		quadUpdates[coord] = visiblity;
+	}
+
+	void RequestAdd(Coord coord)
+	{
+		if (quadUpdates.ContainsKey(coord)) return;
+		quadUpdates[coord] = Visiblity.None;
 	}
 
 	public bool IsVisibleByGod(Coord coord)
 	{
-		if (!quads.ContainsKey(coord))
+		QuadInfo test;
+		if (!quadInfos.TryGetValue(coord, out test))
 			return false;
-		return quads[coord].godVisible;
+		return test.visiblity != Visiblity.None;
 	}
 
 	public bool IsVisibleByHero(Coord coord)
 	{
-		return heroVisiblity.Contains(coord);
+		QuadInfo test;
+		if (!quadInfos.TryGetValue(coord, out test))
+			return false;
+		return test.visiblity == Visiblity.Hero;
 	}
 
-	QuadInfo PullQuad(Coord coord)
+	void ResolveAllUpdateVisiblityRequest()
+	{
+		if (quadUpdates.Count == 0)
+			return;
+
+		var addedQuadCount = 0;
+		foreach (var update in quadUpdates)
+		{
+			if (!quadInfos.ContainsKey(update.Key))
+				++addedQuadCount;
+		}
+
+		var newQuadCount = quadInfos.Count + addedQuadCount;
+		var newVertexCount = newQuadCount * 4;
+		var newUVCount = newVertexCount;
+		var newTriangleCount = newQuadCount * 6;
+		var newVertexes = new Vector3[newVertexCount];
+		var newUVs = new Vector2[newUVCount];
+		var newTriangles = new int[newTriangleCount];
+		System.Array.Copy(mesh.vertices, newVertexes, mesh.vertices.Length);
+		System.Array.Copy(mesh.uv, newUVs, mesh.uv.Length);
+		System.Array.Copy(mesh.triangles, newTriangles, mesh.triangles.Length);
+
+		foreach (var update in quadUpdates)
+		{
+			ResolveUpdateVisiblityRequest(
+				update.Key, update.Value,
+				newVertexes, newUVs, newTriangles);
+		}
+		mesh.vertices = newVertexes;
+		mesh.uv = newUVs;
+		mesh.triangles = newTriangles;
+		mesh.UploadMeshData(false);
+
+		quadUpdates.Clear();
+	}
+
+	void ResolveUpdateVisiblityRequest(
+		Coord coord, Visiblity visiblity,
+		Vector3[] vertexes, Vector2[] uvs, int[] triangles)
 	{
 		QuadInfo quadInfo;
-		if (quads.TryGetValue(coord, out quadInfo))
-			return quadInfo;
+		if (!quadInfos.TryGetValue(coord, out quadInfo))
+		{
+			quadInfo.quadIdx = quadInfos.Count;
+			quadInfo.visiblity = visiblity;
+			quadInfos.Add(coord, quadInfo);
 
-		quadInfo = new QuadInfo();
-		quads[coord] = quadInfo;
+			var quadIdx = quadInfo.quadIdx;
+			var vStart = quadIdx * 4;
+			var origin = coord.ToVector3();
+			vertexes[vStart] = origin;
+			vertexes[vStart + 1] = origin + Vector3.forward;
+			vertexes[vStart + 2] = origin + new Vector3(1, 0, 1);
+			vertexes[vStart + 3] = origin + Vector3.right;
+			var tStart = quadIdx * 6;
+			triangles[tStart] = vStart;
+			triangles[tStart + 1] = vStart + 1;
+			triangles[tStart + 2] = vStart + 2;
+			triangles[tStart + 3] = vStart;
+			triangles[tStart + 4] = vStart + 2;
+			triangles[tStart + 5] = vStart + 3;
+		}
+		else
+		{
+			var oldVisiblity = quadInfo.visiblity;
+			if (oldVisiblity == visiblity) return;
+			quadInfo.visiblity = visiblity;
+		}
 
-		var pos = coord.ToVector3(0.5f);
-		var quad = Instantiate(prefabQuad, pos, Quaternion.identity, quadRoot);
-		quad.name = coord.ToString();
-		quad.transform.eulerAngles = new Vector3(90, 0, 0);
-		quad.SetActive(true);
+		quadInfos[coord] = quadInfo;
+		var uvStart = quadInfo.quadIdx * 4;
+		var alpha = AlphaForVisiblity(visiblity);
+		var alpha2 = new Vector2(alpha, alpha);
+		uvs[uvStart] = alpha2;
+		uvs[uvStart + 1] = alpha2;
+		uvs[uvStart + 2] = alpha2;
+		uvs[uvStart + 3] = alpha2;
+	}
 
-		quadInfo.go = quad;
-		quadInfo.renderer = quad.GetComponent<MeshRenderer>();
+	static float AlphaForVisiblity(Visiblity visiblity)
+	{
+		switch (visiblity)
+		{
+			case Visiblity.None: return 1;
+			case Visiblity.God: return 0.3f;
+			case Visiblity.Hero: return 0;
+			default: return 1;
+		}
+	}
 
-		return quadInfo;
+	void Update()
+	{
+		UpdateFrustrum();
+		ResolveAllUpdateVisiblityRequest();
 	}
 
 	void UpdateFrustrum()
@@ -74,7 +172,7 @@ public class FogOfWar : MonoBehaviour
 		oldBoundingRect = boundingRect;
 
 		foreach (var coord in Range.Grid(boundingRect))
-			PullQuad(coord);
+			RequestAdd(coord);
 	}
 
 	public static CoordRect BoundingXZRect(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
@@ -93,60 +191,40 @@ public class FogOfWar : MonoBehaviour
 		return ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
 	}
 
-	void SetHeroVisible(Coord coord)
-	{
-		var quadInfo = PullQuad(coord);
-		quadInfo.godVisible = true;
-		if (quadInfo.go.activeSelf)
-			quadInfo.go.SetActive(false);
-	}
-
-	void SetGodVisible(Coord coord)
-	{
-		var quadInfo = PullQuad(coord);
-		quadInfo.godVisible = true;
-		if (!quadInfo.go.activeSelf)
-			quadInfo.go.SetActive(true);
-		quadInfo.renderer.sharedMaterial = matGodVisible;
-	}
-
 	public void UpdateVisibilty(Character character, int visibleDistance)
 	{
 		var center = character.coord;
 
-		var oldVisible = heroVisiblity;
-		heroVisiblity = new HashSet<Coord>();
+		var oldVisibleToVisible = visibleToHero;
+		visibleToHero = new HashSet<Coord>();
 
-		// TODO: 벽체크.
 		foreach (var testDelta in Range.InsideDistance(visibleDistance))
 		{
 			var testCoord = center + testDelta;
+
+			// Check wall
 			RaycastHit hitInfo;
 			if (!character.CanSee(testCoord, out hitInfo))
 			{
 				var hitCoord = Coord.Round(hitInfo.transform.position);
-				if (hitCoord != testCoord)
-					continue;
+				if (hitCoord != testCoord) continue;
 			}
 
-			SetHeroVisible(testCoord);
-			heroVisiblity.Add(testCoord);
+			RequestUpdate(testCoord, Visiblity.Hero);
+			visibleToHero.Add(testCoord);
 		}
 
-		foreach (var oldVisibleCoord in oldVisible)
+		foreach (var oldVisibleCoord in oldVisibleToVisible)
 		{
-			if (!heroVisiblity.Contains(oldVisibleCoord))
-				SetGodVisible(oldVisibleCoord);
+			if (!visibleToHero.Contains(oldVisibleCoord))
+				RequestUpdate(oldVisibleCoord, Visiblity.God);
 		}
 	}
 
 	public void ClearHeroVisibility()
 	{
-		foreach (var coord in heroVisiblity)
-		{
-			var quadInfo = quads[coord];
-			quadInfo.renderer.sharedMaterial = matGodVisible;
-		}
-		heroVisiblity.Clear();
+		foreach (var coord in visibleToHero)
+			RequestUpdate(coord, Visiblity.God);
+		visibleToHero.Clear();
 	}
 }
