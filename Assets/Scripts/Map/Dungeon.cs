@@ -36,8 +36,6 @@ public class Dungeon : MonoBehaviour
 			floors.Add(currentFloor);
 		}
 
-        MainLogic.instance.pathFinder.UpdateMapInfo(currentFloor);
-
 		return currentFloor.entrance.transform.position;
 	}
 

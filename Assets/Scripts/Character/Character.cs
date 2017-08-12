@@ -21,6 +21,7 @@ public abstract class Character : MonoBehaviour
 	private float inverseMoveTime;
 
 	public ConditionType condition;
+	public int visibleDistance = 10;
 	public new CharacterAnimation animation;
 
 	protected virtual void Awake()
@@ -45,7 +46,20 @@ public abstract class Character : MonoBehaviour
 
 	public bool CanSee(Coord testCoord, out RaycastHit hitInfo)
 	{
-		return !IsCoordBlocked(testCoord, out hitInfo);
+		if (Coord.distance(testCoord, coord) > visibleDistance)
+		{
+			hitInfo = default(RaycastHit);
+			return false;
+		}
+		var isBlocked = IsCoordBlocked(testCoord, out hitInfo);
+		if (!isBlocked) return true;
+		return Coord.Round(hitInfo.collider.transform.position) == testCoord;
+	}
+
+	public bool CanSee(Coord testCoord)
+	{
+		RaycastHit unused;
+		return CanSee(testCoord, out unused);
 	}
 
 	//return if Moving was successful

@@ -10,7 +10,6 @@ public class MainLogic : MonoBehaviour
 
     public Dungeon dungeon;
     public God god;
-    public PathFinder pathFinder;
 
 	public Hero hero;
 	public HeroController heroController;
@@ -43,8 +42,6 @@ public class MainLogic : MonoBehaviour
 		heroPlaceholder = hero;
 		heroControllerPlaceholder = heroController;
         
-        pathFinder = new PathFinder();
-        pathFinder.init();
         InitGame();
 		StartCoroutine(CoroutineCycleTurnInfinite());
 
@@ -57,12 +54,18 @@ public class MainLogic : MonoBehaviour
         ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
         ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
 
-        ItemManager.equipDic.Add(EquipmentType.ARMOR, 0);
-        ItemManager.equipDic.Add(EquipmentType.BOOTS, 0);
-        ItemManager.equipDic.Add(EquipmentType.GAUNTLET, 0);
-        ItemManager.equipDic.Add(EquipmentType.HELMET, 0);
-        ItemManager.equipDic.Add(EquipmentType.SHIELD, 0);
-        ItemManager.equipDic.Add(EquipmentType.WEAPON, 0);
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR0, new EquipmentInfo(EquipmentType.ARMOR, 0));
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR1, new EquipmentInfo(EquipmentType.ARMOR, 20));
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR2, new EquipmentInfo(EquipmentType.ARMOR, 30));
+        ItemManager.equipDic.Add(EquipmentCode.ARMOR3, new EquipmentInfo(EquipmentType.ARMOR, 40));
+
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON0, new EquipmentInfo(EquipmentType.WEAPON, 0));
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON1, new EquipmentInfo(EquipmentType.WEAPON, 20));
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON2, new EquipmentInfo(EquipmentType.WEAPON, 30));
+        ItemManager.equipDic.Add(EquipmentCode.WEAPON3, new EquipmentInfo(EquipmentType.WEAPON, 40));
+
+        ItemManager.heroEquipInfo.Add(EquipmentType.ARMOR, EquipmentCode.ARMOR0);
+        ItemManager.heroEquipInfo.Add(EquipmentType.WEAPON, EquipmentCode.WEAPON0);
     }
 
     void Update()
@@ -98,7 +101,7 @@ public class MainLogic : MonoBehaviour
 	void UpdateFogOfWar()
 	{
 		var floor = dungeon.currentFloor;
-		floor.fogOfWar.UpdateVisibilty(hero, hero.visibleDistance);
+		floor.fogOfWar.UpdateVisibilty(hero, hero.fogDistance);
 	}
 
 	void UpdateUI()
@@ -312,8 +315,7 @@ public class MainLogic : MonoBehaviour
         {
             if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
             {
-                Debug.Log("RUN");
-                //hero.condition = new Condition(ConditionType.RUNAWAY, 4);
+                hero.nextCondition = ConditionType.PANIC;
             }
         }
         

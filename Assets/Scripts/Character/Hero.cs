@@ -7,9 +7,8 @@ public class Hero : Character
 	public int level = 1;
 	public int expNeeded = 10;
 
-	public bool preParalyzed = false;
-	public bool prePanic = false;
-	public int visibleDistance = 8;
+	public ConditionType? nextCondition;
+	public int fogDistance = 8;
 
 	public ConditionType defaultCondition = ConditionType.EXPLORE;
 
@@ -30,9 +29,9 @@ public class Hero : Character
 
 		else if (other.tag == "Equipment")
 		{
-            if (other.GetComponent<EquipmentItem>().power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().type]){
-                ItemManager.equipDic.Remove(other.GetComponent<EquipmentItem>().type);
-                ItemManager.equipDic.Add(other.GetComponent<EquipmentItem>().type, other.GetComponent<EquipmentItem>().power);
+            if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power){
+                ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
+                ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
             }
 			// TODO :  loot or ignore
 		}

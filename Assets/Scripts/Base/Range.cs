@@ -72,4 +72,28 @@ public static class Range
 				yield return new Coord(x, y);
 		}
 	}
+
+	/*
+	public static IEnumerable<Coord> InsideDistanceNearToFar(int distance)
+	{
+		for (var d = 0; d != distance; ++d)
+		{
+			for (var x = d; x >= -d; --x)
+				yield return new Coord(x, d - Mathf.Abs(x));
+			for (var x = -d + 1; x <= d - 1; ++x)
+				yield return new Coord(x, -d + Mathf.Abs(x));
+		}
+	}
+	*/
+
+	public static IEnumerable<Coord> DistanceNearToFar(int distance)
+	{
+		for (var d = 0; d != distance; ++d)
+		{
+			for (var x = d; x >= -d; --x)
+				yield return new Coord(x, d - Mathf.Abs(x));
+			for (var x = -d + 1; x <= d - 1; ++x)
+				yield return new Coord(x, -d + Mathf.Abs(x));
+		}
+	}
 }

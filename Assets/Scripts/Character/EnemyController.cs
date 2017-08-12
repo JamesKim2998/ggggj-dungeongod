@@ -2,7 +2,7 @@
 
 public class EnemyController : MonoBehaviour
 {
-    protected PathFinder pathFinder;
+    PathFinder pathFinder;
     protected Enemy character;
     protected Hero hero;
 
@@ -10,6 +10,11 @@ public class EnemyController : MonoBehaviour
     public int chaseDistance = 4;
     public int attackRange = 1;
     public int countdown = 0;
+
+	void Awake()
+	{
+		pathFinder = MainLogic.instance.dungeon.currentFloor.pathFinder;
+	}
 
     private void OnEnable()
     {
@@ -70,7 +75,6 @@ public class EnemyController : MonoBehaviour
 
     public virtual void RunAway(Coord Source)
     {
-        pathFinder = MainLogic.instance.pathFinder;
         character.TryToMove(
             pathFinder.FindPath(character.coord, Source)
             .Reverse());
@@ -78,7 +82,6 @@ public class EnemyController : MonoBehaviour
 
     public virtual void Follow(Coord Source)
     {
-        pathFinder = MainLogic.instance.pathFinder;
         character.TryToMove(
             pathFinder.FindPath(character.coord, Source));
 
@@ -106,6 +109,7 @@ public class EnemyController : MonoBehaviour
     public virtual void NextTurn()
     {
         var hero = MainLogic.instance.hero;
+        UpdateCondition(hero);
 
         switch (character.condition)
         {

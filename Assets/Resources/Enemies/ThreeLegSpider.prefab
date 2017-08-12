@@ -52,9 +52,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4847638346825782}
   - component: {fileID: 114130359033258056}
-  - component: {fileID: 114262733434784172}
   - component: {fileID: 65917250832447362}
   - component: {fileID: 54836398898525402}
+  - component: {fileID: 114665513567794164}
   m_Layer: 8
   m_Name: ThreeLegSpider
   m_TagString: Untagged
@@ -187,11 +187,16 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
+  condition: 0
+  visibleDistance: 10
+  animation: {fileID: 0}
   exp: 12
   isLootable: 0
+  prePanic: 0
+  rage: 0
+  defaultCondition: 2
   reaction: 0
-  raged: 0
---- !u!114 &114262733434784172
+--- !u!114 &114665513567794164
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -199,8 +204,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613055945346848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0257c31513f13114aa3e792cf95c1d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b2689004d5191d44b32b978de1bf571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonFloor: {fileID: 0}
-  detectDistance: 4
+  detectDistance: 3
+  chaseDistance: 4
+  attackRange: 1
+  countdown: 0

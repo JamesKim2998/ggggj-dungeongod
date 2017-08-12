@@ -4,22 +4,15 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public static Dictionary<ConsumableItemCode, int> consumalbeDic = new Dictionary<ConsumableItemCode, int>();
-    public static Dictionary<EquipmentType, int> equipDic = new Dictionary<EquipmentType, int>();
+
+    public static Dictionary<EquipmentType, EquipmentCode> heroEquipInfo = new Dictionary<EquipmentType, EquipmentCode>();
+
+    public static Dictionary<EquipmentCode, EquipmentInfo> equipDic = new Dictionary<EquipmentCode, EquipmentInfo>();
+
     public Item[] items;
 
     public int sumOfPowerFromEquipments()
     {
-        int sum = 0;
-        for (int i=0; i<=6; ++i)
-        {
-            sum += equipDic[(EquipmentType)i];
-        }
-        return sum;
+        return equipDic[heroEquipInfo[EquipmentType.ARMOR]].power + equipDic[heroEquipInfo[EquipmentType.WEAPON]].power;
     }
-
-    private void Awake()
-    {
-        items = FindObjectsOfType<Item>();
-    }
-
 }
