@@ -30,17 +30,22 @@ public class Hero : Character
 
 		else if (other.tag == "Equipment")
 		{
+            if (other.GetComponent<EquipmentItem>().power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().type]){
+                ItemManager.equipDic.Remove(other.GetComponent<EquipmentItem>().type);
+                ItemManager.equipDic.Add(other.GetComponent<EquipmentItem>().type, other.GetComponent<EquipmentItem>().power);
+            }
 			// TODO :  loot or ignore
 		}
 
-		else if (other.tag == "Consumable")
-		{
-			if ((int)other.GetComponent<ConsumableItem>().code <= 2) // ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-				MainLogic.instance.hero.HP += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-			else //ï¿½ï¿½ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-				MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-			Destroy(other.gameObject);
-		}
+        else if (other.tag == "Consumable")
+        {
+            if ((int)other.GetComponent<ConsumableItem>().code <= 2) // Èú°è¿­ ¾ÆÀÌÅÛ
+                MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
+            else //¹öÇÁ°è¿­ ¾ÆÀÌÅÛ
+                MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+            Destroy(other.gameObject);
+        }
+
 	}
 
 	public void checkBuffEnded()
