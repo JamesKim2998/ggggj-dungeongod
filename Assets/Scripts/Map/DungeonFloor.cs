@@ -46,6 +46,16 @@ public class DungeonFloor : MonoBehaviour
 		}
 	}
 
+	void OnDisable()
+	{
+		foreach (var enemy in enemies)
+		{
+			if (enemy != null)
+				Destroy(enemy.gameObject);
+		}
+		enemies.Clear();
+	}
+
 	RaycastHit[] hitsCache = new RaycastHit[16];
 	public bool CheckWallExists(Coord coord)
 	{
@@ -62,7 +72,8 @@ public class DungeonFloor : MonoBehaviour
 
 	public IEnumerable<Enemy> EachEnemy()
 	{
-		foreach (var enemy in enemies)
+		var tempEnemies = new List<Enemy>(enemies);
+		foreach (var enemy in tempEnemies)
 		{
 			if (enemy == null) continue;
 			yield return enemy;

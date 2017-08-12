@@ -38,4 +38,13 @@ public class Dungeon : MonoBehaviour
 
 		return currentFloor.entrance.transform.position;
 	}
+
+	public Vector3 GoBackToFirstFloor()
+	{
+		currentFloor.gameObject.SetActive(false);
+		currentFloor = floors[0];
+		currentFloorIdx = 0;
+		currentFloor.gameObject.SetActive(true);
+		return currentFloor.entrance.transform.position;
+	}
 }
