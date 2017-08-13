@@ -248,7 +248,7 @@ public class MainLogic : MonoBehaviour
 
 	IEnumerator CoroutineOnHeroDead()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(0.3f);
 
 		// Skeleton
 		var skeletonPrefab = Resources.Load<GameObject>("Hero/Dead Skeleton");
@@ -256,12 +256,14 @@ public class MainLogic : MonoBehaviour
 		var rotation = hero.transform.rotation;
 		var parent = dungeon.currentFloor.transform;
 		Instantiate(skeletonPrefab, position, rotation, parent);
-		yield return new WaitForSeconds(2);
 
+		// Destroy Hero
+		Destroy(hero.gameObject);
 		hero = heroPlaceholder;
 		heroController = heroControllerPlaceholder;
+		yield return new WaitForSeconds(1);
+
 		GoBackToFirstFloor();
-		Destroy(hero.gameObject);
 	}
 
 	/*

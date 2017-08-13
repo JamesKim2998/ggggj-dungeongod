@@ -39,6 +39,11 @@ public abstract class Character : MonoBehaviour
 
 	protected virtual void Awake()
 	{
+		Init();
+	}
+
+	void Init()
+	{
 		boxCollider = GetComponent<BoxCollider>();
 		rigidbody = GetComponent<Rigidbody>();
 		animation = GetComponentInChildren<CharacterAnimation>();
@@ -55,6 +60,8 @@ public abstract class Character : MonoBehaviour
 
 	public bool IsCoordBlocked(Coord testCoord, out RaycastHit hitInfo)
 	{
+		if (boxCollider == null)
+			Init();
 		var start = transform.position;
 		var dest = testCoord.ToVector3(start.y);
 		bool isHit = false;

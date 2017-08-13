@@ -62,6 +62,8 @@ public class HeroController : MonoBehaviour
 
 	public void NextTurn()
 	{
+		if (character == null) return;
+
 		if (nextCondition.HasValue)
 		{
 			TransferToCondition(nextCondition.Value);
