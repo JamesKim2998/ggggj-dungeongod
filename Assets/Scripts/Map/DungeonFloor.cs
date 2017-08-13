@@ -9,6 +9,7 @@ public class DungeonFloor : MonoBehaviour
 
 	public Transform enemySpawnRoot;
 	public List<GameObject> enemySpawnInfo = new List<GameObject>();
+	public List<GameObject> objectsToReset = new List<GameObject>();
 	List<Enemy> enemies = new List<Enemy>();
 	Item[] items = new Item[0];
 
@@ -51,6 +52,10 @@ public class DungeonFloor : MonoBehaviour
 			enemy.GetComponent<Enemy>().initialCoord = Coord.Round(point);
 			enemies.Add(enemy.GetComponent<Enemy>());
 			index++;
+		}
+		foreach (var item in objectsToReset)
+		{
+			item.SetActive(true);
 		}
 
 		items = FindObjectsOfType<Item>();

@@ -34,9 +34,10 @@ public class Hero : Character
 			{
 				ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
 				ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
-				Destroy(other.gameObject);
+				other.gameObject.SetActive(false);
+				other.GetComponentInParent<DungeonFloor>().objectsToReset.Add(other.gameObject);
 				AudioManager.playSFX(this, MainLogic.instance.audioManager.SFXs[3]);
-                EffectSpawner.SetEffect("PwUP", transform.position);
+				EffectSpawner.SetEffect("PwUP", transform.position);
 			}
 			// TODO :  loot or ignore
 		}
@@ -47,7 +48,8 @@ public class Hero : Character
 			MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
 			// else //�����迭 ������
 			// MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-			Destroy(other.gameObject);
+			other.gameObject.SetActive(false);
+			other.GetComponentInParent<DungeonFloor>().objectsToReset.Add(other.gameObject);
 			AudioManager.playSFX(this, MainLogic.instance.audioManager.SFXs[3]);
 		}
 
