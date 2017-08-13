@@ -31,6 +31,8 @@ public class Enemy : Character
 
 	public virtual void Attack(Hero hero)
 	{
+		if (hero.IsDead()) return;
+
 		if (animation != null)
 		{
 			animation.Attack(hero, callback: AttackCallback);
