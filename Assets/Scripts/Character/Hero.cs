@@ -35,7 +35,8 @@ public class Hero : Character
 				ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
 				ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
 				Destroy(other.gameObject);
-				EffectSpawner.SetEffect("PwUP", transform.position);
+				AudioManager.playSFX(this, MainLogic.instance.audioManager.SFXs[3]);
+                EffectSpawner.SetEffect("PwUP", transform.position);
 			}
 			// TODO :  loot or ignore
 		}
@@ -47,6 +48,7 @@ public class Hero : Character
 			// else //�����迭 ������
 			// MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
 			Destroy(other.gameObject);
+			AudioManager.playSFX(this, MainLogic.instance.audioManager.SFXs[3]);
 		}
 
 	}
@@ -86,7 +88,8 @@ public class Hero : Character
 		}
 		if (levelup)
 		{
-			StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
+			var clip = MainLogic.instance.audioManager.SFXs[4];
+			AudioManager.playSFX(this, clip, 0);
 			EffectSpawner.SetEffect("LvUP", transform.position);
 		}
 	}

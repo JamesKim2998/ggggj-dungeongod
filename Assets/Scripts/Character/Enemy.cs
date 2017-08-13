@@ -15,6 +15,9 @@ public class Enemy : Character
 
 	public EnemyReaction reaction;
 
+	public SFXInfo attackSFX;
+	public SFXInfo dieSFX;
+
 	protected override void Awake()
 	{
 		base.Awake();
@@ -31,6 +34,7 @@ public class Enemy : Character
 		if (animation != null)
 		{
 			animation.Attack(hero, callback: AttackCallback);
+			PlaySFX(attackSFX);
 		}
 		else
 		{
@@ -60,7 +64,11 @@ public class Enemy : Character
 	public override void getDamage(int power, int dice)
 	{
 		base.getDamage(power, dice);
-		if (IsDead()) isLootable = true;
+		if (IsDead())
+		{
+			isLootable = true;
+			PlaySFX(dieSFX);
+		}
 	}
 
 	public override void Die()

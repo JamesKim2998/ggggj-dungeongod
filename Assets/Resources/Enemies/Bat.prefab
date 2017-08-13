@@ -454,12 +454,24 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 10
   animation: {fileID: 0}
+  moveSFX:
+    clip: {fileID: 8300000, guid: 3a14a13b9097649908dbc0d85a9ea39a, type: 3}
+    delay: 0.1
+    volume: 1
   exp: 5
   isLootable: 0
   prePanic: 0
   rage: 0
   defaultCondition: 0
   reaction: 3
+  attackSFX:
+    clip: {fileID: 8300000, guid: 799b9613cb402445898368fa0db3fe19, type: 3}
+    delay: 0
+    volume: 0.8
+  dieSFX:
+    clip: {fileID: 8300000, guid: be6a8db7968d04ee08b21c9aefcc0077, type: 3}
+    delay: 0.8
+    volume: 0.8
 --- !u!114 &114898712199312852
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,6 +1,16 @@
 using UnityEngine;
 using System.Collections;
 using DG.Tweening;
+using System;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public class SFXInfo
+{
+	public AudioClip clip;
+	public float delay;
+	public float volume = 1;
+}
 
 public abstract class Character : MonoBehaviour
 {
@@ -25,12 +35,22 @@ public abstract class Character : MonoBehaviour
 	public new CharacterAnimation animation;
 	protected string moveType = "Move";
 
+	public SFXInfo moveSFX;
+
 	protected virtual void Awake()
 	{
 		boxCollider = GetComponent<BoxCollider>();
 		rigidbody = GetComponent<Rigidbody>();
 		animation = GetComponentInChildren<CharacterAnimation>();
 		inverseMoveTime = 1f / moveTime;
+	}
+
+	public void PlaySFX(SFXInfo sfxInfo)
+	{
+		if (sfxInfo.clip == null) return;
+		AudioManager.playSFX(
+			this, sfxInfo.clip,
+			sfxInfo.delay, sfxInfo.volume);
 	}
 
 	public bool IsCoordBlocked(Coord testCoord, out RaycastHit hitInfo)
@@ -119,6 +139,7 @@ public abstract class Character : MonoBehaviour
 
 		if (canMove)
 		{
+			PlaySFX(moveSFX);
 			return;
 		}
 
@@ -180,7 +201,6 @@ public abstract class Character : MonoBehaviour
 		}
 		return false;
 	}
-
 
 	public abstract void Die();
 }

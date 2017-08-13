@@ -156,8 +156,8 @@ public class MainLogic : MonoBehaviour
 		hero.transform.position = position;
 		hero.onHitExit += GoToNextFloor;
 		hero.onDead += OnHeroDead;
-		// TODO: AI ?�성?�서 ??�?
 		heroController = hero.gameObject.AddComponent<HeroController>();
+		hero.gameObject.AddComponent<AudioListener>();
 	}
 
 	void SetCameraXZToCenter(Vector3 positionToCenter)
@@ -301,7 +301,8 @@ public class MainLogic : MonoBehaviour
 				return;
 			if (isThunder)
 			{
-				StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), audioManager.SFXs[5]));
+				var clip = audioManager.SFXs[5];
+				AudioManager.playSFX(this, clip, 0);
 				thunder = Instantiate(thunderPrefab);
 				thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
 				isThunder = false;
@@ -329,7 +330,11 @@ public class MainLogic : MonoBehaviour
 
 	public void highLightObject()
 	{
-		highLighted = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+        RaycastHit firstHit;
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out firstHit);
+        if (firstHit.transform == null)
+            return;
+		highLighted = Physics.RaycastAll(new Ray(new Vector3(firstHit.transform.position.x, 10, firstHit.transform.position.z), Vector3.down));
 		foreach (var hit in highLighted)
 		{
 			hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(0.5f, 0.8f, 0.5f);
