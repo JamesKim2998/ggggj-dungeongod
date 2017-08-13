@@ -48,24 +48,26 @@ public class MainLogic : MonoBehaviour
 		audioManager = FindObjectOfType<AudioManager>();
 
 		ItemManager.consumalbeDic.Add(ConsumableItemCode.CAKE, 5);
-		ItemManager.consumalbeDic.Add(ConsumableItemCode.CHICKEN, 3);
-		ItemManager.consumalbeDic.Add(ConsumableItemCode.PIE, 2);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.CHICKEN, 5);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.PIE, 5);
 		ItemManager.consumalbeDic.Add(ConsumableItemCode.WINE, 10);
 		ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
 		ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
 
-		ItemManager.equipDic.Add(EquipmentCode.ARMOR0, new EquipmentInfo(EquipmentType.ARMOR, 0));
-		ItemManager.equipDic.Add(EquipmentCode.ARMOR1, new EquipmentInfo(EquipmentType.ARMOR, 20));
-		ItemManager.equipDic.Add(EquipmentCode.ARMOR2, new EquipmentInfo(EquipmentType.ARMOR, 30));
-		ItemManager.equipDic.Add(EquipmentCode.ARMOR3, new EquipmentInfo(EquipmentType.ARMOR, 40));
+		ItemManager.equipDic.Add(EquipmentCode.NOARMOR, new EquipmentInfo(EquipmentType.ARMOR, 0));
+		ItemManager.equipDic.Add(EquipmentCode.ARMOR0, new EquipmentInfo(EquipmentType.ARMOR, 1));
+		ItemManager.equipDic.Add(EquipmentCode.ARMOR1, new EquipmentInfo(EquipmentType.ARMOR, 2));
 
-		ItemManager.equipDic.Add(EquipmentCode.WEAPON0, new EquipmentInfo(EquipmentType.WEAPON, 0));
-		ItemManager.equipDic.Add(EquipmentCode.WEAPON1, new EquipmentInfo(EquipmentType.WEAPON, 20));
-		ItemManager.equipDic.Add(EquipmentCode.WEAPON2, new EquipmentInfo(EquipmentType.WEAPON, 30));
-		ItemManager.equipDic.Add(EquipmentCode.WEAPON3, new EquipmentInfo(EquipmentType.WEAPON, 40));
+		ItemManager.equipDic.Add(EquipmentCode.NOWEAPON, new EquipmentInfo(EquipmentType.WEAPON, 0));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON0, new EquipmentInfo(EquipmentType.WEAPON, 1));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON1, new EquipmentInfo(EquipmentType.WEAPON, 2));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON2, new EquipmentInfo(EquipmentType.WEAPON, 3));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON3, new EquipmentInfo(EquipmentType.WEAPON, 4));
 
-		ItemManager.heroEquipInfo.Add(EquipmentType.ARMOR, EquipmentCode.ARMOR0);
-		ItemManager.heroEquipInfo.Add(EquipmentType.WEAPON, EquipmentCode.WEAPON0);
+
+
+		ItemManager.heroEquipInfo.Add(EquipmentType.ARMOR, EquipmentCode.NOARMOR);
+		ItemManager.heroEquipInfo.Add(EquipmentType.WEAPON, EquipmentCode.NOWEAPON);
 	}
 
 	void Update()

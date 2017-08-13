@@ -88,6 +88,11 @@ public abstract class Character : MonoBehaviour
 
 	}
 
+	public virtual int GetPower()
+	{
+		return power;
+	}
+
 	// changing location
 	protected IEnumerator SmoothMovement(Vector3 dest)
 	{
@@ -129,7 +134,7 @@ public abstract class Character : MonoBehaviour
 
 	public virtual void getDamage(int power, int dice)
 	{
-		int powerDiff = power + dice - this.power;
+		int powerDiff = power + dice - this.GetPower();
 		bool hit = false;
 		if (powerDiff >= 12)
 		{

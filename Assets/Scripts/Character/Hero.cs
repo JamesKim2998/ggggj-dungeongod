@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class Hero : Character
 {
@@ -28,10 +29,12 @@ public class Hero : Character
 
 		else if (other.tag == "Equipment")
 		{
+			Debug.Log("Touched!");
 			if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power)
 			{
 				ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
 				ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
+				Destroy(other.gameObject);
 			}
 			// TODO :  loot or ignore
 		}
@@ -63,6 +66,12 @@ public class Hero : Character
 		CheckLevelUp();
 	}
 
+	public override int GetPower()
+	{
+		var equipPower = ItemManager.heroEquipInfo.Select(kvp => ItemManager.equipDic[kvp.Value].power).Sum();
+		return power + equipPower;
+	}
+
 	public void CheckLevelUp()
 	{
 		bool levelup = expNeeded <= 0;
@@ -89,7 +98,7 @@ public class Hero : Character
 	void AttackCallback(Character target)
 	{
 		var enemy = target as Enemy;
-		enemy.getDamage(power, DiceRoll());
+		enemy.getDamage(GetPower(), DiceRoll());
 
 		if (enemy.IsDead() && enemy.isLootable)
 		{

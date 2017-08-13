@@ -41,7 +41,7 @@ public class Enemy : Character
 	void AttackCallback(Character target)
 	{
 		var hero = target as Hero;
-		hero.getDamage(power, DiceRoll() + rage);
+		hero.getDamage(GetPower(), DiceRoll() + rage);
 		rage = 0;
 	}
 
