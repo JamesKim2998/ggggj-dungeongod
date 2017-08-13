@@ -9,6 +9,7 @@ public class CharacterAnimation : MonoBehaviour
 	Animator anim;
 	Character target;
 	System.Action<Character> attackCallback;
+	bool duringDeathAnimation = false;
 
 	/// <summary>
 	/// Awake is called when the script instance is being loaded.
@@ -47,6 +48,11 @@ public class CharacterAnimation : MonoBehaviour
 	public void SetTrigger(string trigger)
 	{
 		if (me.IsDead() && trigger != "Die") return;
+		if (trigger == "Die")
+		{
+			if (duringDeathAnimation) return;
+			duringDeathAnimation = true;
+		}
 		anim.SetTrigger(trigger);
 	}
 
