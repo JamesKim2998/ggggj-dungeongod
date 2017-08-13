@@ -435,6 +435,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195773559}
   m_Mesh: {fileID: 4300000, guid: a71b564461ea448daa50cb89dce05a79, type: 3}
+--- !u!1001 &1214207099
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1400011289
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,9 +568,13 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
+  condition: 0
+  visibleDistance: 8
+  animation: {fileID: 0}
   level: 1
   expNeeded: 10
-  visibleDistance: 8
+  fogDistance: 8
+  defaultCondition: 0
   buffed: 0
   buffedTurn: 0
 --- !u!1 &1623559352
@@ -708,45 +754,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &2087155644
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561000171187066, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3b9784ff184c64ea3992fb76374382ff, type: 2}
-  m_IsPrefabParent: 0
