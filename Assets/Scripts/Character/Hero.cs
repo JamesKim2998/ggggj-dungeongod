@@ -88,7 +88,8 @@ public class Hero : Character
 		}
 		if (levelup)
 		{
-			StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
+			var clip = MainLogic.instance.audioManager.SFXs[4];
+			AudioManager.playSFX(this, clip, 0);
 			EffectSpawner.SetEffect("LvUP", transform.position);
 		}
 	}

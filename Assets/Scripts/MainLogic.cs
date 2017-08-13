@@ -156,8 +156,8 @@ public class MainLogic : MonoBehaviour
 		hero.transform.position = position;
 		hero.onHitExit += GoToNextFloor;
 		hero.onDead += OnHeroDead;
-		// TODO: AI ?�성?�서 ??�?
 		heroController = hero.gameObject.AddComponent<HeroController>();
+		hero.gameObject.AddComponent<AudioListener>();
 	}
 
 	void SetCameraXZToCenter(Vector3 positionToCenter)
@@ -301,7 +301,8 @@ public class MainLogic : MonoBehaviour
 				return;
 			if (isThunder)
 			{
-				StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), audioManager.SFXs[5]));
+				var clip = audioManager.SFXs[5];
+				AudioManager.playSFX(this, clip, 0);
 				thunder = Instantiate(thunderPrefab);
 				thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
 				isThunder = false;
