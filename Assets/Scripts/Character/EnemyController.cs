@@ -75,7 +75,6 @@ public class EnemyController : MonoBehaviour
 
     public virtual void Wait()
     {
-        //character.TryToMove(Dir.Stay);
     }
 
     public virtual void RunAway(Coord Source)
