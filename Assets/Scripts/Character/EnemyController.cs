@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
     public int attackRange = 1;
     public int countdown = 0;
 
+    public int stopPerTurn = 1000;
+    public int stopCount = 0;
+
 	void Awake()
 	{
 		pathFinder = MainLogic.instance.dungeon.currentFloor.pathFinder;
@@ -27,8 +30,16 @@ public class EnemyController : MonoBehaviour
         this.countdown = countDown;
     }
 
-    public virtual void UpdateCondition(Hero hero) { 
-    
+    public virtual void UpdateCondition(Hero hero) {
+
+        stopCount++;
+        if (stopCount >= stopPerTurn)
+        {
+            character.condition = ConditionType.WAIT;
+            stopCount = 0;
+            return;
+        }
+
         if (character.prePanic == true) {
             character.condition = ConditionType.PANIC;
             countdown = 3;

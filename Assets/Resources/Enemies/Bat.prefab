@@ -426,10 +426,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2689004d5191d44b32b978de1bf571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDistance: 3
-  chaseDistance: 4
+  detectDistance: 6
+  chaseDistance: 6
   attackRange: 1
   countdown: 0
+  stopPerTurn: 1000
+  stopCount: 0
 --- !u!114 &114629510514854506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,12 +453,12 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 10
   animation: {fileID: 0}
-  exp: 12
+  exp: 5
   isLootable: 0
   prePanic: 0
   rage: 0
-  defaultCondition: 2
-  reaction: 0
+  defaultCondition: 0
+  reaction: 3
 --- !u!114 &114990945874199702
 MonoBehaviour:
   m_ObjectHideFlags: 1
