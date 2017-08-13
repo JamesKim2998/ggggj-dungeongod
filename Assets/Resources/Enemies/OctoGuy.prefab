@@ -65,9 +65,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4985497980114604}
   - component: {fileID: 114737163249023856}
-  - component: {fileID: 114988800650226670}
-  - component: {fileID: 65295314096294542}
   - component: {fileID: 54600550143783240}
+  - component: {fileID: 114840424400747840}
+  - component: {fileID: 65930611291823008}
+  - component: {fileID: 114598409257995934}
   m_Layer: 8
   m_Name: OctoGuy
   m_TagString: Untagged
@@ -881,7 +882,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65295314096294542
+--- !u!65 &65930611291823008
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -921,6 +922,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6915dd680f12471eb1b8431967398f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114598409257995934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061476804178620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7144ddcfb6927a94180142dc85ef4940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 114737163249023856}
 --- !u!114 &114737163249023856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,7 +961,7 @@ MonoBehaviour:
   rage: 0
   defaultCondition: 2
   reaction: 0
---- !u!114 &114988800650226670
+--- !u!114 &114840424400747840
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -956,10 +969,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1061476804178620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0257c31513f13114aa3e792cf95c1d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b2689004d5191d44b32b978de1bf571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDistance: 4
+  detectDistance: 3
   chaseDistance: 4
   attackRange: 1
   countdown: 0
+  stopPerTurn: 1000
+  stopCount: 0

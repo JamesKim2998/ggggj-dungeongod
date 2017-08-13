@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65091342025826694}
   - component: {fileID: 54075758200392694}
   - component: {fileID: 114094984055843718}
+  - component: {fileID: 114334834926885708}
   m_Layer: 8
   m_Name: LeechGuy
   m_TagString: Untagged
@@ -427,9 +428,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectDistance: 3
-  chaseDistance: 4
+  chaseDistance: 1000
   attackRange: 1
   countdown: 0
+  stopPerTurn: 4
+  stopCount: 0
 --- !u!114 &114101402408145362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,6 +444,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6915dd680f12471eb1b8431967398f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114334834926885708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070084215050350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7144ddcfb6927a94180142dc85ef4940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 114986933382832226}
 --- !u!114 &114986933382832226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,9 +477,9 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 10
   animation: {fileID: 0}
-  exp: 12
+  exp: 10
   isLootable: 0
   prePanic: 0
   rage: 0
-  defaultCondition: 2
+  defaultCondition: 0
   reaction: 0

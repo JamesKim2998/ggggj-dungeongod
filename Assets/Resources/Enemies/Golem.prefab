@@ -114,9 +114,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4219793610618734}
   - component: {fileID: 114435224718019126}
-  - component: {fileID: 114243608773384762}
   - component: {fileID: 65512666374148050}
   - component: {fileID: 54275682193690736}
+  - component: {fileID: 114196532693104256}
+  - component: {fileID: 114501728249062186}
   m_Layer: 8
   m_Name: Golem
   m_TagString: Untagged
@@ -712,7 +713,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114243608773384762
+--- !u!114 &114196532693104256
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -720,13 +721,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366860592099368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0257c31513f13114aa3e792cf95c1d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b2689004d5191d44b32b978de1bf571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDistance: 4
-  chaseDistance: 4
+  detectDistance: 1
+  chaseDistance: 6
   attackRange: 1
   countdown: 0
+  stopPerTurn: 2
+  stopCount: 0
 --- !u!114 &114256991000236358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,9 +762,21 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 10
   animation: {fileID: 0}
-  exp: 12
+  exp: 30
   isLootable: 0
   prePanic: 0
   rage: 0
-  defaultCondition: 2
-  reaction: 0
+  defaultCondition: 1
+  reaction: 2
+--- !u!114 &114501728249062186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366860592099368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7144ddcfb6927a94180142dc85ef4940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 114435224718019126}
