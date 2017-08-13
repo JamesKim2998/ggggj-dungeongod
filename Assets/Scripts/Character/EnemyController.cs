@@ -33,12 +33,6 @@ public class EnemyController : MonoBehaviour
     public virtual void UpdateCondition(Hero hero) {
 
         stopCount++;
-        if (stopCount >= stopPerTurn)
-        {
-            character.condition = ConditionType.WAIT;
-            stopCount = 0;
-            return;
-        }
 
         if (character.prePanic == true) {
             character.condition = ConditionType.PANIC;
@@ -81,7 +75,7 @@ public class EnemyController : MonoBehaviour
 
     public virtual void Wait()
     {
-        character.TryToMove(Dir.Stay);
+        //character.TryToMove(Dir.Stay);
     }
 
     public virtual void RunAway(Coord Source)
@@ -121,6 +115,13 @@ public class EnemyController : MonoBehaviour
     {
         var hero = MainLogic.instance.hero;
         UpdateCondition(hero);
+
+        if (stopCount >= stopPerTurn)
+        {
+            Wait();
+            stopCount = 0;
+            return;
+        }
 
         switch (character.condition)
         {
