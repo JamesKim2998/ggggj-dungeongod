@@ -261,7 +261,7 @@ public class MainLogic : MonoBehaviour
 		Destroy(hero.gameObject);
 		hero = heroPlaceholder;
 		heroController = heroControllerPlaceholder;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
 
 		GoBackToFirstFloor();
 	}
