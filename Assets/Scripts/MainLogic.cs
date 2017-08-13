@@ -330,7 +330,11 @@ public class MainLogic : MonoBehaviour
 
 	public void highLightObject()
 	{
-		highLighted = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+        RaycastHit firstHit;
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out firstHit);
+        if (firstHit.transform == null)
+            return;
+		highLighted = Physics.RaycastAll(new Ray(new Vector3(firstHit.transform.position.x, 10, firstHit.transform.position.z), Vector3.down));
 		foreach (var hit in highLighted)
 		{
 			hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(0.5f, 0.8f, 0.5f);
