@@ -41,10 +41,10 @@ public class Hero : Character
 
 		else if (other.tag == "Consumable")
 		{
-			if ((int)other.GetComponent<ConsumableItem>().code <= 2) // ���迭 ������
-				MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
-			else //�����迭 ������
-				MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+			// if ((int)other.GetComponent<ConsumableItem>().code <= 2) // ���迭 ������
+			MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
+			// else //�����迭 ������
+			// MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
 			Destroy(other.gameObject);
 		}
 
