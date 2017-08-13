@@ -21,7 +21,8 @@ public class HeroController : MonoBehaviour
 
 	protected Hero character;
 
-	public int combatHP = 2;
+	public int combatStartHPConstant = 1;
+	public float combatStartHPPercentage = 0.334f;
 	int combarHPOnLastTurn;
 	public int runAwayDistance = 5;
 
@@ -142,7 +143,8 @@ public class HeroController : MonoBehaviour
 		Dir dir;
 
 		// 시야범위 안에 적이 있고 체력이 n 이상이면 전투 상태에 들어간다
-		if (character.HP >= combatHP)
+		var combatThreshold = character.maxHP * combatStartHPPercentage + combatStartHPConstant;
+		if (character.HP >= (int)combatThreshold)
 		{
 			targetToCombat = GetDirToReachableVisibleEnemy(out dir);
 			if (targetToCombat)
