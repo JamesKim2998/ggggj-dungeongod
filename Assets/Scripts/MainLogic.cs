@@ -4,77 +4,77 @@ using System.Collections.Generic;
 
 public class MainLogic : MonoBehaviour
 {
-    public static MainLogic instance = null;
+	public static MainLogic instance = null;
 
-    public float turnDelay;
+	public float turnDelay;
 
-    public Dungeon dungeon;
-    public God god;
+	public Dungeon dungeon;
+	public God god;
 
 	public Hero hero;
 	public HeroController heroController;
 
-    private RaycastHit[] highLighted;
+	private RaycastHit[] highLighted;
 
 	public HeroHPBar heroHPBar;
 	public GodPowerBar godPowerBar;
 
-    public GameObject thunderPrefab;
+	public GameObject thunderPrefab;
 
-    public AudioManager audioManager;
+	public AudioManager audioManager;
 
-    // public bool isEnemyPhase = false;
+	// public bool isEnemyPhase = false;
 
 	Hero heroPlaceholder;
 	HeroController heroControllerPlaceholder;
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        
+	void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else if (instance != this)
+		{
+			Destroy(gameObject);
+		}
+
 		heroPlaceholder = hero;
 		heroControllerPlaceholder = heroController;
-        
-        InitGame();
+
+		InitGame();
 		StartCoroutine(CoroutineCycleTurnInfinite());
 
-        audioManager = FindObjectOfType<AudioManager>();
+		audioManager = FindObjectOfType<AudioManager>();
 
-        ItemManager.consumalbeDic.Add(ConsumableItemCode.CAKE, 5);
-        ItemManager.consumalbeDic.Add(ConsumableItemCode.CHICKEN, 3);
-        ItemManager.consumalbeDic.Add(ConsumableItemCode.PIE, 2);
-        ItemManager.consumalbeDic.Add(ConsumableItemCode.WINE, 10);
-        ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
-        ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.CAKE, 5);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.CHICKEN, 3);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.PIE, 2);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.WINE, 10);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.SPAGETTI, 6);
+		ItemManager.consumalbeDic.Add(ConsumableItemCode.EGGJJIM, 4);
 
-        ItemManager.equipDic.Add(EquipmentCode.ARMOR0, new EquipmentInfo(EquipmentType.ARMOR, 0));
-        ItemManager.equipDic.Add(EquipmentCode.ARMOR1, new EquipmentInfo(EquipmentType.ARMOR, 20));
-        ItemManager.equipDic.Add(EquipmentCode.ARMOR2, new EquipmentInfo(EquipmentType.ARMOR, 30));
-        ItemManager.equipDic.Add(EquipmentCode.ARMOR3, new EquipmentInfo(EquipmentType.ARMOR, 40));
+		ItemManager.equipDic.Add(EquipmentCode.ARMOR0, new EquipmentInfo(EquipmentType.ARMOR, 0));
+		ItemManager.equipDic.Add(EquipmentCode.ARMOR1, new EquipmentInfo(EquipmentType.ARMOR, 20));
+		ItemManager.equipDic.Add(EquipmentCode.ARMOR2, new EquipmentInfo(EquipmentType.ARMOR, 30));
+		ItemManager.equipDic.Add(EquipmentCode.ARMOR3, new EquipmentInfo(EquipmentType.ARMOR, 40));
 
-        ItemManager.equipDic.Add(EquipmentCode.WEAPON0, new EquipmentInfo(EquipmentType.WEAPON, 0));
-        ItemManager.equipDic.Add(EquipmentCode.WEAPON1, new EquipmentInfo(EquipmentType.WEAPON, 20));
-        ItemManager.equipDic.Add(EquipmentCode.WEAPON2, new EquipmentInfo(EquipmentType.WEAPON, 30));
-        ItemManager.equipDic.Add(EquipmentCode.WEAPON3, new EquipmentInfo(EquipmentType.WEAPON, 40));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON0, new EquipmentInfo(EquipmentType.WEAPON, 0));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON1, new EquipmentInfo(EquipmentType.WEAPON, 20));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON2, new EquipmentInfo(EquipmentType.WEAPON, 30));
+		ItemManager.equipDic.Add(EquipmentCode.WEAPON3, new EquipmentInfo(EquipmentType.WEAPON, 40));
 
-        ItemManager.heroEquipInfo.Add(EquipmentType.ARMOR, EquipmentCode.ARMOR0);
-        ItemManager.heroEquipInfo.Add(EquipmentType.WEAPON, EquipmentCode.WEAPON0);
-    }
+		ItemManager.heroEquipInfo.Add(EquipmentType.ARMOR, EquipmentCode.ARMOR0);
+		ItemManager.heroEquipInfo.Add(EquipmentType.WEAPON, EquipmentCode.WEAPON0);
+	}
 
-    void Update()
-    {
+	void Update()
+	{
 		god.Update();
-        deHighLighObject();
-        highLightObject();
-        if (Input.GetMouseButtonDown(0) && god.powerLeft >= 20)
-            UpdateGodTouch();
+		deHighLighObject();
+		highLightObject();
+		if (Input.GetMouseButtonDown(0) && god.powerLeft >= 20)
+			UpdateGodTouch();
 		UpdateCamera();
 		UpdateFogOfWar();
 		UpdateUI();
@@ -90,7 +90,7 @@ public class MainLogic : MonoBehaviour
             isEnemyPhase = true;
         }
 		*/
-    }
+	}
 
 	void UpdateCamera()
 	{
@@ -126,7 +126,7 @@ public class MainLogic : MonoBehaviour
 		}
 	}
 
-	const string prefKey_CanControlHeroWithInput= "MainLogic_CanControlHeroByInput";
+	const string prefKey_CanControlHeroWithInput = "MainLogic_CanControlHeroByInput";
 	static bool canControlHeroWithInput
 	{
 		get { return PlayerPrefs.GetInt(prefKey_CanControlHeroWithInput) == 1; }
@@ -138,15 +138,15 @@ public class MainLogic : MonoBehaviour
 		canControlHeroWithInput = GUILayout.Toggle(canControlHeroWithInput, "ControlHeroByInput");
 	}
 
-    void InitGame()
-    {
-        // Init level
-        dungeon.Clear();
+	void InitGame()
+	{
+		// Init level
+		dungeon.Clear();
 		var entrance = dungeon.LoadInitLevel();
 		SpawnNewHero(entrance);
 		SetCameraXZToCenter(entrance);
 		godPowerBar.powerMax = god.powerMax;
-    }
+	}
 
 	void SpawnNewHero(Vector3 position)
 	{
@@ -169,7 +169,7 @@ public class MainLogic : MonoBehaviour
 		var newPosition = positionToCenter + xzOffset;
 		newPosition.y = camY;
 		var delta = newPosition - cam.transform.position;
-		var camParent= cam.transform.parent;
+		var camParent = cam.transform.parent;
 		camParent.position = camParent.position + delta;
 	}
 
@@ -190,10 +190,13 @@ public class MainLogic : MonoBehaviour
     }
 	*/
 
+	int turnCount;
+
 	public IEnumerator CoroutineCycleTurnInfinite()
 	{
 		while (true)
 		{
+			Debug.Log("Turn: " + turnCount++);
 			yield return HeroPhase();
 			yield return EnemyPhase();
 		}
@@ -212,14 +215,14 @@ public class MainLogic : MonoBehaviour
 		}
 	}
 
-    IEnumerator EnemyPhase()
-    {
+	IEnumerator EnemyPhase()
+	{
 		yield return new WaitForSeconds(turnDelay);
 		// Assume that we can ignore times to calculate AI's next action
 		var enemies = dungeon.currentFloor.EachEnemy();
 		foreach (var enemy in enemies)
 			enemy.GetComponent<EnemyController>().NextTurn();
-    }
+	}
 
 	void GoToNextFloor()
 	{
@@ -234,14 +237,14 @@ public class MainLogic : MonoBehaviour
 		SetCameraXZToCenter(entrance);
 	}
 
-    void OnHeroDead()
-    {
+	void OnHeroDead()
+	{
 		hero = heroPlaceholder;
 		heroController = heroControllerPlaceholder;
 		GoBackToFirstFloor();
-    }
+	}
 
-    /*
+	/*
     public Dungeon dungeon;
     public God god;
     public Hero hero;
@@ -276,69 +279,70 @@ public class MainLogic : MonoBehaviour
         enemyManager.NextTurn();
     }*/
 
-    // TODO
-    public RaycastHit[] TestGodTouch()
-    {
-        return Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
-    }
+	// TODO
+	public RaycastHit[] TestGodTouch()
+	{
+		return Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+	}
 
-    public void UpdateGodTouch()
-    {
-        GameObject thunder = null;
-        bool hitOnGround = true;
+	public void UpdateGodTouch()
+	{
+		GameObject thunder = null;
+		bool hitOnGround = true;
 
-        var hits = TestGodTouch();
+		var hits = TestGodTouch();
 		if (hits == null) return;
-        bool isThunder = true;
-        foreach (var hit in hits)
-        {
-            if (!dungeon.currentFloor.fogOfWar.IsVisibleByGod(Coord.Round(hit.transform.position)))
-                return;
-            if (isThunder)
-            {
-                StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), audioManager.SFXs[5]));
-                thunder = Instantiate(thunderPrefab);
-                thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
-                isThunder = false;
-                god.powerLeft -= 20;
-            }
-            var hitGO = hit.collider.gameObject;
-            var godTouch = hitGO.GetComponent<GodTouchAction>();
-            if (godTouch != null)
-            {
-                hitOnGround = false;
-                godTouch.Act();
-            }
-        }
-        
-        if (hitOnGround && thunder != null)
-        {
-            if (Coord.distance(hero.coord, Coord.Round(thunder.transform.position)) <= hero.visibleDistance)
-            {
-                hero.nextCondition = ConditionType.PANIC;
-            }
-        }
-        
-    }
+		bool isThunder = true;
+		foreach (var hit in hits)
+		{
+			if (!dungeon.currentFloor.fogOfWar.IsVisibleByGod(Coord.Round(hit.transform.position)))
+				return;
+			if (isThunder)
+			{
+				StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), audioManager.SFXs[5]));
+				thunder = Instantiate(thunderPrefab);
+				thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
+				isThunder = false;
+				god.powerLeft -= 20;
+			}
+			var hitGO = hit.collider.gameObject;
+			var godTouch = hitGO.GetComponent<GodTouchAction>();
+			if (godTouch != null)
+			{
+				hitOnGround = false;
+				godTouch.Act();
+			}
+		}
 
-    public void highLightObject()
-    {
-        highLighted = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
-        foreach (var hit in highLighted)
-        {
-            hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(0.5f, 0.8f, 0.5f);
-        }
-    }
+		if (hitOnGround && thunder != null)
+		{
+			var thunderCoord = Coord.Round(thunder.transform.position);
+			if (Coord.distance(hero.coord, thunderCoord) <= hero.visibleDistance)
+			{
+				heroController.ForceRunAway(thunderCoord, Random.Range(2, 5));
+			}
+		}
 
-    public void deHighLighObject()
-    {
-        if (highLighted == null)
-            return;
-        foreach (var hit in highLighted)
-        {
-            if (hit.transform == null)
-                continue;
-            hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(1, 1, 1);
-        }
-    }
+	}
+
+	public void highLightObject()
+	{
+		highLighted = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+		foreach (var hit in highLighted)
+		{
+			hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(0.5f, 0.8f, 0.5f);
+		}
+	}
+
+	public void deHighLighObject()
+	{
+		if (highLighted == null)
+			return;
+		foreach (var hit in highLighted)
+		{
+			if (hit.transform == null)
+				continue;
+			hit.transform.GetComponentInChildren<MeshRenderer>().material.color = new Color(1, 1, 1);
+		}
+	}
 }

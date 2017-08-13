@@ -23,6 +23,7 @@ public abstract class Character : MonoBehaviour
 	public ConditionType condition;
 	public int visibleDistance = 10;
 	public new CharacterAnimation animation;
+	protected string moveType = "Move";
 
 	protected virtual void Awake()
 	{
@@ -76,7 +77,7 @@ public abstract class Character : MonoBehaviour
 		{
 			var oldPos = transform.position;
 			transform.DOMove(dest.ToVector3(oldPos.y), 0.5f);
-			if (animation) animation.SetTrigger("Move");
+			if (animation) animation.SetTrigger(moveType);
 			// TODO: 조작감 문제로 일단 주석처리.
 			// StartCoroutine(SmoothMovement(dest));
 
@@ -129,17 +130,20 @@ public abstract class Character : MonoBehaviour
 	public virtual void getDamage(int power, int dice)
 	{
 		int powerDiff = power + dice - this.power;
+		bool hit = false;
 		if (powerDiff >= 12)
 		{
 			//CRITICAL !! TODO ANIMATION
 			this.HP -= 2;
 			EffectSpawner.SetEffect("HitEffect", transform.position + Vector3.up);
+			hit = true;
 		}
 		else if (powerDiff >= 7 || dice >= 12)
 		{
 			//normal hit;
 			this.HP -= 1;
 			EffectSpawner.SetEffect("HitEffect", transform.position + Vector3.up);
+			hit = true;
 		}
 		else
 		{
@@ -149,12 +153,11 @@ public abstract class Character : MonoBehaviour
 
 		if (IsDead())
 		{
-			Die();
 			if (animation) animation.SetTrigger("Die");
 		}
 		else
 		{
-			if (animation) animation.SetTrigger("Hit");
+			if (animation && hit) animation.SetTrigger("Hit");
 		}
 	}
 

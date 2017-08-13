@@ -12,6 +12,8 @@ public class HeroGodTouchAction : GodTouchAction
         // TODO : Hero 기절, HP 1 감소
         hero.condition = ConditionType.PARALYZED;
         hero.HP--;
+        if (hero.IsDead())
+            hero.Die();
     }
 
     public bool IsHeroParalyzed()

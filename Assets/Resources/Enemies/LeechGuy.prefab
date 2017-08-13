@@ -452,9 +452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2d21016bea6304c86cd7d88125dbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 15
-  HP: 10
-  power: 5
+  maxHP: 3
+  HP: 3
+  power: 6
   moveTime: 1
   blockingLayer:
     serializedVersion: 2

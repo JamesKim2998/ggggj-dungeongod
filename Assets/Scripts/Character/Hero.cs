@@ -7,7 +7,6 @@ public class Hero : Character
 	public int level = 1;
 	public int expNeeded = 10;
 
-	public ConditionType? nextCondition;
 	public int fogDistance = 8;
 
 	public ConditionType defaultCondition = ConditionType.EXPLORE;
@@ -23,30 +22,35 @@ public class Hero : Character
 		var tag = other.GetComponent<ObjectTag>();
 		if (tag != null && tag.type == ObjectType.DOWN_STAIR)
 		{
-			if (onHitExit != null)
-				onHitExit();
+			animation.SetTrigger("Jumpdown");
+			tag.GetComponent<Animator>().enabled = true;
 		}
 
 		else if (other.tag == "Equipment")
 		{
-            if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power){
-                ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
-                ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
-            }
+			if (ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power >= ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].power)
+			{
+				ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
+				ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
+			}
 			// TODO :  loot or ignore
 		}
 
-        else if (other.tag == "Consumable")
-        {
-            if ((int)other.GetComponent<ConsumableItem>().code <= 2) // Èú°è¿­ ¾ÆÀÌÅÛ
-                MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
-            else //¹öÇÁ°è¿­ ¾ÆÀÌÅÛ
-                MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
-            Destroy(other.gameObject);
-        }
+		else if (other.tag == "Consumable")
+		{
+			if ((int)other.GetComponent<ConsumableItem>().code <= 2) // ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				MainLogic.instance.hero.HP = Mathf.Min(MainLogic.instance.hero.HP + ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code], MainLogic.instance.hero.maxHP);
+			else //ï¿½ï¿½ï¿½ï¿½ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				MainLogic.instance.hero.buffedTurn += ItemManager.consumalbeDic[other.GetComponent<ConsumableItem>().code];
+			Destroy(other.gameObject);
+		}
 
 	}
 
+	public void JumpedDown()
+	{
+		onHitExit();
+	}
 	public void checkBuffEnded()
 	{
 		if (buffedTurn <= 0)
@@ -71,7 +75,10 @@ public class Hero : Character
 			this.HP++;
 		}
 		if (levelup)
+		{
 			StartCoroutine(AudioManager.playSFX(Camera.main.gameObject.AddComponent<AudioSource>(), MainLogic.instance.audioManager.SFXs[4]));
+			EffectSpawner.SetEffect("LvUP", transform.position);
+		}
 	}
 
 	public void Attack(Enemy enemy)
@@ -100,6 +107,15 @@ public class Hero : Character
 		{
 			Attack(enemy);
 		}
+	}
+
+	public override bool Move(Dir dir, out RaycastHit hitInfo)
+	{
+		if (condition == ConditionType.PANIC || condition == ConditionType.RUNAWAY)
+			moveType = "Panic";
+		else
+			moveType = "Move";
+		return base.Move(dir, out hitInfo);
 	}
 
 	public override void Die()

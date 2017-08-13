@@ -16,7 +16,7 @@ public class Dungeon : MonoBehaviour
 
 	public Vector3 LoadInitLevel()
 	{
-		currentFloorIdx = -1;
+		currentFloorIdx = 0;
 		return GoToNextFloor();
 	}
 

@@ -179,48 +179,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1001 &1029617961
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1041908679
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +366,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 5ebedd592d1d74f1ca7c684341ebb67f, type: 2}
+--- !u!1001 &1163473225
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907266505715174, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2143381d6829648729cbda3c626dfef0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1195773559
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,12 +569,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   condition: 0
+  visibleDistance: 8
   animation: {fileID: 0}
   level: 1
   expNeeded: 10
-  preParalyzed: 0
-  prePanic: 0
-  visibleDistance: 8
+  fogDistance: 8
   defaultCondition: 0
   buffed: 0
   buffedTurn: 0

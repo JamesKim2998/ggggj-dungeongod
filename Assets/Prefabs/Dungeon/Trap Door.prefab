@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4397411347907910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trap Tunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4879554866610190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trap Door 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4357516758126238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trap Door 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 4221551325768754}
   - component: {fileID: 33206001936435992}
   - component: {fileID: 23378332396289918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 4416274007338466}
   - component: {fileID: 33246841605172070}
   - component: {fileID: 23219552940371192}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4686758236068012}
   - component: {fileID: 33077315573629500}
   - component: {fileID: 23033316190315382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4084234129636592}
   - component: {fileID: 95388121283869786}
-  m_Layer: 0
+  - component: {fileID: 65827783388757252}
+  - component: {fileID: 114862093580882530}
+  m_Layer: 10
   m_Name: Trap Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,6 +339,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1454465247588234}
   m_Mesh: {fileID: 4300000, guid: d0f1a5f38b7594c679b1e98496eae6d7, type: 3}
+--- !u!65 &65827783388757252
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788393134852946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95388121283869786
 Animator:
   serializedVersion: 3
@@ -354,3 +368,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114862093580882530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788393134852946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2c1eadf73ca4448b9cfa471005f08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3

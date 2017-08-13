@@ -1,6 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class CharacterOrCoord
+{
+	bool isCharacter;
+	Character target;
+	Coord coord;
+	public CharacterOrCoord(Character newTarget) { target = newTarget; isCharacter = true; coord = new Coord(0, 0); }
+	public CharacterOrCoord(Coord newCoord) { isCharacter = false; coord = newCoord; target = null; }
+	public Vector3 GetPosition()
+	{
+		if (isCharacter) return target.transform.position;
+		else return coord.ToVector3();
+	}
+}
 public class HeroController : MonoBehaviour
 {
 	DungeonFloor curFloor { get { return MainLogic.instance.dungeon.currentFloor; } }
@@ -8,17 +21,16 @@ public class HeroController : MonoBehaviour
 
 	protected Hero character;
 
-	public int combatHP = 6;
+	public int combatHP = 2;
 	int combarHPOnLastTurn;
 	public int runAwayDistance = 5;
 
-	ConditionType? nextCondition;
+	public ConditionType? nextCondition;
 	int countdown = 0;
 
-	GameObject targetToGather;
+	Item targetToGather;
 	Enemy targetToCombat;
-	Enemy targetToRunAway;
-
+	CharacterOrCoord targetToRunAway;
 
 	void Awake()
 	{
@@ -65,6 +77,13 @@ public class HeroController : MonoBehaviour
 			case ConditionType.PANIC: Panic_NextTurn(); break;
 			default: break;
 		}
+	}
+
+	public void ForceRunAway(Coord from, int turns)
+	{
+		nextCondition = ConditionType.RUNAWAY;
+		targetToRunAway = new CharacterOrCoord(from);
+		countdown = turns;
 	}
 
 	Item GetDirToReachableVisibleItem(out Dir dir)
@@ -122,14 +141,6 @@ public class HeroController : MonoBehaviour
 	{
 		Dir dir;
 
-		// 시야범위 안에 아이템이 떨어져 있으면 획득 상태에 들어간다
-		var targetToGather = GetDirToReachableVisibleItem(out dir);
-		if (targetToGather)
-		{
-			nextCondition = ConditionType.GATHER;
-			return dir;
-		}
-
 		// 시야범위 안에 적이 있고 체력이 n 이상이면 전투 상태에 들어간다
 		if (character.HP >= combatHP)
 		{
@@ -139,6 +150,14 @@ public class HeroController : MonoBehaviour
 				nextCondition = ConditionType.COMBAT;
 				return dir;
 			}
+		}
+
+		// 시야범위 안에 아이템이 떨어져 있으면 획득 상태에 들어간다
+		targetToGather = GetDirToReachableVisibleItem(out dir);
+		if (targetToGather)
+		{
+			nextCondition = ConditionType.GATHER;
+			return dir;
 		}
 
 		// 안개로 덮인 가장 이동거리 가까운 곳을 목표로 이동한다
@@ -196,7 +215,7 @@ public class HeroController : MonoBehaviour
 		if (character.HP <= combarHPOnLastTurn - 2)
 		{
 			nextCondition = ConditionType.RUNAWAY;
-			targetToRunAway = targetToCombat;
+			targetToRunAway = new CharacterOrCoord(targetToCombat);
 		}
 
 		var targetCoord = Coord.Round(targetToCombat.transform.position);
@@ -225,7 +244,7 @@ public class HeroController : MonoBehaviour
 			countdown = 0;
 		}
 
-		var targetCoord = Coord.Round(targetToRunAway.transform.position);
+		var targetCoord = Coord.Round(targetToRunAway.GetPosition());
 		if (Coord.distance(targetCoord, character.coord) >= runAwayDistance)
 		{
 			nextCondition = ConditionType.EXPLORE;

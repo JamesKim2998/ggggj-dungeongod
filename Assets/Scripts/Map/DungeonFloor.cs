@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[Serializable]
-public class EnemySpawnInfo
-{
-	public Transform point;
-	public string prefabName;
-}
 
 public class DungeonFloor : MonoBehaviour
 {
 	public GameObject entrance;
 
 	public Transform enemySpawnRoot;
-	public List<EnemySpawnInfo> enemySpawnInfo = new List<EnemySpawnInfo>();
+	public List<GameObject> enemySpawnInfo = new List<GameObject>();
 	List<Enemy> enemies = new List<Enemy>();
 	Item[] items = new Item[0];
 
@@ -47,13 +41,17 @@ public class DungeonFloor : MonoBehaviour
 
 	void OnEnable()
 	{
-		foreach (var spawnInfo in enemySpawnInfo)
+		int index = 0;
+		foreach (var spawn in enemySpawnRoot)
 		{
-			var point = spawnInfo.point.position;
-			var prefab = Resources.Load<GameObject>("Enemies/" + spawnInfo.prefabName);
+			if (index == enemySpawnInfo.Count) break;
+			var spawnPosition = spawn as Transform;
+			var point = spawnPosition.position;
+			var prefab = Resources.Load<GameObject>("Enemies/" + enemySpawnInfo[index].name);
 			var enemy = Instantiate(prefab, point, Quaternion.identity, enemySpawnRoot);
 			enemy.GetComponent<Enemy>().initialCoord = Coord.Round(point);
 			enemies.Add(enemy.GetComponent<Enemy>());
+			index++;
 		}
 
 		items = FindObjectsOfType<Item>();

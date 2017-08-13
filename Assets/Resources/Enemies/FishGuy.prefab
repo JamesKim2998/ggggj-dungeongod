@@ -452,14 +452,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2d21016bea6304c86cd7d88125dbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 15
-  HP: 10
-  power: 5
+  maxHP: 7
+  HP: 7
+  power: 8
   moveTime: 1
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
   condition: 0
+  visibleDistance: 10
   animation: {fileID: 0}
   exp: 12
   isLootable: 0
