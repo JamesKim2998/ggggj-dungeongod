@@ -65,6 +65,8 @@ public class DungeonFloor : MonoBehaviour
 				Destroy(enemy.gameObject);
 		}
 		enemies.Clear();
+
+		fogOfWar.ClearHeroMemorizingVisibility();
 	}
 
 	RaycastHit[] hitsCache = new RaycastHit[16];

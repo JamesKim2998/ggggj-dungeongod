@@ -37,6 +37,7 @@ public class PathFinder
         return Coord.distance(curr, dest) == 0;
     }
 
+	/*
     public bool isVisiableByHero(Coord curr)
     {
         return currMap.fogOfWar.IsVisibleByHero(curr);
@@ -46,6 +47,7 @@ public class PathFinder
     {
         return currMap.fogOfWar.IsVisibleByGod(curr);
     }
+	*/
 
     private bool IsNewLand(Coord curr)
     {

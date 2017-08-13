@@ -126,7 +126,7 @@ public class HeroController : MonoBehaviour
 		foreach (var testDelta in Range.DistanceNearToFar(exploreDistance))
 		{
 			var testCoord = testDelta + character.coord;
-			var noFog = curFloor.fogOfWar.IsVisibleByHero(testCoord);
+			var noFog = curFloor.fogOfWar.IsHeroMemorizeAsVisible(testCoord);
 			if (noFog) continue;
 			var dirToFog = curPathFinder.FindPath(character.coord, testCoord);
 			if (dirToFog == Dir.Stay) continue;

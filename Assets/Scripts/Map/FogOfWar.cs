@@ -25,6 +25,8 @@ public class FogOfWar : MonoBehaviour
 	readonly Dictionary<Coord, QuadInfo> quadInfos = new Dictionary<Coord, QuadInfo>();
 	readonly Dictionary<Coord, Visiblity> quadUpdates = new Dictionary<Coord, Visiblity>();
 
+	public HashSet<Coord> heroMemorizingVisiblity = new HashSet<Coord>();
+
 	void Awake()
 	{
 		mesh = new Mesh();
@@ -51,12 +53,9 @@ public class FogOfWar : MonoBehaviour
 		return test.visiblity != Visiblity.None;
 	}
 
-	public bool IsVisibleByHero(Coord coord)
+	public bool IsHeroMemorizeAsVisible(Coord coord)
 	{
-		QuadInfo test;
-		if (!quadInfos.TryGetValue(coord, out test))
-			return false;
-		return test.visiblity == Visiblity.Hero;
+		return heroMemorizingVisiblity.Contains(coord);
 	}
 
 	void ResolveAllUpdateVisiblityRequest()
@@ -210,6 +209,7 @@ public class FogOfWar : MonoBehaviour
 
 			RequestUpdate(testCoord, Visiblity.Hero);
 			visibleToHero.Add(testCoord);
+			heroMemorizingVisiblity.Add(testCoord);
 		}
 
 		foreach (var oldVisibleCoord in oldVisibleToVisible)
@@ -219,10 +219,8 @@ public class FogOfWar : MonoBehaviour
 		}
 	}
 
-	public void ClearHeroVisibility()
+	public void ClearHeroMemorizingVisibility()
 	{
-		foreach (var coord in visibleToHero)
-			RequestUpdate(coord, Visiblity.God);
-		visibleToHero.Clear();
+		heroMemorizingVisiblity.Clear();
 	}
 }
