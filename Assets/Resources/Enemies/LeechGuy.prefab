@@ -427,9 +427,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectDistance: 3
-  chaseDistance: 4
+  chaseDistance: 1000
   attackRange: 1
   countdown: 0
+  stopPerTurn: 4
+  stopCount: 0
 --- !u!114 &114101402408145362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,9 +464,9 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 10
   animation: {fileID: 0}
-  exp: 12
+  exp: 10
   isLootable: 0
   prePanic: 0
   rage: 0
-  defaultCondition: 2
+  defaultCondition: 0
   reaction: 0

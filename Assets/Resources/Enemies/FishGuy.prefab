@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4787047230667034}
   - component: {fileID: 114780735018876934}
-  - component: {fileID: 114356841896282010}
   - component: {fileID: 65739676177288150}
   - component: {fileID: 54342251118560368}
+  - component: {fileID: 114172252218419978}
   m_Layer: 8
   m_Name: FishGuy
   m_TagString: Untagged
@@ -415,6 +415,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114172252218419978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1042412909246914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2689004d5191d44b32b978de1bf571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectDistance: 3
+  chaseDistance: 4
+  attackRange: 1
+  countdown: 0
+  stopPerTurn: 1000
+  stopCount: 0
 --- !u!114 &114320544842550942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,21 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6915dd680f12471eb1b8431967398f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114356841896282010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042412909246914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0257c31513f13114aa3e792cf95c1d8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectDistance: 4
-  chaseDistance: 4
-  attackRange: 1
-  countdown: 0
 --- !u!114 &114780735018876934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,9 +464,9 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 10
   animation: {fileID: 0}
-  exp: 12
+  exp: 15
   isLootable: 0
   prePanic: 0
   rage: 0
   defaultCondition: 2
-  reaction: 0
+  reaction: 1
