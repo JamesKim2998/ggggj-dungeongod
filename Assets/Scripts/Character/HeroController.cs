@@ -89,12 +89,13 @@ public class HeroController : MonoBehaviour
 
 	Item GetDirToReachableVisibleItem(out Dir dir)
 	{
-		foreach (var item in curFloor.EachItem())
+		var heroCoord = character.coord;
+		foreach (var item in curFloor.EachItemFromNearToFar(heroCoord))
 		{
 			if (item == null) continue;
-			var itemCoord = Coord.Round(item.transform.position);
+			var itemCoord = item.coord;
 			if (!character.CanSee(itemCoord)) continue;
-			var testDir = curFloor.pathFinder.FindPath(character.coord, itemCoord);
+			var testDir = curFloor.pathFinder.FindPath(heroCoord, itemCoord);
 			if (testDir == Dir.Stay) continue;
 			dir = testDir;
 			return item;
@@ -106,12 +107,13 @@ public class HeroController : MonoBehaviour
 
 	Enemy GetDirToReachableVisibleEnemy(out Dir dir)
 	{
-		foreach (var enemy in curFloor.EachEnemy())
+		var heroCoord = character.coord;
+		foreach (var enemy in curFloor.EachEnemyFromNearToFar(heroCoord))
 		{
 			if (enemy == null) continue;
-			var enemyCoord = Coord.Round(enemy.transform.position);
+			var enemyCoord = enemy.coord;
 			if (!character.CanSee(enemyCoord)) continue;
-			var testDir = curPathFinder.FindPath(character.coord, enemyCoord);
+			var testDir = curPathFinder.FindPath(heroCoord, enemyCoord);
 			if (testDir == Dir.Stay) continue;
 			dir = testDir;
 			return enemy;

@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-
-
 
 public class DungeonFloor : MonoBehaviour
 {
@@ -93,6 +92,12 @@ public class DungeonFloor : MonoBehaviour
 		}
 	}
 
+	public IEnumerable<Enemy> EachEnemyFromNearToFar(Coord distanceFrom)
+	{
+		return EachEnemy()
+			.OrderBy(enemy => Coord.distance(enemy.coord, distanceFrom));
+	}
+
 	public IEnumerable<Item> EachItem()
 	{
 		foreach (var item in items)
@@ -100,6 +105,12 @@ public class DungeonFloor : MonoBehaviour
 			if (item == null) continue;
 			yield return item;
 		}
+	}
+
+	public IEnumerable<Item> EachItemFromNearToFar(Coord distanceFrom)
+	{
+		return EachItem()
+			.OrderBy(item => Coord.distance(item.coord, distanceFrom));
 	}
 
 	/*
