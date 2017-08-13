@@ -206,6 +206,8 @@ public class MainLogic : MonoBehaviour
 
 	IEnumerator HeroPhase()
 	{
+		if (hero.IsDead()) yield break;
+
 		if (canControlHeroWithInput)
 		{
 			yield return null;
@@ -241,6 +243,12 @@ public class MainLogic : MonoBehaviour
 
 	void OnHeroDead()
 	{
+		StartCoroutine(CoroutineOnHeroDead());
+	}
+
+	IEnumerator CoroutineOnHeroDead()
+	{
+		yield return new WaitForSeconds(1);
 		hero = heroPlaceholder;
 		heroController = heroControllerPlaceholder;
 		GoBackToFirstFloor();
