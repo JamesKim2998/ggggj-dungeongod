@@ -723,6 +723,10 @@ MonoBehaviour:
   condition: 0
   visibleDistance: 8
   animation: {fileID: 0}
+  moveSFX:
+    clip: {fileID: 0}
+    delay: 0
+    volume: 1
   level: 1
   expNeeded: 10
   fogDistance: 8
@@ -809,7 +813,6 @@ GameObject:
   - component: {fileID: 1575776026}
   - component: {fileID: 1575776025}
   - component: {fileID: 1575776024}
-  - component: {fileID: 1575776023}
   - component: {fileID: 1575776022}
   - component: {fileID: 1575776027}
   - component: {fileID: 1575776028}
@@ -845,13 +848,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 5ebedd592d1d74f1ca7c684341ebb67f, type: 2}
---- !u!81 &1575776023
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1575776020}
-  m_Enabled: 1
 --- !u!124 &1575776024
 Behaviour:
   m_ObjectHideFlags: 0
@@ -980,7 +976,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
