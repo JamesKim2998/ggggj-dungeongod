@@ -249,9 +249,21 @@ public class MainLogic : MonoBehaviour
 	IEnumerator CoroutineOnHeroDead()
 	{
 		yield return new WaitForSeconds(1);
+
+		// Skeleton
+		var skeletonPrefab = Resources.Load<GameObject>("Hero/Dead Skeleton");
+		var position = transform.position;
+		var rotation = transform.rotation;
+		var parent = MainLogic.instance.dungeon.currentFloor.transform;
+		Instantiate(skeletonPrefab, position, rotation, parent);
+		yield return new WaitForSeconds(1);
+
 		hero = heroPlaceholder;
 		heroController = heroControllerPlaceholder;
 		GoBackToFirstFloor();
+		yield return new WaitForSeconds(1);
+
+		Destroy(gameObject);
 	}
 
 	/*
@@ -309,10 +321,10 @@ public class MainLogic : MonoBehaviour
 				return;
 			if (isThunder)
 			{
-				var clip = audioManager.SFXs[5];
-				AudioManager.playSFX(this, clip, 0);
 				thunder = Instantiate(thunderPrefab);
 				thunder.transform.position = new Vector3(hit.transform.position.x, thunder.transform.position.y, hit.transform.position.z);
+				var clip = audioManager.SFXs[5];
+				AudioManager.playSFX(thunder.transform.position, clip, 0);
 				isThunder = false;
 				god.powerLeft -= 20;
 			}

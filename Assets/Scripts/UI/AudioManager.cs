@@ -52,4 +52,17 @@ public class AudioManager : MonoBehaviour {
 		audioSource.volume = volume * SFXvolume;
 		coroutineRunner.StartCoroutine(playSFX(audioSource, delay));
 	}
+
+	public static void playSFX(Vector3 position, AudioClip clip, float delay = 0, float volume = 1)
+	{
+		var tempGO = new GameObject("Audio: " + clip.name);
+		var coroutineRunner = tempGO.AddComponent<ObjectTag>();
+		tempGO.transform.position = position;
+		var audioSource = tempGO.AddComponent<AudioSource>();
+		audioSource.clip = clip;
+		audioSource.spatialBlend = 0.9f;
+		audioSource.maxDistance = 8;
+		audioSource.volume = volume * SFXvolume;
+		coroutineRunner.StartCoroutine(playSFX(audioSource, delay));
+	}
 }

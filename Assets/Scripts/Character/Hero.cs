@@ -133,12 +133,6 @@ public class Hero : Character
 
 	public override void Die()
 	{
-		var skeletonPrefab = Resources.Load<GameObject>("Hero/Dead Skeleton");
-		var position = transform.position;
-		var rotation = transform.rotation;
-		var parent = MainLogic.instance.dungeon.currentFloor.transform;
-		Instantiate(skeletonPrefab, position, rotation, parent);
-		Destroy(gameObject);
 		if (onDead != null) onDead();
 	}
 }
