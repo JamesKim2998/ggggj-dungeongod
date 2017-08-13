@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 65512666374148050}
   - component: {fileID: 54275682193690736}
   - component: {fileID: 114196532693104256}
+  - component: {fileID: 114501728249062186}
   m_Layer: 8
   m_Name: Golem
   m_TagString: Untagged
@@ -767,3 +768,15 @@ MonoBehaviour:
   rage: 0
   defaultCondition: 1
   reaction: 2
+--- !u!114 &114501728249062186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366860592099368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7144ddcfb6927a94180142dc85ef4940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 114435224718019126}
