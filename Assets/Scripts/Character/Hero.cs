@@ -35,6 +35,7 @@ public class Hero : Character
 				ItemManager.heroEquipInfo.Remove(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type);
 				ItemManager.heroEquipInfo.Add(ItemManager.equipDic[other.GetComponent<EquipmentItem>().code].type, other.GetComponent<EquipmentItem>().code);
 				Destroy(other.gameObject);
+				EffectSpawner.SetEffect("PwUP", transform.position);
 			}
 			// TODO :  loot or ignore
 		}
