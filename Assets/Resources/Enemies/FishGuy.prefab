@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65739676177288150}
   - component: {fileID: 54342251118560368}
   - component: {fileID: 114172252218419978}
+  - component: {fileID: 114461662177324144}
   m_Layer: 8
   m_Name: FishGuy
   m_TagString: Untagged
@@ -443,6 +444,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6915dd680f12471eb1b8431967398f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114461662177324144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1042412909246914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7144ddcfb6927a94180142dc85ef4940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 114780735018876934}
 --- !u!114 &114780735018876934
 MonoBehaviour:
   m_ObjectHideFlags: 1
