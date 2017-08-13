@@ -6195,7 +6195,7 @@ GameObject:
   - component: {fileID: 4497678595763132}
   - component: {fileID: 114836265092353098}
   - component: {fileID: 65033380588342776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pie
   m_TagString: Consumable
   m_Icon: {fileID: 0}
@@ -6875,7 +6875,7 @@ GameObject:
   - component: {fileID: 4254899123113944}
   - component: {fileID: 114977005970519458}
   - component: {fileID: 65422561811175540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wood Sword 1
   m_TagString: Equipment
   m_Icon: {fileID: 0}
@@ -9897,7 +9897,7 @@ GameObject:
   - component: {fileID: 114864868266585120}
   - component: {fileID: 114266014977201270}
   - component: {fileID: 114010653206242850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GoddessStatue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13918,7 +13918,7 @@ GameObject:
   - component: {fileID: 4893600941069810}
   - component: {fileID: 114976160768247350}
   - component: {fileID: 65190893912847140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chicken
   m_TagString: Consumable
   m_Icon: {fileID: 0}
@@ -19026,7 +19026,7 @@ GameObject:
   - component: {fileID: 114223878156201560}
   - component: {fileID: 65474949449463440}
   - component: {fileID: 114810672083051304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trap Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20095,7 +20095,7 @@ GameObject:
   - component: {fileID: 4442476992933110}
   - component: {fileID: 65125439201134116}
   - component: {fileID: 114771668993818042}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leather Armor
   m_TagString: Equipment
   m_Icon: {fileID: 0}
@@ -22839,7 +22839,7 @@ GameObject:
   - component: {fileID: 4202095943568418}
   - component: {fileID: 114161411071181526}
   - component: {fileID: 65963280528334496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Traveler's Sword
   m_TagString: Equipment
   m_Icon: {fileID: 0}
@@ -68530,7 +68530,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1275254714280382}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8, z: 0.8}
@@ -69142,7 +69142,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860399967246976}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 1, z: 0.4}
@@ -69682,7 +69682,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614152819613936}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8, z: 0.8}
@@ -69778,7 +69778,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428426764723042}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
@@ -71494,7 +71494,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303864098901566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 1, z: 0.4}
@@ -71842,7 +71842,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810614194852810}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.2, y: 1, z: 0.2}
@@ -75838,7 +75838,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985518050284302}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 1, z: 0.4}
