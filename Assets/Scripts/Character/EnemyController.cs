@@ -55,7 +55,7 @@ public class EnemyController : MonoBehaviour
         {
             character.condition = ConditionType.COMBAT;
         }
-        else if (Coord.distance(hero.coord, character.coord) >= chaseDistance)
+        else if (Coord.distance(hero.coord, character.coord) > chaseDistance)
         {
             character.condition = character.defaultCondition;
         }
@@ -101,7 +101,7 @@ public class EnemyController : MonoBehaviour
         }
         else if (Coord.distance(hero.coord, character.coord) <= attackRange)
         {
-            //ranged attack
+            //ranged attack5
             character.Attack(hero);
         }
         else
